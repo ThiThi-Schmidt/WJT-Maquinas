@@ -41,10 +41,16 @@ export default function Home() {
             {/* Conteúdo de Texto */}
             <div className="lg:col-span-5 z-10 text-center lg:text-left">
               <h1 className="text-4xl lg:text-5xl font-extrabold mb-6 leading-tight">
-                NOME DA EMPRESA<span className="block text-white/90 font-normal">OQUE FAZEMOS</span>
+                WJT <span className="block text-white/90 font-normal">COMERCIO E MANUTENÇÃO DE MÁQUINAS</span>
               </h1>
               <p className="text-white/70 mb-8 max-w-md mx-auto lg:mx-0 leading-relaxed">
-                SOBRE NÓS/FRASE DE IMPACTO
+                🪏🧱Tudo em Jardinagem & Construção Civil
+                <p>
+                🔧Manutenção Especializada
+                </p>
+                 <p>
+                 🏆 Qualidade e experiência há 15 anos
+                 </p>
               </p>
               <div className="flex justify-center lg:justify-start space-x-4">
                 <a href="/shop" className="bg-[#f9bf29] text-[#2f2f2f] font-semibold px-8 py-3.5 rounded-full hover:bg-[#f9bf29]/90 transition duration-300 shadow-lg">
