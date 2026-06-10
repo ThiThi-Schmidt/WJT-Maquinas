@@ -14,12 +14,12 @@ export default function Home() {
           {/* Menu Desktop */}
           <div className="hidden md:flex items-center space-x-8">
             <ul className="flex space-x-6 text-sm font-medium text-white/70">
-              <li className="text-white border-b-2 border-[#f9bf29] pb-1"><a href="/">Home</a></li>
-              <li className="hover:text-white transition duration-200"><a href="/shop">Shop</a></li>
-              <li className="hover:text-white transition duration-200"><a href="/about">About us</a></li>
-              <li className="hover:text-white transition duration-200"><a href="/services">Services</a></li>
-              <li className="hover:text-white transition duration-200"><a href="/blog">Blog</a></li>
-              <li className="hover:text-white transition duration-200"><a href="/contact">Contact us</a></li>
+              <li className="text-white border-b-2 border-[#f9bf29] pb-1"><a href="/">Início</a></li>
+              <li className="hover:text-white transition duration-200"><a href="/shop">Loja</a></li>
+              <li className="hover:text-white transition duration-200"><a href="/about">Sobre nós</a></li>
+              <li className="hover:text-white transition duration-200"><a href="/services">Serviços</a></li>
+              <li className="hover:text-white transition duration-200"><a href="/blog">Clientes</a></li>
+              <li className="hover:text-white transition duration-200"><a href="/contact">Contato</a></li>
             </ul>
           </div>
 
@@ -41,17 +41,17 @@ export default function Home() {
             {/* Conteúdo de Texto */}
             <div className="lg:col-span-5 z-10 text-center lg:text-left">
               <h1 className="text-4xl lg:text-5xl font-extrabold mb-6 leading-tight">
-                Modern Interior <span className="block text-white/90 font-normal">Design Studio</span>
+                NOME DA EMPRESA<span className="block text-white/90 font-normal">OQUE FAZEMOS</span>
               </h1>
               <p className="text-white/70 mb-8 max-w-md mx-auto lg:mx-0 leading-relaxed">
-                Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
+                SOBRE NÓS/FRASE DE IMPACTO
               </p>
               <div className="flex justify-center lg:justify-start space-x-4">
                 <a href="/shop" className="bg-[#f9bf29] text-[#2f2f2f] font-semibold px-8 py-3.5 rounded-full hover:bg-[#f9bf29]/90 transition duration-300 shadow-lg">
-                  Shop Now
+                  Compre agora
                 </a>
                 <a href="#" className="border-2 border-white/30 text-white font-semibold px-8 py-3.5 rounded-full hover:border-white hover:bg-white/10 transition duration-300">
-                  Explore
+                  explore mais
                 </a>
               </div>
             </div>
@@ -80,31 +80,55 @@ export default function Home() {
               <p><a href="/shop" className="inline-block bg-[#2f2f2f] text-white font-medium px-7 py-3 rounded-full hover:bg-[#2f2f2f]/90 transition duration-300 text-sm">Explore</a></p>
             </div> 
 
-            {/* Coluna 2: Produto 1 */}
-            <div className="group relative text-center pt-10 pb-8 px-4 rounded-3xl hover:bg-white transition duration-300">
+            {/* Coluna 2: Produto 1 com Efeito Hover Completo */}
+            <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10 mb-8 lg:mb-0">
+              {/* Efeito do Fundo Verde subindo */}
+              <div className="absolute bottom-0 left-0 w-full bg-[#dce5e4] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
+              
               <a className="block" href="/cart">
                 <img src="/images/product-1.png" alt="Nordic Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
                 <h3 className="text-gray-900 font-semibold text-base mb-1">Nordic Chair</h3>
                 <strong className="text-gray-900 font-bold text-lg">$50.00</strong>
               </a>
+
+              {/* Botão de Adicionar (Aparece no Hover) */}
+              <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#2f2f2f] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+              </span>
             </div> 
 
-            {/* Coluna 3: Produto 2 */}
-            <div className="group relative text-center pt-10 pb-8 px-4 rounded-3xl hover:bg-white transition duration-300">
+            {/* Coluna 3: Produto 2 com Efeito Hover Completo */}
+            <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10 mb-8 lg:mb-0">
+              {/* Efeito do Fundo Verde subindo */}
+              <div className="absolute bottom-0 left-0 w-full bg-[#dce5e4] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
+              
               <a className="block" href="/cart">
                 <img src="/images/product-2.png" alt="Kruzo Aero Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
                 <h3 className="text-gray-900 font-semibold text-base mb-1">Kruzo Aero Chair</h3>
                 <strong className="text-gray-900 font-bold text-lg">$78.00</strong>
               </a>
+
+              {/* Botão de Adicionar (Aparece no Hover) */}
+              <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#2f2f2f] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+              </span>
             </div>
 
-            {/* Coluna 4: Produto 3 */}
-            <div className="group relative text-center pt-10 pb-8 px-4 rounded-3xl hover:bg-white transition duration-300">
+            {/* Coluna 4: Produto 3 com Efeito Hover Completo */}
+            <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10 mb-8 lg:mb-0">
+              {/* Efeito do Fundo Verde subindo */}
+              <div className="absolute bottom-0 left-0 w-full bg-[#dce5e4] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
+              
               <a className="block" href="/cart">
                 <img src="/images/product-3.png" alt="Ergonomic Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
                 <h3 className="text-gray-900 font-semibold text-base mb-1">Ergonomic Chair</h3>
                 <strong className="text-gray-900 font-bold text-lg">$43.00</strong>
               </a>
+
+              {/* Botão de Adicionar (Aparece no Hover) */}
+              <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#2f2f2f] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+              </span>
             </div>
 
           </div>
@@ -247,7 +271,7 @@ export default function Home() {
       </div>
       {/* End Popular Product */}
 
-      {/* Start Testimonial Section (Static Layout for React) */}
+      {/* Start Testimonial Section */}
       <div className="py-20 lg:py-24 bg-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-16">Testimonials</h2>
