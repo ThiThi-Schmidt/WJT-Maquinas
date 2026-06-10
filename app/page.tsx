@@ -41,15 +41,15 @@ export default function Home() {
             {/* Conteúdo de Texto */}
             <div className="lg:col-span-5 z-10 text-center lg:text-left">
               <h1 className="text-4xl lg:text-5xl font-extrabold mb-6 leading-tight">
-                WJT <span className="block text-white/90 font-normal">COMERCIO E MANUTENÇÃO DE MÁQUINAS</span>
+                WJT <span className="block text-white/90 font-normal">Comércio e manutenção de máquinas</span>
               </h1>
               <p className="text-white/70 mb-8 max-w-md mx-auto lg:mx-0 leading-relaxed">
-                🪏🧱Tudo em Jardinagem & Construção Civil
+                Tudo em Jardinagem & Construção Civil
                 <p>
-                🔧Manutenção Especializada
+                Manutenção Especializada
                 </p>
                  <p>
-                 🏆 Qualidade e experiência há 15 anos
+                 Qualidade e experiência há 15 anos
                  </p>
               </p>
               <div className="flex justify-center lg:justify-start space-x-4">
