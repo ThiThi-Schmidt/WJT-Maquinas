@@ -3,7 +3,22 @@ export default function Home() {
     <div className="bg-[#eff2f1] text-[#2f2f2f] font-sans antialiased min-h-screen overflow-hidden">
 
       {/* Start Header/Navigation */}
-      <nav className="bg-[#3b5d50] py-6 text-white sticky top-0 z-50 shadow-md">
+    <nav 
+  className="py-6 text-white sticky top-0 z-50 shadow-md"
+  style={{
+    // 1. Cor base azul escura do panfleto
+    backgroundColor: '#162e56',
+    // 2. O gradiente radial (efeito de luz no meio) + a malha de grade em SVG
+    backgroundImage: `
+      radial-gradient(circle, rgba(27, 60, 115, 0.8) 0%, rgba(10, 20, 38, 0.95) 100%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M0 0l12 12M12 0L0 12' stroke='%23000' stroke-width='1.2' opacity='0.4'/%3E%3C/svg%3E")
+    `,
+    // 3. Mistura a textura com a cor de fundo para dar o efeito fosco/realista
+    backgroundBlendMode: 'overlay'
+  }}
+>
+  {/* O restante do seu código interno da nav continua exatamente igual aqui dentro */}
+
         <div className="container mx-auto px-4 flex justify-between items-center">
             
           {/* Logo */}
