@@ -1,14 +1,24 @@
-export default function Body() {
+export default function Body() {                     
   return (
     <main>
-      {/* 1. Hero Section */}
-      <div className="bg-[#43695a] text-white py-16 lg:py-24 relative">
+      {/* AQUI ESTÁ A BARRINHA DA CORDA */}                     {/*separação da corda*/}
+      <div 
+        className="h-3 w-full relative z-50 shadow-md" 
+        style={{
+          backgroundImage: 'repeating-linear-gradient(45deg, #967240 0px, #967240 8px, #c29b63 8px, #c29b63 16px)'
+        }} 
+      />
+
+     {/* 1. Hero Section */}                                                    
+      <div className="bg-[#3b5d50] text-white py-16 lg:py-24 relative">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-5 z-10 text-center lg:text-left">
+            {/* Conteúdo de Texto */}
+            <div className="lg:col-span-5 z-10 text-center lg:text-left">            {/*separação da corda*/}
               <h1 className="text-4xl lg:text-5xl font-extrabold mb-6 leading-tight">
                 WJT <span className="block text-white/90 font-normal">Comércio e manutenção de máquinas</span>
               </h1>
+             
               <div className="text-white/70 mb-8 max-w-md mx-auto lg:mx-0 leading-relaxed space-y-2">
                 <p>Tudo em Jardinagem & Construção Civil</p>
                 <p>Manutenção Especializada</p>
