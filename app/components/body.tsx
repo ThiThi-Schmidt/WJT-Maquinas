@@ -1,4 +1,4 @@
-export default function Body() {                     
+export default function Body() {                    
   return (
     <main>
       {/* DECORAÇÃO: Barrinha listrada no topo da página (efeito visual de corda) */}
@@ -9,18 +9,27 @@ export default function Body() {
         }} 
       />
 
-     {/* 1. SEÇÃO HERO (BANNER PRINCIPAL) - Apresentação da empresa, slogan e foto de destaque */}                                                    
-      <div className="bg-[#3b5d50] text-white py-16 lg:py-24 relative">
-        <div className="container mx-auto px-4">
+      {/* 1. SEÇÃO HERO (BANNER PRINCIPAL) - Modificado para imagem de fundo + transparente preto */}
+      <div 
+        className="relative py-16 lg:py-24 bg-cover bg-center bg-no-repeat"
+        style={{
+          // IMPORTANTE: Substitua o link abaixo pelo caminho da imagem que você criar (ex: '/images/seu-fundo.jpg')
+          backgroundImage: "url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2070')"
+        }}
+      >
+        {/* Camada de preto transparente (Overlay) para dar contraste e leitura ao texto */}
+        <div className="absolute inset-0 bg-black/70 z-0" />
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* LADO ESQUERDO: Textos principais e Botões de Ação */}
             <div className="lg:col-span-5 z-10 text-center lg:text-left">
               {/* Título Principal (Nome da Empresa) */}
-              <h1 className="text-4xl lg:text-5xl font-extrabold mb-6 leading-tight">
+              <h1 className="text-4xl lg:text-5xl font-extrabold mb-6 leading-tight text-white">
                 WJT <span className="block text-white/90 font-normal">Comércio e manutenção de máquinas</span>
               </h1>
-             
+               
               {/* Subtítulos / Especialidades da Empresa */}
               <div className="text-white/70 mb-8 max-w-md mx-auto lg:mx-0 leading-relaxed space-y-2">
                 <p>Tudo em Jardinagem & Construção Civil</p>
@@ -333,11 +342,9 @@ export default function Body() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-16">Testimonials</h2>
           <div className="max-w-3xl mx-auto">
-            {/* Bloco de Citação em Itálico */}
             <blockquote className="text-lg lg:text-xl text-gray-600 italic leading-relaxed mb-8">
               &ldquo;Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer convallis volutpat dui quis scelerisque.&rdquo;
             </blockquote>
-            {/* Dados do Autor do Depoimento */}
             <div className="flex flex-col items-center justify-center">
               <img src="/images/person-1.png" alt="Maria Jones" className="w-20 h-20 rounded-full mb-4 object-cover" />
               <h3 className="font-bold text-gray-900">Maria Jones</h3>
@@ -351,7 +358,6 @@ export default function Body() {
       <div className="py-20 lg:py-24 bg-[#eff2f1]">
         <div className="container mx-auto px-4">
           
-          {/* Cabeçalho do Blog com botão de "Ver Todos" à direita */}
           <div className="flex flex-col md:flex-row justify-between items-center mb-12">
             <h2 className="text-3xl font-bold mb-4 md:mb-0">Recent Blog</h2>
             <a href="#" className="text-sm font-semibold border-b-2 border-gray-300 hover:border-gray-900 transition pb-1">View All Posts</a>
