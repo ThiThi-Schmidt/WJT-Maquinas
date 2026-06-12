@@ -9,14 +9,7 @@ export default function Body() {
         }} 
       />
 
-      {/* 1. SEÇÃO HERO (BANNER PRINCIPAL) - Modificado para imagem de fundo + transparente preto */}
-      <div 
-        className="relative py-16 lg:py-24 bg-cover bg-center bg-no-repeat"
-        style={{
-          // IMPORTANTE: Substitua o link abaixo pelo caminho da imagem que você criar (ex: '/images/seu-fundo.jpg')
-          backgroundImage: "url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2070')"
-        }}
-      >
+      <div className="text-white py-16 lg:py-24 relative" style={{ backgroundImage: "url('/images/hero.png')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
         {/* Camada de preto transparente (Overlay) para dar contraste e leitura ao texto */}
         <div className="absolute inset-0 bg-black/70 z-0" />
 
@@ -47,7 +40,7 @@ export default function Body() {
             {/* LADO DIREITO: Imagem de destaque do Banner (Atualmente a foto do sofá/couch) */}
             <div className="lg:col-span-7 relative mt-8 lg:mt-0">
               <div className="relative lg:-right-16 xl:-right-24">
-                <img src="/images/couch.png" alt="Couch" className="w-full h-auto max-w-2xl mx-auto" />
+               
               </div>
             </div>
 
