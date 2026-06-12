@@ -13,9 +13,10 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
-        <a className="text-3xl font-bold tracking-tight inline-block" href="/">
-          <img src="/images/couch.png" alt="Logo" className="h-12 w-auto" />
-        </a>
+        <a className="flex items-center gap-3 text-3xl font-bold tracking-tight" href="/">
+           <img src="/images/couch.png" alt="Logo" className="h-12 w-auto" />
+           <span>WTJ</span>
+        </a>  
 
         {/* Menu Desktop */}
         <div className="hidden md:flex items-center space-x-8">
