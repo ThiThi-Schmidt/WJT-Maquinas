@@ -26,7 +26,7 @@ export default function Body() {
 
               {/* Botões de Chamada para Ação (CTA) */}
               <div className="flex justify-center lg:justify-start space-x-4">
-                <a href="/shop" className="bg-[#f9bf29] text-[#2f2f2f] font-semibold px-8 py-3.5 rounded-full hover:bg-[#f9bf29]/90 transition duration-300 shadow-lg">Compre agora</a>
+                <a href="/shop" className="bg-[#ff7b00] text-[#2f2f2f] font-semibold px-8 py-3.5 rounded-full hover:bg-[#ff7b00]/90 transition duration-300 shadow-lg">Compre agora</a>
                 <a href="#" className="border-2 border-white/30 text-white font-semibold px-8 py-3.5 rounded-full hover:border-white hover:bg-white/10 transition duration-300">explore mais</a>
               </div>
             </div>
@@ -60,117 +60,117 @@ export default function Body() {
 
               {/* CARD DO PRODUTO 1 */}
               <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
-                <div className="absolute bottom-0 left-0 w-full bg-[#dce5e4] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
+                <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
                   <img src="/images/product-1.png" alt="Nordic Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
                   <h3 className="text-gray-900 font-semibold text-base mb-1">Nordic Chair</h3>
                   <strong className="text-gray-900 font-bold text-lg">$50.00</strong>
                 </a>
-                <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#2f2f2f] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
+                <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#ea580c] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                 </span>
               </div> 
 
               {/* CARD DO PRODUTO 2 */}
               <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
-                <div className="absolute bottom-0 left-0 w-full bg-[#dce5e4] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
+                <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
                   <img src="/images/product-2.png" alt="Kruzo Aero Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
                   <h3 className="text-gray-900 font-semibold text-base mb-1">Kruzo Aero Chair</h3>
                   <strong className="text-gray-900 font-bold text-lg">$78.00</strong>
                 </a>
-                <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#2f2f2f] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
+                <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#ea580c] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                 </span>
               </div>
 
               {/* CARD DO PRODUTO 3 */}
               <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
-                <div className="absolute bottom-0 left-0 w-full bg-[#dce5e4] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
+                <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
                   <img src="/images/product-3.png" alt="Ergonomic Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
                   <h3 className="text-gray-900 font-semibold text-base mb-1">Ergonomic Chair</h3>
                   <strong className="text-gray-900 font-bold text-lg">$43.00</strong>
                 </a>
-                <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#2f2f2f] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
+                <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#ea580c] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                 </span>
               </div>
 
               {/* CARD DO PRODUTO 4 */}
               <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
-                <div className="absolute bottom-0 left-0 w-full bg-[#dce5e4] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
+                <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
                   <img src="/images/product-4.png" alt="Garden Lounge Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
                   <h3 className="text-gray-900 font-semibold text-base mb-1">Garden Lounge Chair</h3>
                   <strong className="text-gray-900 font-bold text-lg">$85.00</strong>
                 </a>
-                <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#2f2f2f] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
+                <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#ea580c] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                 </span>
               </div>
 
               {/* CARD DO PRODUTO 5 */}
               <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
-                <div className="absolute bottom-0 left-0 w-full bg-[#dce5e4] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
+                <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
                   <img src="/images/product-5.png" alt="Industrial Stool" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
                   <h3 className="text-gray-900 font-semibold text-base mb-1">Industrial Stool</h3>
                   <strong className="text-gray-900 font-bold text-lg">$45.00</strong>
                 </a>
-                <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#2f2f2f] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
+                <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#ea580c] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                 </span>
               </div>
 
               {/* CARD DO PRODUTO 6 */}
               <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
-                <div className="absolute bottom-0 left-0 w-full bg-[#dce5e4] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
+                <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
                   <img src="/images/product-6.png" alt="Patio Table" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
                   <h3 className="text-gray-900 font-semibold text-base mb-1">Patio Table</h3>
                   <strong className="text-gray-900 font-bold text-lg">$120.00</strong>
                 </a>
-                <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#2f2f2f] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
+                <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#ea580c] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                 </span>
               </div>
 
               {/* CARD DO PRODUTO 7 */}
               <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
-                <div className="absolute bottom-0 left-0 w-full bg-[#dce5e4] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
+                <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
                   <img src="/images/product-7.png" alt="Work Bench" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
                   <h3 className="text-gray-900 font-semibold text-base mb-1">Work Bench</h3>
                   <strong className="text-gray-900 font-bold text-lg">$199.00</strong>
                 </a>
-                <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#2f2f2f] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
+                <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#ea580c] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                 </span>
               </div>
 
               {/* CARD DO PRODUTO 8 */}
               <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
-                <div className="absolute bottom-0 left-0 w-full bg-[#dce5e4] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
+                <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
                   <img src="/images/product-8.png" alt="Outdoor Sofa" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
                   <h3 className="text-gray-900 font-semibold text-base mb-1">Outdoor Sofa</h3>
                   <strong className="text-gray-900 font-bold text-lg">$250.00</strong>
                 </a>
-                <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#2f2f2f] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
+                <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#ea580c] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                 </span>
               </div>
 
               {/* CARD DO PRODUTO 9 */}
               <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
-                <div className="absolute bottom-0 left-0 w-full bg-[#dce5e4] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
+                <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
                   <img src="/images/product-9.png" alt="Tool Cabinet" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
                   <h3 className="text-gray-900 font-semibold text-base mb-1">Tool Cabinet</h3>
                   <strong className="text-gray-900 font-bold text-lg">$175.00</strong>
                 </a>
-                <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#2f2f2f] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
+                <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#ea580c] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                 </span>
               </div>
