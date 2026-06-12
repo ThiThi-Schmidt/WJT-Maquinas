@@ -13,8 +13,8 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
-        <a className="text-3xl font-bold tracking-tight" href="/">
-          Furni<span className="text-[#f9bf29]">.</span>
+        <a className="text-3xl font-bold tracking-tight inline-block" href="/">
+          <img src="/images/couch.png" alt="Logo" className="h-12 w-auto" />
         </a>
 
         {/* Menu Desktop */}
