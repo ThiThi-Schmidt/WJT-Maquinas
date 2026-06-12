@@ -62,7 +62,7 @@ export default function Body() {
               <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
                 <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
-                  <img src="/images/product-1.png" alt="Nordic Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
+                  <img src="/images/lavajato-removebg-preview.png" alt="Nordic Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
                   <h3 className="text-gray-900 font-semibold text-base mb-1">Nordic Chair</h3>
                   <strong className="text-gray-900 font-bold text-lg">$50.00</strong>
                 </a>
