@@ -1,6 +1,7 @@
 export default function Body() {                    
   return (
     <main>
+<<<<<<< HEAD
       {/* DECORAÇÃO: Barrinha listrada no topo da página (efeito visual de corda) */}
       <div 
         className="h-3 w-full relative z-50 shadow-md" 
@@ -10,6 +11,16 @@ export default function Body() {
       />
 
       <div className="text-white py-16 lg:py-24 relative" style={{ backgroundImage: "url('/images/hero.png')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+=======
+      {/* 1. SEÇÃO HERO (BANNER PRINCIPAL) - Modificado para imagem de fundo + transparente preto */}
+      <div 
+        className="relative py-16 lg:py-24 bg-cover bg-center bg-no-repeat"
+        style={{
+          // IMPORTANTE: Substitua o link abaixo pelo caminho da imagem que você criar (ex: '/images/seu-fundo.jpg')
+          backgroundImage: "url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2070')"
+        }}
+      >
+>>>>>>> 09c5fa555405b41947d8b21e974d8b38b44a803b
         {/* Camada de preto transparente (Overlay) para dar contraste e leitura ao texto */}
         <div className="absolute inset-0 bg-black/70 z-0" />
 
