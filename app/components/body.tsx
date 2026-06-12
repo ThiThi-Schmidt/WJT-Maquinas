@@ -1,14 +1,6 @@
 export default function Body() {                    
   return (
     <main>
-      {/* DECORAÇÃO: Barrinha listrada no topo da página (efeito visual de corda) */}
-      <div 
-        className="h-3 w-full relative z-50 shadow-md" 
-        style={{
-          backgroundImage: 'repeating-linear-gradient(45deg, #967240 0px, #967240 8px, #c29b63 8px, #c29b63 16px)'
-        }} 
-      />
-
       {/* 1. SEÇÃO HERO (BANNER PRINCIPAL) - Modificado para imagem de fundo + transparente preto */}
       <div 
         className="relative py-16 lg:py-24 bg-cover bg-center bg-no-repeat"
