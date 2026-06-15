@@ -32,7 +32,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-12">
           <div className="lg:col-span-4">
             {/* Logo alterada para combinar com a identidade */}
-            <div className="mb-4"><a href="#" className="text-3xl font-bold text-[#2f2f2f]">WTJ<span className="text-[#ea580c]">.</span></a></div>
+            <div className="mb-4"><a href="#" className="text-3xl font-bold text-[#2f2f2f]">WTJ</a></div>
             <p className="text-gray-500 text-sm leading-relaxed mb-6">Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
 
             {/* Redes sociais com hover laranja */}
@@ -80,7 +80,7 @@ export default function Footer() {
             <li><a href="#" className="hover:text-[#ea580c] transition">Privacy Policy</a></li>
           </ul>
         </div>
-
+    
       </div>
     </footer>
   );
