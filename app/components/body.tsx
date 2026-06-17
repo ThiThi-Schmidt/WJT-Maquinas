@@ -63,8 +63,9 @@ export default function Body() {
                 <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
                   <img src="/images/lavajato-removebg-preview.png" alt="Nordic Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
-                  <h3 className="text-gray-900 font-semibold text-base mb-1">Nordic Chair</h3>
-                  <strong className="text-gray-900 font-bold text-lg">$50.00</strong>
+                  <h3 className="text-gray-900 font-semibold text-base mb-1">Lavadora de alta pressão <br>
+                  </br> WAP Líder 2200</h3>
+                  <strong className="text-gray-900 font-bold text-lg">R$ 618,99</strong>
                 </a>
                 <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#ea580c] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
@@ -75,9 +76,9 @@ export default function Body() {
               <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
                 <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
-                  <img src="/images/product-2.png" alt="Kruzo Aero Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
-                  <h3 className="text-gray-900 font-semibold text-base mb-1">Kruzo Aero Chair</h3>
-                  <strong className="text-gray-900 font-bold text-lg">$78.00</strong>
+                  <img src="/images/parafusadeira.png" alt="Kruzo Aero Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
+                  <h3 className="text-gray-900 font-semibold text-base mb-1">Parafusadeira Furadeira de<br></br> Impacto Brushless</h3>
+                  <strong className="text-gray-900 font-bold text-lg">R$ 1449,99</strong>
                 </a>
                 <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#ea580c] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
@@ -88,9 +89,9 @@ export default function Body() {
               <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
                 <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
-                  <img src="/images/product-3.png" alt="Ergonomic Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
-                  <h3 className="text-gray-900 font-semibold text-base mb-1">Ergonomic Chair</h3>
-                  <strong className="text-gray-900 font-bold text-lg">$43.00</strong>
+                  <img src="/images/ferramentas.png" alt="Ergonomic Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
+                  <h3 className="text-gray-900 font-semibold text-base mb-1">Jogo de Ferramentas<br></br>com 216 Pecas e Maleta</h3>
+                  <strong className="text-gray-900 font-bold text-lg">R$ 1.149,99</strong>
                 </a>
                 <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#ea580c] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
@@ -101,9 +102,9 @@ export default function Body() {
               <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
                 <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
-                  <img src="/images/product-4.png" alt="Garden Lounge Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
-                  <h3 className="text-gray-900 font-semibold text-base mb-1">Garden Lounge Chair</h3>
-                  <strong className="text-gray-900 font-bold text-lg">$85.00</strong>
+                  <img src="/images/motoserra.png" alt="Garden Lounge Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
+                  <h3 className="text-gray-900 font-semibold text-base mb-1">Motosserra a Gasolina<br></br> 63CC 3HP</h3>
+                  <strong className="text-gray-900 font-bold text-lg">R$ 649,99</strong>
                 </a>
                 <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#ea580c] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
@@ -114,9 +115,9 @@ export default function Body() {
               <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
                 <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
-                  <img src="/images/product-5.png" alt="Industrial Stool" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
-                  <h3 className="text-gray-900 font-semibold text-base mb-1">Industrial Stool</h3>
-                  <strong className="text-gray-900 font-bold text-lg">$45.00</strong>
+                  <img src="/images/aparador.png" alt="Industrial Stool" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
+                  <h3 className="text-gray-900 font-semibold text-base mb-1">Aparador de Grama 1500W<br></br>GARTHEN-GAM1500BP</h3>
+                  <strong className="text-gray-900 font-bold text-lg">R$ 319,99</strong>
                 </a>
                 <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#ea580c] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
@@ -127,9 +128,9 @@ export default function Body() {
               <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
                 <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
-                  <img src="/images/product-6.png" alt="Patio Table" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
-                  <h3 className="text-gray-900 font-semibold text-base mb-1">Patio Table</h3>
-                  <strong className="text-gray-900 font-bold text-lg">$120.00</strong>
+                  <img src="/images/machado.png" alt="Patio Table" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
+                  <h3 className="text-gray-900 font-semibold text-base mb-1">Machadinha com Cabo de Fibra<br></br>VONDER-3589000600</h3>
+                  <strong className="text-gray-900 font-bold text-lg">R$ 94,29</strong>
                 </a>
                 <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#ea580c] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
@@ -140,9 +141,9 @@ export default function Body() {
               <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
                 <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
-                  <img src="/images/product-7.png" alt="Work Bench" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
-                  <h3 className="text-gray-900 font-semibold text-base mb-1">Work Bench</h3>
-                  <strong className="text-gray-900 font-bold text-lg">$199.00</strong>
+                  <img src="/images/aparador2.png" alt="Work Bench" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
+                  <h3 className="text-gray-900 font-semibold text-base mb-1">Trator Cortador de Grama<br></br> BT 1942 a Gasolina </h3>
+                  <strong className="text-gray-900 font-bold text-lg">R$ 26.899,99</strong>
                 </a>
                 <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#ea580c] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
@@ -153,9 +154,9 @@ export default function Body() {
               <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
                 <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
-                  <img src="/images/product-8.png" alt="Outdoor Sofa" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
-                  <h3 className="text-gray-900 font-semibold text-base mb-1">Outdoor Sofa</h3>
-                  <strong className="text-gray-900 font-bold text-lg">$250.00</strong>
+                  <img src="/images/mesa.png" alt="Outdoor Sofa" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
+                  <h3 className="text-gray-900 font-semibold text-base mb-1">Carro para Ferramentas com 11 Gavetas <br></br>SATA-ST95114G-B</h3>
+                  <strong className="text-gray-900 font-bold text-lg">R$ 7.399,99</strong>
                 </a>
                 <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#ea580c] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
@@ -166,9 +167,9 @@ export default function Body() {
               <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
                 <div className="absolute bottom-0 left-0 w-full bg-[#fed7aa] rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
                 <a className="block" href="/cart">
-                  <img src="/images/product-9.png" alt="Tool Cabinet" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
-                  <h3 className="text-gray-900 font-semibold text-base mb-1">Tool Cabinet</h3>
-                  <strong className="text-gray-900 font-bold text-lg">$175.00</strong>
+                  <img src="/images/soprador.png" alt="Tool Cabinet" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
+                  <h3 className="text-gray-900 font-semibold text-base mb-1">Soprador Aspirador 800W 220V<br></br>DEWALT-DWB800</h3>
+                  <strong className="text-gray-900 font-bold text-lg">R$ 849,99</strong>
                 </a>
                 <span className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-8 opacity-0 group-hover:opacity-100 group-hover:translate-y-1/2 transition-all duration-300 bg-[#ea580c] w-10 h-10 rounded-full flex items-center justify-center pointer-events-none">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
