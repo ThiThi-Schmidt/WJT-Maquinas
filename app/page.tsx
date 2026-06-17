@@ -1,13 +1,24 @@
-import Header from "./components/header";
-import Body from "./components/body";
 import Footer from "./components/footer";
+import Header from "./components/header";
+import Hero from "./components/hero";
 
-export default function Home() {
+import ProductShowcase from "./components/product-showcase";
+import RecentBlog from "./components/recent-blog";
+import Testimonials from "./components/testimonials";
+import WeHelpYou from "./components/we-help-you";
+import WhyChooseUs from "./components/why-choose-us";
+
+export default function Body() {                    
   return (
-    <div className="bg-[#eff2f1] text-[#2f2f2f] font-sans antialiased min-h-screen overflow-hidden">
+    <main>
       <Header />
-      <Body />
+      <Hero />
+      <ProductShowcase />
+      <WhyChooseUs />
+      <WeHelpYou />
+      <Testimonials />
+      <RecentBlog />
       <Footer />
-    </div>
+    </main>
   );
 }
