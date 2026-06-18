@@ -6,12 +6,14 @@ export default function ProductShowcase() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
-          <div className="lg:col-span-3 mb-12 lg:mb-0 pr-4">
+          {/* <div className="lg:col-span-3 mb-12 lg:mb-0 pr-4">
             <h2 className="text-3xl font-bold text-black mb-4 leading-tight">Crafted with excellent material.</h2>
             <p className="text-black mb-6 text-sm leading-relaxed">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
             <p><a href="/shop" className="inline-block bg-[#2f2f2f] text-black font-medium px-7 py-3 rounded-full hover:bg-[#2f2f2f]/90 transition duration-300 text-sm">Explore</a></p>
-          </div> 
+          </div>  */}
 
+          {/* //////////////////// ARRUMAR OS PRODUTOS */}
+            
           <div className="lg:col-span-9 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Produto 1 */}
             <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">

@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <nav 
-      className="py-6 text-white sticky top-0 z-50 shadow-md"
+      className="fixed py-6 text-white sticky top-0 z-50 shadow-md"
       style={{
         backgroundColor: '#162e56',
         backgroundImage: `
@@ -32,7 +32,7 @@ export default function Header() {
 
         {/* User & Cart Icons */}
         <div className="hidden md:flex items-center space-x-6">
-          <a href="#" className="hover:opacity-80 transition">
+          <a href="/login" className="hover:opacity-80 transition">
             <img src="/images/user.svg" alt="User" />
           </a>
           <a href="/cart" className="hover:opacity-80 transition">
