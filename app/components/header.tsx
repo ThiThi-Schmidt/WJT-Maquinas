@@ -15,7 +15,7 @@ export default function Header() {
         {/* Logo */}
         <a className="flex items-center gap-3 text-3xl font-bold tracking-tight" href="/">
            <img src="/images/couch.png" alt="Logo" className="h-12 w-auto" />
-           <span>WTJ</span>
+           <span>WJT</span>
         </a>  
 
         {/* Menu Desktop */}

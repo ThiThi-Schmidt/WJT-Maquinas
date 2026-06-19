@@ -6,7 +6,7 @@ export function LoginHeader() {
       {/* Logo circular com a chama do SnapBite */}
       <a className="flex items-center gap-3 text-3xl font-bold tracking-tight" >
            <img src="/images/couch.png" alt="Logo" className="h-15 w-auto" />
-           <h2>WTJ</h2>
+           <h2>WJT</h2>
         </a>  
       <div>
         <p className="text-xs text-gray-400 uppercase font-black">
