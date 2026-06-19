@@ -6,10 +6,19 @@ import { LoginForm } from "./components/LoginForm";
 export default function Login() {
   return (
     // CONTAINER PRINCIPAL: Centraliza o formulário na tela inteira
-    <div className="min-h-screen bg-[#121212] text-white font-sans flex items-center justify-center p-4 selection:bg-[#f26422]/30">
+    <div
+      className="min-h-screen text-white font-sans flex items-center justify-center p-4 selection:bg-[#f26422]/30"
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/hero.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+      >
       
       {/* CARD DO FORMULÁRIO */}
-      <div className="w-full max-w-md bg-[#1e1e1e] border border-white/5 rounded-[2.5rem] p-8 flex flex-col gap-8 shadow-2xl">
+      <div className="w-full max-w-md bg-[#03001d] border border-white/5 rounded-[2.5rem] p-8 flex flex-col gap-8 shadow-2xl">
         
         {/* Cabeçalho do Login */}
         <LoginHeader />
@@ -18,9 +27,9 @@ export default function Login() {
         <LoginForm />
 
         {/* RODAPÉ DO CARD */}
-        <p className="text-center text-xs text-gray-500 font-medium">
+        <p className="text-center text-xs text-gray-400 font-medium">
           Não tem uma conta?{" "}
-          <a href="#" className="text-[#f26422] font-bold hover:underline">
+          <a href="#" className="text-[#ff834a] font-bold hover:underline">
             Cadastre-se gratuito
           </a>
         </p>
@@ -29,3 +38,4 @@ export default function Login() {
     </div>
   );
 }
+

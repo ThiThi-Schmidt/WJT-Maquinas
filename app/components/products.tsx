@@ -16,7 +16,7 @@ export default function ProductShowcase() {
             
           <div className="lg:col-span-9 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Produto 1 */}
-            <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
+            <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10 ">
               <div className="absolute bottom-0 left-0 w-full bg-orange-300 shadow-lg-600 rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
               <a className="block" href="/cart">
                 <img src="/images/lavajato-removebg-preview.png" alt="Nordic Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />

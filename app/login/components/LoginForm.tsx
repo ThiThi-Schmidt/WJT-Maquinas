@@ -69,7 +69,7 @@ export function LoginForm() {
 
       {/* CAMPO DE EMAIL */}
       <div className="flex flex-col gap-2">
-        <label className="text-[10px] font-black uppercase tracking-widest text-gray-500 px-1">
+        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 px-1">
           E-mail
         </label>
         <div className="relative flex items-center">
@@ -87,10 +87,10 @@ export function LoginForm() {
       {/* CAMPO DE SENHA */}
       <div className="flex flex-col gap-2">
         <div className="flex justify-between items-center px-1">
-          <label className="text-[10px] font-black uppercase tracking-widest text-gray-500">
+          <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">
             Senha
           </label>
-          <a href="#" className="text-[10px] font-bold text-[#f26422] hover:underline uppercase tracking-wider">
+          <a href="#" className="text-[10px] font-bold text-[#ff834a] hover:underline uppercase tracking-wider">
             Esqueceu?
           </a>
         </div>
@@ -99,6 +99,7 @@ export function LoginForm() {
             type={showPassword ? "text" : "password"}
             required
             value={password}
+            placeholder="12345..."
             onChange={(e) => setPassword(e.target.value)}
             className="w-full bg-[#121212] border border-white/5 rounded-2xl py-4 pl-12 pr-12 text-sm font-medium text-white placeholder-gray-600 focus:outline-none focus:border-[#f26422] focus:ring-1 focus:ring-[#f26422] transition-all"
           />
@@ -115,7 +116,7 @@ export function LoginForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#f26422] hover:bg-[#d8531a] disabled:opacity-50 text-white font-bold text-sm uppercase tracking-wider py-4 rounded-2xl mt-2 transition-all shadow-lg shadow-[#f26422]/10 active:scale-[0.98]"
+        className="w-full bg-[#ee6f34] hover:bg-[#d8531a] disabled:opacity-50 text-white font-bold text-sm uppercase tracking-wider py-4 rounded-2xl mt-2 transition-all shadow-lg shadow-[#f26422]/10 active:scale-[0.98]"
       >
         {isSubmitting ? "Entrando..." : "Entrar na conta"}
       </button>
