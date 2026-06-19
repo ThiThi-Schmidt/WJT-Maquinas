@@ -1,0 +1,110 @@
+GET http://localhost:3000/health
+###
+
+GET http://localhost:3000/users
+Content-Type: application/json
+Authorization: Bearer 
+###
+
+# CADASTRO
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Ciclano",
+  "email": "ciclano@email.com",
+  "password": "123456",
+  "role": "CLIENT"
+}
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Admin",
+  "email": "admin@wjt.com",
+  "password": "123456",
+  "role": "ADMIN"
+}
+###
+
+# LOGIN // DAS CONTAS CADASTRADAS
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@wjt.com",
+  "password": "123456",
+  "role": "ADMIN"
+}
+###
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "ciclano@email.com",
+  "password": "123456",
+  "role": "CLIENT"
+}
+###
+
+# ATUALIZAR // ADICIONAR ID
+PUT http://localhost:3000/users/
+Content-Type: application/json
+Authorization: Bearer 
+
+{
+  "name": "Ciclane",
+  "email": "ciclane@wjt.com",
+  "password": "1234567"
+}
+###
+
+# DELETAR // ADICIONAR ID
+DELETE http://localhost:3000/users/3
+Authorization: Bearer 
+###
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+GET http://localhost:3000/products
+Content-Type: application/json
+###
+
+# BUSCAR PRODUTO ESPECIFICO // ADICIONAR ID
+GET http://localhost:3000/products/
+Content-Type: application/json
+###
+
+# CRIAR PRODUTO NA LOJA
+POST http://localhost:3000/products
+Content-Type: application/json
+Authorization: Bearer 
+
+{
+  "name": "Motoserra",
+  "description": "A gasolina.",
+  "price": 359.99,
+  "stock": 45
+}
+###
+
+# ATUALIZAR // ADICIONAR ID
+PUT http://localhost:3000/products/2
+Content-Type: application/json
+Authorization: Bearer 
+
+{
+  "name": "Motoserra",
+  "description": "A bateria.",
+  "price": 599.90,
+  "stock": 40
+}
+###
+
+# DELETAR PRODUTO // ADICIONAR ID
+DELETE http://localhost:3000/products/2
+Content-Type: application/json
+Authorization: Bearer 
