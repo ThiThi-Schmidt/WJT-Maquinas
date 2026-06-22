@@ -13,6 +13,7 @@ export function useProducts() {
   const getAllProducts = async () => {
     try {
       setLoading(true);
+      console.log
       const res = await fetch(`${API_BASE_URL}/products`); 
       
       if (!res.ok) throw new Error("Erro ao buscar produtos no servidor");

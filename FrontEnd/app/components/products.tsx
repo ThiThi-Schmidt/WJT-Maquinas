@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useProducts } from "../hooks/useProducts";
 import { categoriesList } from "../data/categoriesList";
 import { Search } from "lucide-react";
+import ProductCard from "./productCart";
 
 export default function Products() {
   const [typedItem, setTypedItem] = useState("");
@@ -67,8 +68,9 @@ export default function Products() {
         })}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {filteredProducts.map((product) => (
-          <div key={product.id} className="flex flex-col group h-fit">
-            <Products product={product} />
+          <div key={product.id} className="border p-4 mb-2">
+            <p className="font-bold">{product.name}</p>
+            <p>R$ {product.price}</p>
           </div>
         ))}
 
