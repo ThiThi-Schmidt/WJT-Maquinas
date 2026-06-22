@@ -1,93 +1,84 @@
-export default function ProductShowcase() {
+"use client";
+
+import { useState } from "react";
+import { useProducts } from "../hooks/useProducts";
+import { categoriesList } from "../data/categoriesList";
+import { Search } from "lucide-react";
+
+export default function Products() {
+  const [typedItem, setTypedItem] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string | number>("all");
+  const { products, loading, error } = useProducts();
+
+  const filteredProducts = products.filter((product) => {
+    const matchesCategory =
+      selectedCategory === "all" ||
+      product.categoryId === Number(selectedCategory);
+
+    const matchesSearch = product.name
+      .toLowerCase()
+      .includes(typedItem.toLowerCase());
+
+    return matchesCategory && matchesSearch;
+  });
+
+  if (loading) return <div className="text-center text-white py-10 font-bold">Carregando produtos...</div>;
+  if (error) return <div className="text-center text-red-500 py-10 font-bold">Erro: {error}</div>;
+
   return (
-    <div className="py-20 lg:py-32 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          <div className="lg:col-span-9 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Produto 1 */}
-            <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10 ">
-              <div className="absolute bottom-0 left-0 w-full bg-orange-300 shadow-lg-600 rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
-              <a className="block" href="/cart">
-                <img src="/images/lavajato-removebg-preview.png" alt="Nordic Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
-                <h3 className="text-black font-semibold text-base mb-1">Lavadora de alta pressão <br /> WAP Líder 2200</h3>
-                <strong className="text-black font-bold text-lg">R$ 618,99</strong>
-              </a>
-            </div> 
-            {/* Produto 2 */}
-            <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
-              <div className="absolute bottom-0 left-0 w-full bg-orange-300 rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
-              <a className="block" href="/cart">
-                <img src="/images/parafusadeira.png" alt="Kruzo Aero Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
-                <h3 className="text-black font-semibold text-base mb-1">Parafusadeira Furadeira de<br /> Impacto Brushless</h3>
-                <strong className="text-black font-bold text-lg">R$ 1449,99</strong>
-              </a>
-            </div>
-            {/* Produto 3 */}
-            <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
-              <div className="absolute bottom-0 left-0 w-full bg-orange-300 rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
-              <a className="block" href="/cart">
-                <img src="/images/ferramentas.png" alt="Ergonomic Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
-                <h3 className="text-black font-semibold text-base mb-1">Jogo de Ferramentas<br />com 216 Pecas e Maleta</h3>
-                <strong className="text-black font-bold text-lg">R$ 1.149,99</strong>
-              </a>
-            </div>
-            {/* Produto 4 */}
-            <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
-              <div className="absolute bottom-0 left-0 w-full bg-orange-300 rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
-              <a className="block" href="/cart">
-                <img src="/images/motoserra.png" alt="Garden Lounge Chair" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
-                <h3 className="text-black font-semibold text-base mb-1">Motosserra a Gasolina<br /> 63CC 3HP</h3>
-                <strong className="text-black font-bold text-lg">R$ 649,99</strong>
-              </a>
-            </div>
-            {/* Produto 5 */}
-            <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
-              <div className="absolute bottom-0 left-0 w-full bg-orange-300 rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
-              <a className="block" href="/cart">
-                <img src="/images/aparador.png" alt="Industrial Stool" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
-                <h3 className="text-black font-semibold text-base mb-1">Aparador de Grama 1500W<br />GARTHEN-GAM1500BP</h3>
-                <strong className="text-black font-bold text-lg">R$ 319,99</strong>
-              </a>
-            </div>
-            {/* Produto 6 */}
-            <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
-              <div className="absolute bottom-0 left-0 w-full bg-orange-300 rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
-              <a className="block" href="/cart">
-                <img src="/images/machado.png" alt="Patio Table" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
-                <h3 className="text-black font-semibold text-base mb-1">Machadinha com Cabo de Fibra<br />VONDER-3589000600</h3>
-                <strong className="text-black font-bold text-lg">R$ 94,29</strong>
-              </a>
-            </div>
-            {/* Produto 7 */}
-            <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
-              <div className="absolute bottom-0 left-0 w-full bg-orange-300 rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
-              <a className="block" href="/cart">
-                <img src="/images/aparador2.png" alt="Work Bench" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
-                <h3 className="text-black font-semibold text-base mb-1">Trator Cortador de Grama<br /> BT 1942 a Gasolina </h3>
-                <strong className="text-black font-bold text-lg">R$ 26.899,99</strong>
-              </a>
-            </div>
-            {/* Produto 8 */}
-            <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
-              <div className="absolute bottom-0 left-0 w-full bg-orange-300 rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
-              <a className="block" href="/cart">
-                <img src="/images/mesa.png" alt="Outdoor Sofa" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
-                <h3 className="text-black font-semibold text-base mb-1">Carro para Ferramentas com 11 Gavetas <br />SATA-ST95114G-B</h3>
-                <strong className="text-black font-bold text-lg">R$ 7.399,99</strong>
-              </a>
-            </div>
-            {/* Produto 9 */}
-            <div className="group relative text-center pt-10 pb-8 px-4 cursor-pointer z-10">
-              <div className="absolute bottom-0 left-0 w-full bg-orange-300 rounded-3xl h-0 group-hover:h-[75%] transition-all duration-300 -z-10"></div>
-              <a className="block" href="/cart">
-                <img src="/images/soprador.png" alt="Tool Cabinet" className="w-auto h-56 mx-auto mb-6 transform group-hover:-translate-y-6 transition duration-300 object-contain" />
-                <h3 className="text-black font-semibold text-base mb-1">Soprador Aspirador 800W 220V<br />DEWALT-DWB800</h3>
-                <strong className="text-black font-bold text-lg">R$ 849,99</strong>
-              </a>
-            </div>
-          </div>
+    <div className="w-full">
+      <div className="flex items-center gap-3 mb-6 overflow-x-auto pb-2 scrollbar-hide">
+        <div className="relative w-full max-w-md shrink-0">
+          <input 
+            type="text" 
+            placeholder="O que você procura hoje?" 
+            value={typedItem}
+            onChange={(e) => setTypedItem(e.target.value)}
+            className="w-full bg-[#1e1e1e]/90 border border-white/5 backdrop-blur-sm py-3 pl-12 pr-4 rounded-2xl outline-none focus:border-[#f26422] transition text-sm text-white"
+          />
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
         </div>
+        <button
+          onClick={() => setSelectedCategory("all")}
+          className={`px-6 py-2.5 rounded-2xl font-bold text-sm transition-all shrink-0 ${
+            selectedCategory === "all"
+              ? "bg-[#f26422] text-white"
+              : "bg-[#1e1e1e] text-gray-500 hover:bg-[#252525] border border-white/5"
+          }`}
+        >
+          Todos 🛠️
+        </button>
+        {categoriesList.map((cat) => {
+          const isActive = cat.id === selectedCategory;
+
+          return (
+            <button
+              key={cat.id}
+              onClick={() => setSelectedCategory(cat.id)} 
+              className={`px-6 py-2.5 rounded-2xl font-bold text-sm transition-all shrink-0 ${
+                isActive
+                  ? "bg-[#f26422] text-white"
+                  : "bg-[#1e1e1e] text-gray-500 hover:bg-[#252525] border border-white/5"
+              }`}
+            >
+              {cat.label} {cat.icon}
+            </button>
+          );
+        })}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {filteredProducts.map((product) => (
+          <div key={product.id} className="flex flex-col group h-fit">
+            <Products product={product} />
+          </div>
+        ))}
+
+        {filteredProducts.length === 0 && (
+          <div className="col-span-full text-center text-gray-500 py-10 font-medium">
+            Nenhum item encontrado nessa categoria ou busca.
+          </div>
+        )}
       </div>
     </div>
+  </div>
   );
 }

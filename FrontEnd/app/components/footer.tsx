@@ -7,7 +7,7 @@ export default function Footer() {
         
 
         {/* Imagem do sofá reajustada para flutuar no topo branco */}
-        <div className="absolute top-[-140px] right-0 w-64 md:w-80 lg:w-[400px] hidden sm:block">
+        <div className="absolute -top-35 right-0 w-64 md:w-80 lg:w-400S hidden sm:block">
           <img src="/images/sofa.png" alt="Sofa" className="w-full h-auto" />
         </div>
 

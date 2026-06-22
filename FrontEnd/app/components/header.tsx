@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <nav 
-      className="fixed py-6 text-white sticky top-0 z-50 shadow-md"
+      className=" py-6 text-white sticky top-0 z-50 shadow-md"
       style={{
         backgroundColor: '#162e56',
         backgroundImage: `
