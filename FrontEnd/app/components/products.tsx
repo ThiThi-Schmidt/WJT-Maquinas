@@ -1,5 +1,6 @@
 export default function ProductShowcase() {
   return (
+  <section id="product">
     <div className="py-20 lg:py-32 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -89,5 +90,6 @@ export default function ProductShowcase() {
         </div>
       </div>
     </div>
+  </section>
   );
 }

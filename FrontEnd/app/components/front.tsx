@@ -15,7 +15,7 @@ export default function Capa() {
             </div>
             <div className="flex justify-center lg:justify-start space-x-4">
               <a href="/shop" className="bg-[#ff7b00] text-[#2f2f2f] font-semibold px-8 py-3.5 rounded-full hover:bg-[#ff7b00]/90 transition duration-300 shadow-lg">Compre agora</a>
-              <a href="#" className="border-2 border-white/30 text-white font-semibold px-8 py-3.5 rounded-full hover:border-white hover:bg-white/10 transition duration-300">explore mais</a>
+              <a href="#product" className="border-2 scroll-behavior: smooth; border-white/30 text-white font-semibold px-8 py-3.5 rounded-full hover:border-white hover:bg-white/10 transition duration-300">explore mais</a>
             </div>
           </div>
           <div className="lg:col-span-7 relative mt-8 lg:mt-0">
