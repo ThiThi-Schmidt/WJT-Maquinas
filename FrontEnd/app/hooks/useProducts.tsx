@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import { API_BASE_URL } from "../utils/config";
 import { Products } from "../types/Products";
 import { useAuthContext } from "../context/AuthContext";
@@ -13,13 +12,26 @@ export function useProducts() {
   const getAllProducts = async () => {
     try {
       setLoading(true);
-      console.log
-      const res = await fetch(`${API_BASE_URL}/products`); 
+      
+      const res = await fetch(`${API_BASE_URL}/products`);
       
       if (!res.ok) throw new Error("Erro ao buscar produtos no servidor");
 
       const data = await res.json();
-      setProducts(data);
+
+      console.log("O que o BackEnd enviou:", data);
+
+      if (Array.isArray(data)) {
+        setProducts(data);
+      } else if (data && Array.isArray(data.products)) {
+        setProducts(data.products);
+      } else if (data && Array.isArray(data.data)) {
+        setProducts(data.data);
+      } else {
+        console.warn("Formato inesperado recebido do backend:", data);
+        setProducts([]); 
+      }
+      
       setError(null);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erro desconhecido");
