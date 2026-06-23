@@ -1,13 +1,13 @@
-GET http://localhost:3000/health
+GET http://localhost:3001/health
 ###
 
-GET http://localhost:3000/users
+GET http://localhost:3001/users
 Content-Type: application/json
 Authorization: Bearer 
 ###
 
 # CADASTRO
-POST http://localhost:3000/users
+POST http://localhost:3001/users
 Content-Type: application/json
 
 {
@@ -18,7 +18,7 @@ Content-Type: application/json
 }
 ###
 
-POST http://localhost:3000/users
+POST http://localhost:3001/users
 Content-Type: application/json
 
 {
@@ -30,7 +30,7 @@ Content-Type: application/json
 ###
 
 # LOGIN // DAS CONTAS CADASTRADAS
-POST http://localhost:3000/auth/login
+POST http://localhost:3001/auth/login
 Content-Type: application/json
 
 {
@@ -40,59 +40,60 @@ Content-Type: application/json
 }
 ###
 
-POST http://localhost:3000/auth/login
+POST http://localhost:3001/auth/login
 Content-Type: application/json
 
 {
-  "email": "ciclano@email.com",
+  "email": "fulano@email.com",
   "password": "123456",
   "role": "CLIENT"
 }
 ###
 
 # ATUALIZAR // ADICIONAR ID
-PUT http://localhost:3000/users/
+PUT http://localhost:3001/users/1
 Content-Type: application/json
 Authorization: Bearer 
 
 {
-  "name": "Ciclane",
-  "email": "ciclane@wjt.com",
+  "name": "Fulane",
+  "email": "fulane@wjt.com",
   "password": "1234567"
 }
 ###
 
 # DELETAR // ADICIONAR ID
-DELETE http://localhost:3000/users/3
+DELETE http://localhost:3001/users/3
 Authorization: Bearer 
 ###
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-GET http://localhost:3000/products
+GET http://localhost:3001/products
 Content-Type: application/json
 ###
 
 # BUSCAR PRODUTO ESPECIFICO // ADICIONAR ID
-GET http://localhost:3000/products/
+GET http://localhost:3001/products/
 Content-Type: application/json
 ###
 
 # CRIAR PRODUTO NA LOJA
-POST http://localhost:3000/products
+POST http://localhost:3001/products
 Content-Type: application/json
-Authorization: Bearer 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoiYWRtaW5Ad2p0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MjI0NDIzNywiZXhwIjoxNzgyMjQ2MDM3fQ.zLhI99H_UyTZ0xvf0WcjguDAHsYpU058jB7LHyB-MmU
 
 {
   "name": "Motoserra",
   "description": "A gasolina.",
   "price": 359.99,
-  "stock": 45
+  "stock": 45,
+  "categoryId": 1
 }
 ###
 
 # ATUALIZAR // ADICIONAR ID
-PUT http://localhost:3000/products/2
+PUT http://localhost:3001/products/2
 Content-Type: application/json
 Authorization: Bearer 
 
@@ -105,6 +106,6 @@ Authorization: Bearer
 ###
 
 # DELETAR PRODUTO // ADICIONAR ID
-DELETE http://localhost:3000/products/2
+DELETE http://localhost:3001/products/2
 Content-Type: application/json
 Authorization: Bearer 

@@ -1,36 +1,48 @@
-import bcrypt from "bcrypt"
-import jwt from "jsonwebtoken"
-
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 import { UserService } from "./userService.js";
 
 const userService = new UserService();
 
 export class AuthService {
-    async authenticate(jwtSecret: string, email: string, password: string) {
-        const user = await userService.findByEmail(email)
+  async authenticate(jwtSecret: string, email: string, password: string) {
+    const user = await userService.findByEmail(email);
 
-        if (!user) {
-            const err = new Error ("Credenciais inválidas")
-            err.status = 401
-            throw err
-        }
-
-        const validPassword = await bcrypt.compare(password, user.password)
-
-        if (!validPassword) {
-            const err = new Error("Credenciais inválidas")
-            err.status = 401
-            throw err
-        }
-
-        const token = jwt.sign({ sub: user.id, email: user.email }, jwtSecret, {
-            expiresIn: "30m",
-        })
-
-        return {
-            token,
-            user: { id: user.id, name: user.name, email: user.email },
-        }
-        
+    if (!user) {
+      const err: any = new Error("Credenciais inválidas");
+      err.status = 401;
+      throw err;
     }
+
+    const validPassword = await bcrypt.compare(password, user.password);
+
+    if (!validPassword) {
+      const err: any = new Error("Credenciais inválidas");
+      err.status = 401;
+      throw err;
+    }
+
+    const token = jwt.sign(
+      {
+        sub: user.id,
+        email: user.email,
+        role: user.role,
+      },
+      jwtSecret,
+      {
+        expiresIn: "30m",
+      }
+    );
+
+    return {
+      token,
+      profile: user.role,
+      user: {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+      },
+    };
+  }
 }

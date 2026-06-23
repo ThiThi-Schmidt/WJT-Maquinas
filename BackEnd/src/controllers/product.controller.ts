@@ -8,7 +8,10 @@ export class ProductController {
       const products = await prisma.product.findMany({ orderBy: { id: "asc" } });
       return res.json(products);
     } catch (err: any) {
-      return res.status(500).json({ error: "Erro ao buscar produtos" });
+      console.error("Erro real ao buscar produtos:", err);
+      return res.status(500).json({
+        error: err?.message || "Erro ao buscar produtos"
+      });
     }
   }
 
@@ -29,13 +32,21 @@ export class ProductController {
 
   async create(req: Request, res: Response) {
     try {
-      const { name, description, price, stock } = req.body;
+      const { name, description, price, stock, categoryId } = req.body;
       const { ProductService } = await import("../services/product.service.js");
       const productService = new ProductService();
-      const product = await productService.execute({ name, description, price, stock });
+
+      const product = await productService.execute({
+        name,
+        description,
+        price,
+        stock,
+        categoryId,
+      });
 
       return res.status(201).json(product);
     } catch (err: any) {
+      console.error("Erro ao criar produto:", err);
       return res.status(400).json({ error: err.message || "Erro ao criar produto" });
     }
   }
