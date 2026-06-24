@@ -36,10 +36,8 @@ export function LoginForm() {
         return;
       }
 
-      // salva token + usuário no contexto/sessionStorage
       login(data.token, data.user);
 
-      // redireciona conforme o cargo
       if (data.user.role === "ADMIN") {
         router.push("/adm");
       } else {

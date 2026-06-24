@@ -3,7 +3,6 @@
 export function LoginHeader() {
   return (
     <div className="flex flex-col items-center gap-3 text-center">
-      {/* Logo circular com a chama do SnapBite */}
       <a className="flex items-center gap-3 text-3xl font-bold tracking-tight" >
            <img src="/images/couch.png" alt="Logo" className="h-15 w-auto" />
            <h2>WJT</h2>
