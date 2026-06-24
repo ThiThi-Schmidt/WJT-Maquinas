@@ -29,6 +29,7 @@ export default function Products() {
   if (error) return <div className="text-center text-red-500 py-10 font-bold">Erro: {error}</div>;
 
   return (
+    <section id="loja" className="py-16 scroll-mt-24"> 
     <div className="w-full">
       {/* 1. CONTAINER DOS FILTROS (Fecha certinho no final dos botões) */}
       <div className="flex items-center gap-3 mb-6 overflow-x-auto pb-2 scrollbar-hide">
@@ -86,5 +87,6 @@ export default function Products() {
         )}
       </div>
     </div>
+    </section>
   );
 }

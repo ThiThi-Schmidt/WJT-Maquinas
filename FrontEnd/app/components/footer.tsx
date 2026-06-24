@@ -1,6 +1,7 @@
 export default function Footer() {
   return (
-    // Removemos o mt-24 e aumentamos o pt-24 para pt-44 para o fundo branco subir
+     <section id="contato" className="py-16 scroll-mt-24">
+      
     <footer className="bg-white text-[#2f2f2f] pt-44 pb-12 relative">
       
       <div className="container mx-auto px-4 relative">
@@ -65,5 +66,6 @@ export default function Footer() {
     
       </div>
     </footer>
+    </section>
   );
 }

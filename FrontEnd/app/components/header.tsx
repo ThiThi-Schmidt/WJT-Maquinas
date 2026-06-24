@@ -16,6 +16,7 @@ export default function Header() {
         backgroundBlendMode: "overlay",
       }}>
       <div className="container mx-auto px-4 flex justify-between items-center">
+
         <a className="flex items-center gap-3 text-3xl font-bold tracking-tight" href="/logo">
           <img src="/images/couch.png" alt="Logo" className="h-12 w-auto" />
           <span>WJT</span>
@@ -27,21 +28,64 @@ export default function Header() {
             </li>
             <li className="hover:text-white transition duration-200">
               <a href="#loja">Loja</a>
-            </li>
+
+        {/* Logo */}
+        <a className="flex items-center gap-3 text-3xl font-bold tracking-tight" href="#logo">
+           <img src="/images/couch.png" alt="Logo" className="h-12 w-auto" />
+           <span>WJT</span>
+        </a>  
+        
+
+        {/* Menu Desktop */}
+        <div className="hidden md:flex items-center space-x-8">
+          <ul className="flex space-x-6 text-sm font-medium text-white/70">
+            
+            {/* 🔽 VEJA OS DESTAQUES ABAIXO NAS PROPRIEDADES href="" 🔽 */}
+
             <li className="hover:text-white transition duration-200">
+              <a href="#logo">Início</a> 
+
+            </li>
+            
+            <li className="hover:text-white transition duration-200">
+
               <a href="#sobre-nos">Sobre nós</a>
+
+              <a href="#loja">Loja</a> 
+
             </li>
+            
             <li className="hover:text-white transition duration-200">
+
               <a href="#servico">Serviços</a>
+
+              <a href="#sobre-nos">Sobre nós</a> 
+
             </li>
+            
             <li className="hover:text-white transition duration-200">
+
               <a href="#clientes">Clientes</a>
+
+              <a href="#servicos">Serviços</a> 
+
             </li>
+            
             <li className="hover:text-white transition duration-200">
+
               <a href="#contato">Contato</a>
+
+              <a href="#clientes">Clientes</a> 
+
             </li>
+            
+            <li className="hover:text-white transition duration-200">
+              <a href="#contato">Contato</a> 
+            </li>
+
           </ul>
         </div>
+
         <div className="hidden md:flex items-center space-x-4">
           {isAuthenticated && user ? (
             <>
@@ -74,6 +118,17 @@ export default function Header() {
               </a>
             </>
           )}
+
+
+        {/* User & Cart Icons */}
+        <div className="hidden md:flex items-center space-x-6">
+          <a href="/login" className="hover:opacity-80 transition">
+            <img src="/images/user.svg" alt="User" />
+          </a>
+          <a href="/cart" className="hover:opacity-80 transition">
+            <img src="/images/cart.svg" alt="Cart" />
+          </a>
+
         </div>
       </div>
     </nav>
