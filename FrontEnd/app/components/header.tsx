@@ -21,15 +21,26 @@ export default function Header() {
         {/* Menu Desktop */}
         <div className="hidden md:flex items-center space-x-8">
           <ul className="flex space-x-6 text-sm font-medium text-white/70">
-            <li className="text-white border-b-2 border-[#ff7b00] pb-1"><a href="/">Início</a></li>
-            <li className="hover:text-white transition duration-200"><a href="/shop">Loja</a></li>
-            <li className="hover:text-white transition duration-200"><a href="/about">Sobre nós</a></li>
-            <li className="hover:text-white transition duration-200"><a href="/services">Serviços</a></li>
-            <li className="hover:text-white transition duration-200"><a href="/blog">Clientes</a></li>
-            <li className="hover:text-white transition duration-200"><a href="/contact">Contato</a></li>
+            <li className="text-white border-b-2 border-[#ff7b00] pb-1">
+              <a href="#inicio">Início</a>
+            </li>
+            <li className="hover:text-white transition duration-200">
+              <a href="#shop">Loja</a>
+            </li>
+            <li className="hover:text-white transition duration-200">
+              <a href="#about">Sobre nós</a>
+            </li>
+            <li className="hover:text-white transition duration-200">
+              <a href="#services">Serviços</a>
+            </li>
+            <li className="hover:text-white transition duration-200">
+              <a href="#blog">Clientes</a>
+            </li>
+            <li className="hover:text-white transition duration-200">
+              <a href="#contact">Contato</a>
+            </li>
           </ul>
         </div>
-
         {/* User & Cart Icons */}
         <div className="hidden md:flex items-center space-x-6">
           <a href="/login" className="hover:opacity-80 transition">
