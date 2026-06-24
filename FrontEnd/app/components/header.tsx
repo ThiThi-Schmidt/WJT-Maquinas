@@ -19,7 +19,7 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
-        <a className="flex items-center gap-3 text-3xl font-bold tracking-tight" href="/">
+        <a className="flex items-center gap-3 text-3xl font-bold tracking-tight" href="#logo">
           <img src="/images/couch.png" alt="Logo" className="h-12 w-auto" />
           <span>WJT</span>
         </a>
@@ -28,22 +28,22 @@ export default function Header() {
         <div className="hidden md:flex items-center space-x-8">
           <ul className="flex space-x-6 text-sm font-medium text-white/70">
             <li className="text-white border-b-2 border-[#ff7b00] pb-1">
-              <a href="#inicio">Início</a>
+              <a href="#logo">Início</a>
             </li>
             <li className="hover:text-white transition duration-200">
-              <a href="#shop">Loja</a>
+              <a href="#loja">Loja</a>
             </li>
             <li className="hover:text-white transition duration-200">
-              <a href="#about">Sobre nós</a>
+              <a href="#sobre-nos">Sobre nós</a>
             </li>
             <li className="hover:text-white transition duration-200">
-              <a href="#services">Serviços</a>
+              <a href="#servicos">Serviços</a>
             </li>
             <li className="hover:text-white transition duration-200">
-              <a href="#blog">Clientes</a>
+              <a href="#clientes">Clientes</a>
             </li>
             <li className="hover:text-white transition duration-200">
-              <a href="#contact">Contato</a>
+              <a href="#contato">Contato</a>
             </li>
           </ul>
         </div>
