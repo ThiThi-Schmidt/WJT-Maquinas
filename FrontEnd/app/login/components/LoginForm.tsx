@@ -1,25 +1,21 @@
 "use client";
 
 import { useState } from "react";
-
 import { useRouter } from "next/navigation";
-
 import { API_BASE_URL } from "../../utils/config";
 import { useAuthContext } from "@/app/context/AuthContext";
-
 
 export function LoginForm() {
   const router = useRouter();
   const { login } = useAuthContext();
 
-  // Estados dos inputs
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState(""); // Substitui "senha" por "password" para manter o padrão
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
     setIsSubmitting(true);
@@ -33,23 +29,23 @@ export function LoginForm() {
         body: JSON.stringify({ email, password }),
       });
 
+      const data = await res.json();
+
       if (!res.ok) {
-        setError("E-mail ou senha inválidos. Tente novamente.");
-        setIsSubmitting(false);
+        setError(data.error || "E-mail ou senha inválidos.");
         return;
       }
 
-      const data = await res.json();
+      // salva token + usuário no contexto/sessionStorage
+      login(data.token, data.user);
 
-      // Salva no contexto e sessionStorage
-      login(data.token, data.user.role, data.user);
-
-      // Redirecionamento inteligente por cargo
+      // redireciona conforme o cargo
       if (data.user.role === "ADMIN") {
         router.push("/adm");
       } else {
-        router.push("/orders");
+        router.push("/");
       }
+
     } catch (err) {
       setError("Ocorreu um erro ao tentar fazer login. Tente novamente mais tarde.");
     } finally {
@@ -59,15 +55,12 @@ export function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-      
-      {/* MENSAGEM DE ERRO (Estilizada no tema SnapBite) */}
       {error && (
         <div className="bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-medium p-4 rounded-2xl text-center">
           {error}
         </div>
       )}
 
-      {/* CAMPO DE EMAIL */}
       <div className="flex flex-col gap-2">
         <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 px-1">
           E-mail
@@ -84,16 +77,13 @@ export function LoginForm() {
         </div>
       </div>
 
-      {/* CAMPO DE SENHA */}
       <div className="flex flex-col gap-2">
         <div className="flex justify-between items-center px-1">
           <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">
             Senha
           </label>
-          <a href="#" className="text-[10px] font-bold text-[#ff834a] hover:underline uppercase tracking-wider">
-            Esqueceu?
-          </a>
         </div>
+
         <div className="relative flex items-center">
           <input
             type={showPassword ? "text" : "password"}
@@ -103,16 +93,17 @@ export function LoginForm() {
             onChange={(e) => setPassword(e.target.value)}
             className="w-full bg-[#121212] border border-white/5 rounded-2xl py-4 pl-12 pr-12 text-sm font-medium text-white placeholder-gray-600 focus:outline-none focus:border-[#f26422] focus:ring-1 focus:ring-[#f26422] transition-all"
           />
+
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
             className="absolute right-4 text-gray-500 hover:text-gray-300 transition-colors"
           >
+            {showPassword ? "Ocultar" : "Mostrar"}
           </button>
         </div>
       </div>
 
-      {/* BOTÃO DE ENTRAR */}
       <button
         type="submit"
         disabled={isSubmitting}

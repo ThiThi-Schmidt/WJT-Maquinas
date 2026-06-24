@@ -67,7 +67,7 @@ export default function Products() {
                   : "bg-[#1e1e1e] text-gray-500 hover:bg-[#252525] border border-white/5"
               }`}
             >
-              {cat.label} {cat.icon}
+              {cat.name} {cat.icon}
             </button>
           );
         })}

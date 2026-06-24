@@ -4,9 +4,6 @@ export default function Footer() {
     <footer className="bg-white text-[#2f2f2f] pt-44 pb-12 relative">
       
       <div className="container mx-auto px-4 relative">
-        
-
-        {/* Imagem do sofá reajustada para flutuar no topo branco */}
         <div className="absolute -top-35 right-0 w-64 md:w-80 lg:w-400S hidden sm:block">
           <img src="/images/sofa.png" alt="Sofa" className="w-full h-auto" />
         </div>

@@ -36,12 +36,11 @@ export class AuthService {
 
     return {
       token,
-      profile: user.role,
       user: {
-        id: user.id,
-        name: user.name,
-        email: user.email,
-        role: user.role,
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      role: user.role,
       },
     };
   }
