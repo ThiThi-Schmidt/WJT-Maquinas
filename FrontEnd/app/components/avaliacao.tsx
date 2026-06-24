@@ -1,14 +1,15 @@
 export default function Testimonials() {
   return (
+    <section id="sobre-nos" className="py-16 scroll-mt-24"> 
   <div>
     <div className="py-20 lg:py-24 bg-white text-[#2f2f2f]">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-3xl font-bold mb-4 text-[#2f2f2f]">Por que nos escolher</h2>
-            {/* <p className="text-gray-500 mb-10">
+            <p className="text-gray-500 mb-10">
               Há 15 anos, combinamos qualidade e experiência no comércio e manutenção de máquinas para jardinagem e construção civil. Oferecemos tudo o que o seu projeto precisa, com o suporte de uma manutenção especializada de total confiança. Escolha a eficiência e a parceria que o seu trabalho merece!
-            </p> */}
+            </p>
             
             <div className="grid grid-cols-2 gap-8">
               <div>
@@ -76,5 +77,6 @@ export default function Testimonials() {
       </div>
     </div>
   </div>
+  </section>
   );
 }
