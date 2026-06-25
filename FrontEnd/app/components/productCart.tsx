@@ -2,27 +2,24 @@
 
 import Image from "next/image";
 import { Plus, Star } from "lucide-react";
-import { Product } from "../types/Products";
+import { Products } from "../types/Products";
 
-// import { useCart } from "../context/CartContexts";
 
 type ProductCartProps = {
-  product: Product;
+  product: Products;
 };
 
 export default function ProductCart({ product }: ProductCartProps) {
-  // const { addToCart } = useCart();
-
-  const imageSrc = product.imagem || "/images/1.png"
+  const imageSrc = product.imagem || "/images/1.png";
 
   return (
-    <div className="flex flex-col gap-3 w-full bg-[#111] p-4 rounded-4xl border border-white/5 shadow-lg">
-      <div className="relative w-full aspect-square rounded-4xl overflow-hidden bg-[#1a1a1a]">
+    <div className="flex flex-col gap-3 w-full bg-[#111827] rounded-4xl p-4 border border-white/5">
+      <div className="relative w-full aspect-square rounded-3xl overflow-hidden bg-[#0f172a]">
         <Image
           src={imageSrc}
           alt={product.name}
           fill
-          className="object-cover hover:scale-105 transition-transform duration-300"
+          className="object-cover"
         />
       </div>
 
@@ -32,19 +29,16 @@ export default function ProductCart({ product }: ProductCartProps) {
         </h3>
 
         <p className="text-gray-400 text-xs line-clamp-2 leading-relaxed font-medium">
-          {product.description}
+          {product.description || "Sem descrição"}
         </p>
-
-        {product.category?.name && (
-          <span className="text-[11px] text-[#f26422] font-semibold">
-            {product.category.name}
-          </span>
-        )}
       </div>
 
       <div className="flex items-center justify-between mt-1 px-1">
         <div className="flex flex-col gap-0.5">
-      
+          <div className="flex items-center gap-1">
+            <Star size={14} className="fill-[#f26422] text-[#f26422]" />
+            <span className="text-xs font-bold text-gray-300">4.8</span>
+          </div>
 
           <div className="text-xl font-black text-white">
             <span className="text-[#f26422] text-sm font-bold mr-1">R$</span>
@@ -53,13 +47,12 @@ export default function ProductCart({ product }: ProductCartProps) {
             })}
           </div>
 
-          <span className="text-xs text-gray-500">
+          <span className="text-xs text-gray-400">
             Estoque: {product.stock}
           </span>
         </div>
 
         <button
-          // onClick={() => addToCart({ ...product, quantity: 1 })}
           className="bg-[#1e1e1e] hover:bg-[#252525] border border-white/5 text-white p-3 rounded-2xl transition-all shadow-lg active:scale-95"
         >
           <Plus size={18} />

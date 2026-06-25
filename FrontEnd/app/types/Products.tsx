@@ -1,11 +1,11 @@
-export type Product = {
+export type Products = {
   id: number;
   name: string;
-  description: string;
+  description: string | null;
   price: number;
   stock: number;
-  categoryId: number;
   imagem?: string | null;
+  categoryId: number;
   category?: {
     id: number;
     name: string;

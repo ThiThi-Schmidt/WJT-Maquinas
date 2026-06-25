@@ -81,15 +81,15 @@ Content-Type: application/json
 # CRIAR PRODUTO NA LOJA
 POST http://localhost:3001/products
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoiYWRtaW5Ad2p0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MjQxMTA4MSwiZXhwIjoxNzgyNDEyODgxfQ.xeWDWU1cTCm8OAWygqFypkWBEeuZcKYe__vcya7hFWw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoiYWRtaW5Ad2p0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MjQxNjk5MSwiZXhwIjoxNzgyNDE4NzkxfQ.g6ty-DQdrjnk-kO4Uk3CrWyelRG66S6sWiSRuTFouGY
 
 {
-  "name": "Jogo de Ferramentas",
-  "description": "ogo de Ferramentas Encaixe 12Pol 38Pol 14Pol com 216 Pecas e Maleta MTX-1353055",
-  "price": 1149.99,
-  "stock": 120,
-  "categoryId": 2,
-  "imagem": "/images/ferramentas.png"
+  "name": "Jogo de Soquetes",
+  "description": "Jogo de Soquetes Estriados 34 Pol com 20 Pecas e Caixa Metalica MTX-135369",
+  "price": 949.99,
+  "stock": 130,
+  "categoryId": 1,
+  "imagem": "/images/soquetes.png"
 }
 ###
 
@@ -115,3 +115,12 @@ Authorization: Bearer
 # CATEGORIAS
 GET http://localhost:3001/categories
 Content-Type: application/json
+###
+
+POST http://localhost:3001/categories
+Content-Type: application/json
+
+{
+  "name": "Baterias"
+}
+###

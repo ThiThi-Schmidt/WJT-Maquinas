@@ -11,7 +11,7 @@ class CategoryService {
     return categories;
   }
 
-  async create(name: string) {
+  async create(name: string, icon?: string) {
     if (!name || !name.trim()) {
       throw new Error("O nome da categoria é obrigatório.");
     }
@@ -19,6 +19,7 @@ class CategoryService {
     const category = await prisma.category.create({
       data: {
         name: name.trim(),
+        icon: icon?.trim() || null,
       },
     });
 

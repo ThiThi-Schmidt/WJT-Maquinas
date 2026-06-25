@@ -1,8 +1,8 @@
-import { Request, Response } from "express";
+import type { Request, Response } from "express";
 import { CategoryService } from "../services/category.service.js";
 
 class CategoryController {
-  async getAll(req: Request, res: Response): Promise<Response> {
+  async getAll(req: Request, res: Response) {
     try {
       const service = new CategoryService();
       const categories = await service.getAll();
@@ -16,7 +16,7 @@ class CategoryController {
     }
   }
 
-  async create(req: Request, res: Response): Promise<Response> {
+  async create(req: Request, res: Response) {
     try {
       const { name } = req.body;
 
