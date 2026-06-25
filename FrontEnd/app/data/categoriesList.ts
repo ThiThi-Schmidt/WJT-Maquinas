@@ -1,5 +1,5 @@
 export const categoriesList = [
-  { id: 1, name: "Máquinas", icon: "⚙️" },
-  { id: 2, name: "Ferramentas", icon: "🔧" },
-  { id: 3, name: "Acessórios", icon: "🎒" }
+  { id: 1, name: "Máquinas" },
+  { id: 2, name: "Ferramentas" },
+  { id: 3, name: "Baterias" }
 ];

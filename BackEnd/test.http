@@ -81,14 +81,15 @@ Content-Type: application/json
 # CRIAR PRODUTO NA LOJA
 POST http://localhost:3001/products
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoiYWRtaW5Ad2p0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MjI0NDIzNywiZXhwIjoxNzgyMjQ2MDM3fQ.zLhI99H_UyTZ0xvf0WcjguDAHsYpU058jB7LHyB-MmU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoiYWRtaW5Ad2p0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MjQxMTA4MSwiZXhwIjoxNzgyNDEyODgxfQ.xeWDWU1cTCm8OAWygqFypkWBEeuZcKYe__vcya7hFWw
 
 {
-  "name": "Motoserra",
-  "description": "A gasolina.",
-  "price": 359.99,
-  "stock": 45,
-  "categoryId": 1
+  "name": "Jogo de Ferramentas",
+  "description": "ogo de Ferramentas Encaixe 12Pol 38Pol 14Pol com 216 Pecas e Maleta MTX-1353055",
+  "price": 1149.99,
+  "stock": 120,
+  "categoryId": 2,
+  "imagem": "/images/ferramentas.png"
 }
 ###
 
@@ -109,3 +110,8 @@ Authorization: Bearer
 DELETE http://localhost:3001/products/2
 Content-Type: application/json
 Authorization: Bearer 
+###
+
+# CATEGORIAS
+GET http://localhost:3001/categories
+Content-Type: application/json

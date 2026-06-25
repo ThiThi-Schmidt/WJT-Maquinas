@@ -5,7 +5,7 @@ export class ProductController {
 
   async getAll(req: Request, res: Response) {
     try {
-      const products = await prisma.product.findMany({ orderBy: { id: "asc" } });
+      const products = await prisma.product.findMany({include: {category: true,},orderBy: {id: "asc",},});
       return res.json(products);
     } catch (err: any) {
       console.error("Erro real ao buscar produtos:", err);
@@ -32,7 +32,7 @@ export class ProductController {
 
   async create(req: Request, res: Response) {
     try {
-      const { name, description, price, stock, categoryId } = req.body;
+      const { name, description, price, stock, categoryId, imagem } = req.body;
       const { ProductService } = await import("../services/product.service.js");
       const productService = new ProductService();
 
@@ -42,6 +42,7 @@ export class ProductController {
         price,
         stock,
         categoryId,
+        imagem
       });
 
       return res.status(201).json(product);
@@ -55,11 +56,11 @@ export class ProductController {
   async update(req: Request, res: Response) {
     try {
       const id = Number(req.params.id);
-      const { name, description, price, stock } = req.body;
+      const { name, description, price, stock, imagem } = req.body;
       
       const product = await prisma.product.update({
         where: { id },
-        data: { name, description, price: Number(price), stock: Number(stock) }
+        data: { name, description, price: Number(price), stock: Number(stock), imagem }
       });
       
       return res.json(product);

@@ -6,7 +6,9 @@ interface CreateProductData {
   price: number;
   stock: number;
   categoryId: number;
+  imagem?: string;
 }
+
 
 export class ProductService {
   async execute(data: CreateProductData) {
@@ -34,13 +36,14 @@ export class ProductService {
       throw new Error("A categoria informada não existe.");
     }
 
-    const product = await prisma.product.create({
+     const product = await prisma.product.create({
       data: {
         name: data.name,
         description: data.description ?? null,
         price: Number(data.price),
         stock: Number(data.stock),
         categoryId: Number(data.categoryId),
+        imagem: data.imagem ?? null,
       },
     });
 

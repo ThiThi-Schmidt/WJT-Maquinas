@@ -1,13 +1,16 @@
 export type Product = {
   id: number;
   name: string;
-  description?: string | null;
+  description: string;
   price: number;
   stock: number;
   categoryId: number;
-  image?: string | null;
-  createdAt?: string;
-  updatedAt?: string;
+  imagem?: string | null;
+  category?: {
+    id: number;
+    name: string;
+    icon?: string | null;
+  };
 };
 
 export type CreateProductInput = {
@@ -16,7 +19,8 @@ export type CreateProductInput = {
   price: number;
   stock: number;
   categoryId: number;
-  image?: string;
+  imagem?: string;
 };
+
 
 export type UpdateProductInput = Partial<CreateProductInput>;

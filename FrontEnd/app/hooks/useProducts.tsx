@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
 import { API_BASE_URL } from "../utils/config";
-import { Products } from "../types/Products";
 import { useAuthContext } from "../context/AuthContext";
+import { Product } from "../types/Products";
+
 
 export function useProducts() {
   const { token } = useAuthContext();
-  const [products, setProducts] = useState<Products[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   const getAllProducts = async () => {
     try {
       setLoading(true);
-      
+
       const res = await fetch(`${API_BASE_URL}/products`);
-      
+
       if (!res.ok) throw new Error("Erro ao buscar produtos no servidor");
 
       const data = await res.json();
@@ -29,9 +30,9 @@ export function useProducts() {
         setProducts(data.data);
       } else {
         console.warn("Formato inesperado recebido do backend:", data);
-        setProducts([]); 
+        setProducts([]);
       }
-      
+
       setError(null);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Erro desconhecido");
@@ -42,10 +43,10 @@ export function useProducts() {
   };
 
   useEffect(() => {
-    getAllProducts(); 
+    getAllProducts();
   }, []);
 
-  const createProduct = async (productData: Omit<Products, "id">) => {
+  const createProduct = async (productData: Omit<Product, "id">) => {
     try {
       const res = await fetch(`${API_BASE_URL}/products`, {
         method: "POST",
@@ -69,7 +70,7 @@ export function useProducts() {
     }
   };
 
-  const updateProduct = async (id: number, productData: Partial<Products>) => {
+  const updateProduct = async (id: number, productData: Partial<Product>) => {
     try {
       const res = await fetch(`${API_BASE_URL}/products/${id}`, {
         method: "PUT",
@@ -120,8 +121,8 @@ export function useProducts() {
     loading,
     error,
     createProduct,
-    updateProduct, 
-    deleteProduct, 
-    refreshProducts: getAllProducts, 
+    updateProduct,
+    deleteProduct,
+    refreshProducts: getAllProducts,
   };
 }
