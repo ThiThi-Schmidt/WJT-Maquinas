@@ -5,6 +5,7 @@ import userRouter from "./routes/user.routes.js";
 import { categoryRoutes } from "./routes/category.routes.js";
 import cors from "cors";
 
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
