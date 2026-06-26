@@ -107,9 +107,9 @@ Authorization: Bearer
 ###
 
 # DELETAR PRODUTO // ADICIONAR ID
-DELETE http://localhost:3001/products/2
+DELETE http://localhost:3001/products/1
 Content-Type: application/json
-Authorization: Bearer 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoiYWRtaW5Ad2p0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MjQ5MzMxNCwiZXhwIjoxNzgyNDk1MTE0fQ.5z5trNY2diO9qLM38vwPjpylQYBijCj1ez39TgWK0hg
 ###
 
 # CATEGORIAS

@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import { Plus, Star } from "lucide-react";
-import { Products } from "../types/Products";
+import { Product } from "../types/Products";
+
 
 
 type ProductCartProps = {
-  product: Products;
+  product: Product;
 };
 
 export default function ProductCart({ product }: ProductCartProps) {

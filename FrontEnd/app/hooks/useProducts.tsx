@@ -11,36 +11,33 @@ export function useProducts() {
   const [error, setError] = useState<string | null>(null);
 
   const getAllProducts = async () => {
-    try {
-      setLoading(true);
+  try {
+    console.log("1 - Entrou na função");
 
-      const res = await fetch(`${API_BASE_URL}/products`);
+    setLoading(true);
 
-      if (!res.ok) throw new Error("Erro ao buscar produtos no servidor");
+    console.log("2 - API:", API_BASE_URL);
 
-      const data = await res.json();
+    console.log("3 - Antes do fetch");
 
-      console.log("O que o BackEnd enviou:", data);
+    const res = await fetch(`${API_BASE_URL}/products`);
 
-      if (Array.isArray(data)) {
-        setProducts(data);
-      } else if (data && Array.isArray(data.products)) {
-        setProducts(data.products);
-      } else if (data && Array.isArray(data.data)) {
-        setProducts(data.data);
-      } else {
-        console.warn("Formato inesperado recebido do backend:", data);
-        setProducts([]);
-      }
+    console.log("4 - Depois do fetch");
 
-      setError(null);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Erro desconhecido");
-      console.error("Erro:", err);
-    } finally {
-      setLoading(false);
-    }
-  };
+    console.log(res);
+
+    const data = await res.json();
+
+    console.log("5 - Dados recebidos", data);
+
+    setProducts(data);
+  } catch (err) {
+    console.error("ERRO COMPLETO");
+    console.error(err);
+  } finally {
+    setLoading(false);
+  }
+};
 
   useEffect(() => {
     getAllProducts();
@@ -72,7 +69,7 @@ export function useProducts() {
 
   const updateProduct = async (id: number, productData: Partial<Product>) => {
     try {
-      const res = await fetch(`${API_BASE_URL}/products/${id}`, {
+      const res = await fetch(`${API_BASE_URL}/product/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
