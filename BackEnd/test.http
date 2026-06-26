@@ -81,20 +81,20 @@ Content-Type: application/json
 # CRIAR PRODUTO NA LOJA
 POST http://localhost:3001/products
 Content-Type: application/json
-Authorization: Bearer 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoiYWRtaW5Ad2p0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MjUwNDI3NCwiZXhwIjoxNzgyNTA2MDc0fQ._dwtqRfObbK-Awf6Qgk4yS4mZYZMDVJTQ1-wqP1CHiY
 
 {
-  "name": "Jogo de Soquetes",
-  "description": "Jogo de Soquetes Estriados 34 Pol com 20 Pecas e Caixa Metalica MTX-135369",
-  "price": 949.99,
-  "stock": 130,
-  "categoryId": 1,
-  "imagem": "/images/soquetes.png"
+  "name": "Soprador",
+  "description": "Soprador de Folhas Elétrico 2000W 220V . TEKNA-B2000E2",
+  "price":  194.90,
+  "stock": 71,
+  "categoryId": 2,
+  "imagem": "/images/soprador.png"
 }
 ###
 
 # ATUALIZAR // ADICIONAR ID
-PUT http://localhost:3001/products/2
+PUT http://localhost:3001/products/11
 Content-Type: application/json
 Authorization: Bearer 
 
@@ -107,9 +107,9 @@ Authorization: Bearer
 ###
 
 # DELETAR PRODUTO // ADICIONAR ID
-DELETE http://localhost:3001/products/1
+DELETE http://localhost:3001/products/11
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoiYWRtaW5Ad2p0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MjQ5MzMxNCwiZXhwIjoxNzgyNDk1MTE0fQ.5z5trNY2diO9qLM38vwPjpylQYBijCj1ez39TgWK0hg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoiYWRtaW5Ad2p0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MjUwMjI3MiwiZXhwIjoxNzgyNTA0MDcyfQ.tdqcj7KfvXJortFWC6mJKC4_gK6NmfVIbSrZcxi_qfM
 ###
 
 # CATEGORIAS
@@ -121,6 +121,6 @@ POST http://localhost:3001/categories
 Content-Type: application/json
 
 {
-  "name": "Baterias"
+  "name": "Jardinagem"
 }
 ###
