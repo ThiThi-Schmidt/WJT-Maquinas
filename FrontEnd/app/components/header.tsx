@@ -1,9 +1,34 @@
 "use client";
 
+import { useState, useEffect } from "react"; // Adicionado apenas isso nos imports
 import { useAuthContext } from "../context/AuthContext";
 
 export default function Header() {
   const { user, isAuthenticated, logout } = useAuthContext();
+  
+  // 1. Criamos um estado simples para guardar qual link está ativo
+  const [ativo, setAtivo] = useState("");
+
+  // 2. Criamos o verificador de scroll simples
+  useEffect(() => {
+    const rastrearScroll = () => {
+      const secoes = ["logo", "loja", "sobre-nos", "clientes", "maquinas-tutoriais", "contato"];
+      
+      for (let id of secoes) {
+        const elemento = document.getElementById(id);
+        if (elemento) {
+          const posicao = elemento.getBoundingClientRect();
+          // Se a seção estiver visível na parte de cima da tela, ele marca como ativo
+          if (posicao.top <= 150 && posicao.bottom >= 150) {
+            setAtivo(id);
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", rastrearScroll);
+    return () => window.removeEventListener("scroll", rastrearScroll);
+  }, []);
 
   return (
     <nav
@@ -28,27 +53,28 @@ export default function Header() {
         <div className="hidden md:flex items-center space-x-8">
           <ul className="flex space-x-6 text-sm font-medium text-white/70">
             <li className="hover:text-white transition duration-200">
-              <a href="#logo">Início</a>
+              {/* Adicionado o ternário para a linha laranja: ativo === 'id' ? 'estilos da linha' : '' */}
+              <a href="#logo" className={ativo === "logo" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Início</a>
             </li>
             <li className="hover:text-white transition duration-200">
-              <a href="#loja">Loja</a>
+              <a href="#loja" className={ativo === "loja" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Loja</a>
             </li>
             <li className="hover:text-white transition duration-200">
-              <a href="#sobre-nos">Sobre nós</a>
+              <a href="#sobre-nos" className={ativo === "sobre-nos" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Sobre nós</a>
             </li>
             <li className="hover:text-white transition duration-200">
-              <a href="#clientes">Clientes</a>
+              <a href="#clientes" className={ativo === "clientes" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Clientes</a>
             </li>
             <li className="hover:text-white transition duration-200">
-              <a href="#maquinas-tutoriais">Ajuda</a>
+              <a href="#maquinas-tutoriais" className={ativo === "maquinas-tutoriais" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Ajuda</a>
             </li>
             <li className="hover:text-white transition duration-200">
-              <a href="#contato">Contato</a>
+              <a href="#contato" className={ativo === "contato" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Contato</a>
             </li>
           </ul>
         </div>
 
-        {/* Área do usuário */}
+        {/* Área do usuário (Mantida exatamente igual) */}
         <div className="hidden md:flex items-center space-x-4">
           {isAuthenticated && user ? (
             <>
