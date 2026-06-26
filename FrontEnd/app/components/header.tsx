@@ -27,7 +27,7 @@ export default function Header() {
         {/* Menu Desktop */}
         <div className="hidden md:flex items-center space-x-8">
           <ul className="flex space-x-6 text-sm font-medium text-white/70">
-            <li className="text-white border-b-2 border-[#ff7b00] pb-1">
+            <li className="hover:text-white transition duration-200">
               <a href="#logo">Início</a>
             </li>
             <li className="hover:text-white transition duration-200">
@@ -37,10 +37,10 @@ export default function Header() {
               <a href="#sobre-nos">Sobre nós</a>
             </li>
             <li className="hover:text-white transition duration-200">
-              <a href="#servicos">Serviços</a>
+              <a href="#clientes">Clientes</a>
             </li>
             <li className="hover:text-white transition duration-200">
-              <a href="#clientes">Clientes</a>
+              <a href="#maquinas-tutoriais">Ajuda</a>
             </li>
             <li className="hover:text-white transition duration-200">
               <a href="#contato">Contato</a>
