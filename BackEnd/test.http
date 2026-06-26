@@ -81,7 +81,7 @@ Content-Type: application/json
 # CRIAR PRODUTO NA LOJA
 POST http://localhost:3001/products
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoiYWRtaW5Ad2p0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MjQxNjk5MSwiZXhwIjoxNzgyNDE4NzkxfQ.g6ty-DQdrjnk-kO4Uk3CrWyelRG66S6sWiSRuTFouGY
+Authorization: Bearer 
 
 {
   "name": "Jogo de Soquetes",
