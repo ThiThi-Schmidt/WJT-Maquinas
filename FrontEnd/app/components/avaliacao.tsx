@@ -1,6 +1,6 @@
 export default function Testimonials() {
   return (
-    <section id="sobre-nos" className="py-16 scroll-mt-24"> 
+    <section id="sobre-nos" className="py-16 scroll-mt-24 bg-white"> 
   <div>
     <div className="py-20 lg:py-24 bg-white text-[#2f2f2f]">
       <div className="container mx-auto px-4">

@@ -11,7 +11,7 @@ export default function MaquinasETutoriais() {
   const [maquinaSelecionada, setMaquinaSelecionada] = useState<Maquina | null>(null);
 
   return (
-    <section id="maquinas-tutoriais" className="py-16 scroll-mt-24 relative">
+    <section id="maquinas-tutoriais" className="py-16 scroll-mt-24 relative bg-black">
       <div className="py-20 lg:py-24 bg-black text-white">
         <div className="container mx-auto px-4">
           
