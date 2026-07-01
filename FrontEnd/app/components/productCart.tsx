@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Plus, Star } from "lucide-react";
 import { Product } from "../types/Products";
+import { useCart } from "../context/CartContext";
 
 
 
@@ -12,6 +13,7 @@ type ProductCartProps = {
 
 export default function ProductCart({ product }: ProductCartProps) {
   const imageSrc = product.imagem || "/images/1.png";
+  const { addToCart } = useCart();
 
   return (
     <div className="flex flex-col gap-3 w-full bg-[#111827] rounded-4xl p-4 border border-white/5">
@@ -48,7 +50,8 @@ export default function ProductCart({ product }: ProductCartProps) {
           </span>
         </div>
 
-        <button
+        <button 
+          onClick={() => addToCart(product)}
           className="bg-[#1e1e1e] hover:bg-[#252525] border border-white/5 text-white p-3 rounded-2xl transition-all shadow-lg active:scale-95"
         >
           <Plus size={18} />

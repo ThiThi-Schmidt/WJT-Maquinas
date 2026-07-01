@@ -11,6 +11,7 @@ import Avaliacao from "./components/avaliacao";
 export default function Body() {                    
   return (
     <main>
+      <Header />
       <Front />
       <Products />
       <Avaliacao />

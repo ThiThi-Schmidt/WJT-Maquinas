@@ -78,19 +78,23 @@ export default function Header() {
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
+  
           <button
             onClick={() => setIsCartOpen(true)}
-            className="relative flex items-center gap-2 bg-[#f26422] hover:bg-[#d8531a] text-white px-5 py-3 rounded-xl transition font-semibold">
-              <ShoppingCart size={20} />
+            className="relative flex items-center gap-2 bg-[#f26422] hover:bg-[#d8531a] text-white px-5 py-3 rounded-xl transition font-semibold"
+          >
+            <ShoppingCart size={20} />
+
             <span>Carrinho</span>
-              {cartItems.length > 0 && (
+
+            {cartItems.length > 0 && (
               <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-red-500 flex items-center justify-center text-xs font-bold">
                 {cartItems.length}
               </span>
             )}
-            </button>
-          
-            {isAuthenticated && user ? (
+          </button>
+
+          {isAuthenticated && user ? (
             <>
               <span className="text-sm font-medium text-white">
                 Olá, <span className="text-[#ff7b00]">{user.name}</span>
@@ -99,34 +103,23 @@ export default function Header() {
               {user.role === "ADMIN" && (
                 <a
                   href="/adm"
-                  className="px-4 py-2 rounded-lg bg-[#ff7b00] hover:bg-[#e56d00] transition text-sm font-semibold">
+                  className="px-4 py-2 rounded-lg bg-[#ff7b00] hover:bg-[#e56d00] transition text-sm font-semibold"
+                >
                   Admin
                 </a>
               )}
+
               <button
                 onClick={logout}
-                className="px-4 py-2 rounded-lg border border-white/20 hover:bg-white/10 transition text-sm font-semibold">
+                className="px-4 py-2 rounded-lg border border-white/20 hover:bg-white/10 transition text-sm font-semibold"
+              >
                 Sair
               </button>
             </>
           ) : (
-            <>
-              <a href="/login" className="hover:opacity-80 transition">
-                <img src="/images/user.svg" alt="User" />
-              </a>
-              <button 
-          onClick={() => setIsCartOpen(true)}
-          className="bg-[#ff7b00] hover:bg-[#d8531a] text-white font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-2xl flex items-center gap-2 transition-all shadow-lg shadow-[#f26422]/20 active:scale-95 relative"
-        >
-          <ShoppingBag size={20} />
-          Carrinho
-          {totalItems > 0 && (
-            <span className="absolute -top-1.5 -right-1.5 bg-white text-[#f26422] text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full shadow-md border border-[#f26422]">
-              {totalItems}
-            </span>
-          )}
-        </button>
-            </>
+            <a href="/login" className="hover:opacity-80 transition">
+              <img src="/images/user.svg" alt="User" />
+            </a>
           )}
         </div>
       </div>
