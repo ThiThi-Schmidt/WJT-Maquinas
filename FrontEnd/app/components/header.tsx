@@ -110,9 +110,23 @@ export default function Header() {
               </button>
             </>
           ) : (
-            <a href="/login" className="hover:opacity-80 transition">
-              <img src="/images/user.svg" alt="User" />
-            </a>
+            <>
+              <a href="/login" className="hover:opacity-80 transition">
+                <img src="/images/user.svg" alt="User" />
+              </a>
+              <button 
+          onClick={() => setIsCartOpen(true)}
+          className="bg-[#ff7b00] hover:bg-[#d8531a] text-white font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-2xl flex items-center gap-2 transition-all shadow-lg shadow-[#f26422]/20 active:scale-95 relative"
+        >
+          <ShoppingBag size={20} />
+          Carrinho
+          {totalItems > 0 && (
+            <span className="absolute -top-1.5 -right-1.5 bg-white text-[#f26422] text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full shadow-md border border-[#f26422]">
+              {totalItems}
+            </span>
+          )}
+        </button>
+            </>
           )}
         </div>
       </div>

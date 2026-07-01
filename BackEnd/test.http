@@ -51,14 +51,12 @@ Content-Type: application/json
 ###
 
 # ATUALIZAR // ADICIONAR ID
-PUT http://localhost:3001/users/1
+PUT http://localhost:3001/products/3
 Content-Type: application/json
-Authorization: Bearer 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoiYWRtaW5Ad2p0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MjkyNzc2MywiZXhwIjoxNzgyOTI5NTYzfQ.ImAYhD43TZlUpjUYKL2MON1WKSbCVmdg2O4WLqInjMs
 
 {
-  "name": "Fulane",
-  "email": "fulane@wjt.com",
-  "password": "1234567"
+  "imagem": "/images/ferramentas.png"
 }
 ###
 

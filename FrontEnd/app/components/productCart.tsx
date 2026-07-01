@@ -37,7 +37,7 @@ export default function ProductCart({ product }: ProductCartProps) {
       <div className="flex items-center justify-between mt-1 px-1">
         <div className="flex flex-col gap-0.5">
           <div className="text-xl font-black text-white">
-            <span className="text-[#f26422] text-sm font-bold mr-1">R$</span>
+            <span className="text-[#ff7b00] text-sm font-bold mr-1">R$</span>
             {product.price.toLocaleString("pt-BR", {
               minimumFractionDigits: 2,
             })}
