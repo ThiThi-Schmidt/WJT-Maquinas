@@ -42,7 +42,7 @@ export default function Products() {
   }
 
   return (
-    <section id="loja" className="py-16 scroll-mt-24">
+    <section id="loja" className="py-16 scroll-mt-24 bg-black">
       <div className="w-full px-4 md:px-8">
         {/* Busca + Filtros */}
         <div className="flex items-center gap-3 mb-8 overflow-x-auto pb-2 scrollbar-hide">

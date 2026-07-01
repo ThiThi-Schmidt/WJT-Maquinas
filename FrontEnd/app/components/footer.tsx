@@ -33,8 +33,8 @@ export default function Footer() {
             <p className="text-gray-500 text-sm leading-relaxed mb-6">Atuamos no comércio e manutenção de máquinas para jardinagem e construção civil, com assistência técnica especializada e mais de 15 anos de experiência. Oferecemos qualidade, eficiência e confiança em cada serviço, porque mais do que máquinas, entregamos resultados que fazem a diferença.</p>
 
             <ul className="flex space-x-4 text-[#2f2f2f]">
-              <li><a href="https://www.instagram.com/smbmaquinas/" className="w-10 h-10 bg-[#eff2f1] rounded-full flex items-center justify-center hover:bg-[#ea580c] hover:text-white transition"><img src="/images/machado.png" alt="Cart" /></a></li>
-              <li><a  href="https://mail.google.com/mail/?view=cm&fs=1&to=corporativo@smbmaquinas.com.br" className="w-10 h-10 bg-[#eff2f1] rounded-full flex items-center justify-center hover:bg-[#ea580c] hover:text-white transition"><img src="/images/aparador2.png" alt="Cart" /></a></li>
+              <li><a href="https://www.instagram.com/smbmaquinas/" className="w-10 h-10 bg-[#eff2f1] rounded-full flex items-center justify-center hover:bg-[#ea580c] hover:text-white transition"><img src="/images/instagram-svgrepo-com.svg" alt="Cart" /></a></li>
+              <li><a  href="https://mail.google.com/mail/?view=cm&fs=1&to=corporativo@smbmaquinas.com.br" className="w-10 h-10 bg-[#eff2f1] rounded-full flex items-center justify-center hover:bg-[#ea580c] hover:text-white transition"><img src="/images/email-1-svgrepo-com.svg" alt="Cart" /></a></li>
             </ul>
           </div>
 
