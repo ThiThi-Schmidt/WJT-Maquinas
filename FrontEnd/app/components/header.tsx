@@ -2,18 +2,20 @@
 
 import { useState, useEffect } from "react"; // Adicionado apenas isso nos imports
 import { useAuthContext } from "../context/AuthContext";
-import { ShoppingBag } from "lucide-react";
+import { ShoppingBag, ShoppingCart } from "lucide-react";
 import { useCart } from "../context/CartContext";
+
 
 export default function Header() {
   const { user, isAuthenticated, logout } = useAuthContext();
   const { setIsCartOpen, setIsOrdersOpen, cartItems } = useCart();
   const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
   
-  // 1. Criamos um estado simples para guardar qual link está ativo
-  const [ativo, setAtivo] = useState("");
 
-  // 2. Criamos o verificador de scroll simples
+
+
+
+  const [ativo, setAtivo] = useState("");
   useEffect(() => {
     const rastrearScroll = () => {
       const secoes = ["logo", "loja", "sobre-nos", "clientes", "maquinas-tutoriais", "contato"];
@@ -22,7 +24,6 @@ export default function Header() {
         const elemento = document.getElementById(id);
         if (elemento) {
           const posicao = elemento.getBoundingClientRect();
-          // Se a seção estiver visível na parte de cima da tela, ele marca como ativo
           if (posicao.top <= 150 && posicao.bottom >= 150) {
             setAtivo(id);
           }
@@ -48,7 +49,7 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
-        <a className="flex items-center gap-3 text-3xl font-bold tracking-tight" href="#logo">
+        <a className="flex items-center gap-3 text-3xl font-bold tracking-tight" href={"#logo"}>
           <img src="/images/couch.png" alt="Logo" className="h-12 w-auto" />
           <span>WJT</span>
         </a>
@@ -56,31 +57,45 @@ export default function Header() {
         {/* Menu Desktop */}
         <div className="hidden md:flex items-center">
           <ul className="flex space-x-6 text-sm font-medium text-white/70">
-            <li className="hover:text-white transition duration-200">
-              <a href="#logo" className={ativo === "logo" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Início</a>
-            </li>
-            <li className="hover:text-white transition duration-200">
-              <a href="#loja" className={ativo === "loja" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Loja</a>
-            </li>
-            <li className="hover:text-white transition duration-200">
-              <a href="#sobre-nos" className={ativo === "sobre-nos" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Sobre nós</a>
-            </li>
-            <li className="hover:text-white transition duration-200">
-              <a href="#maquinas-tutoriais" className={ativo === "maquinas-tutoriais" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Ajuda</a>
-            </li>
-            <li className="hover:text-white transition duration-200">
-              <a href="#contato" className={ativo === "contato" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Contato</a>
-            </li>
+            <ul className="flex space-x-6 text-sm font-medium text-white/70">
+              <li className="hover:text-white transition duration-200">
+                <a href="#logo" className={ativo === "logo" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Início</a>
+              </li>
+              <li className="hover:text-white transition duration-200">
+                <a href="#loja" className={ativo === "loja" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Loja</a>
+              </li>
+              <li className="hover:text-white transition duration-200">
+                <a href="#sobre-nos" className={ativo === "sobre-nos" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Sobre nós</a>
+              </li>
+              <li className="hover:text-white transition duration-200">
+                <a href="#maquinas-tutoriais" className={ativo === "maquinas-tutoriais" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Ajuda</a>
+              </li>
+              <li className="hover:text-white transition duration-200">
+                <a href="#contato" className={ativo === "contato" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Contato</a>
+              </li>
+            </ul>
           </ul>
         </div>
 
-        {/* Área do usuário (Mantida exatamente igual) */}
         <div className="hidden md:flex items-center space-x-4">
-          {isAuthenticated && user ? (
+          <button
+            onClick={() => setIsCartOpen(true)}
+            className="relative flex items-center gap-2 bg-[#f26422] hover:bg-[#d8531a] text-white px-5 py-3 rounded-xl transition font-semibold">
+              <ShoppingCart size={20} />
+            <span>Carrinho</span>
+              {cartItems.length > 0 && (
+              <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-red-500 flex items-center justify-center text-xs font-bold">
+                {cartItems.length}
+              </span>
+            )}
+            </button>
+          
+            {isAuthenticated && user ? (
             <>
               <span className="text-sm font-medium text-white">
                 Olá, <span className="text-[#ff7b00]">{user.name}</span>
               </span>
+
               {user.role === "ADMIN" && (
                 <a
                   href="/adm"
@@ -93,28 +108,11 @@ export default function Header() {
                 className="px-4 py-2 rounded-lg border border-white/20 hover:bg-white/10 transition text-sm font-semibold">
                 Sair
               </button>
-              <a className="hover:opacity-80 transition">
-                <img src="/images/cart.svg" alt="Cart" />
-              </a>
             </>
           ) : (
-            <>
-              <a href="/login" className="hover:opacity-80 transition">
-                <img src="/images/user.svg" alt="User" />
-              </a>
-              <button 
-          onClick={() => setIsCartOpen(true)}
-          className="bg-[#f26422] hover:bg-[#d8531a] text-white font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-2xl flex items-center gap-2 transition-all shadow-lg shadow-[#f26422]/20 active:scale-95 relative"
-        >
-          <ShoppingBag size={20} />
-          Carrinho
-          {totalItems > 0 && (
-            <span className="absolute -top-1.5 -right-1.5 bg-white text-[#f26422] text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full shadow-md border border-[#f26422]">
-              {totalItems}
-            </span>
-          )}
-        </button>
-            </>
+            <a href="/login" className="hover:opacity-80 transition">
+              <img src="/images/user.svg" alt="User" />
+            </a>
           )}
         </div>
       </div>

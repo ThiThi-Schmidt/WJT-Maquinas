@@ -7,11 +7,10 @@ import Posts from "./components/posts";
 import Avaliacao from "./components/avaliacao";
 
 
+
 export default function Body() {                    
   return (
-    
     <main>
-      <Header />
       <Front />
       <Products />
       <Avaliacao />

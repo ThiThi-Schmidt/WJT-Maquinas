@@ -29,7 +29,7 @@ export default function Login() {
         {/* RODAPÉ DO CARD */}
         <p className="text-center text-xs text-gray-400 font-medium">
           Não tem uma conta?{" "}
-          <a href="#" className="text-[#ff834a] font-bold hover:underline">
+          <a href="/cadastro" className="text-[#ff834a] font-bold hover:underline">
             Cadastre-se gratuito
           </a>
         </p>

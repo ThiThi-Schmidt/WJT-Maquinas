@@ -1,23 +1,20 @@
 "use client";
 
 import { createContext, useContext, useState, ReactNode } from "react";
+import { Product } from "../types/Products";
 
-export interface CartItem {
-  id: string;
-  name: string;
-  price: number;
-  image: string;
+export interface CartItem extends Product {
   quantity: number;
 }
 
+
 interface CartContextType {
   cartItems: CartItem[];
-  addToCart: (product: any) => void;
-  removeFromCart: (id: string) => void;
-  updateQuantity: (id: string, amount: number) => void;
+  addToCart: (product: Product) => void;
+  removeFromCart: (id: number) => void;
+  updateQuantity: (id: number, amount: number) => void;
   isCartOpen: boolean;
   setIsCartOpen: (isOpen: boolean) => void;
-  // Nova engrenagem para os pedidos
   isOrdersOpen: boolean;
   setIsOrdersOpen: (isOpen: boolean) => void;
   cartTotal: number;
@@ -30,7 +27,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isOrdersOpen, setIsOrdersOpen] = useState(false); // Novo estado controlado
 
-  const addToCart = (product: any) => {
+  const addToCart = (product: Product) => {
     setCartItems((prev) => {
       const exists = prev.find((item) => item.id === product.id);
       if (exists) {
@@ -42,7 +39,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     });
   };
 
-  const updateQuantity = (id: string, amount: number) => {
+  const updateQuantity = (id: number, amount: number) => {
     setCartItems((prev) =>
       prev
         .map((item) =>
@@ -52,7 +49,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     );
   };
 
-  const removeFromCart = (id: string) => {
+  const removeFromCart = (id: number) => {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 

@@ -33,7 +33,7 @@ export function CartSidebar() {
             cartItems.map((item) => (
               <div key={item.id} className="flex gap-4 items-center bg-[#121212] p-3 rounded-2xl border border-white/5">
                 <div className="relative w-16 h-16 rounded-xl overflow-hidden shrink-0">
-                  <Image src={item.image || "/images/burger.jpg"} alt={item.name} fill className="object-cover" />
+                  <Image src={item.imagem || "/images/placeholder.png"} alt={item.name} fill className="object-cover" />
                 </div>
                 
                 <div className="flex-1 flex flex-col gap-1">
