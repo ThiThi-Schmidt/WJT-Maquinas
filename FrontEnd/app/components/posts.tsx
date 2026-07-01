@@ -2,13 +2,12 @@
 
 import React, { useState } from 'react';
 import { maquinasData, Maquina } from '../data/maquinasData';
-// Importe os dados e a interface que criamos no Passo 1
-// (Ajuste o caminho './maquinasData' de acordo com a pasta onde você salvou o arquivo)
-
 
 export default function MaquinasETutoriais() {
-  // AQUI ESTÁ A CORREÇÃO DO ERRO DA IMAGEM: <Maquina | null>
   const [maquinaSelecionada, setMaquinaSelecionada] = useState<Maquina | null>(null);
+  
+  // NOVO ESTADO: Controla a abertura do modal de "Todos os Tutoriais"
+  const [mostrarTodos, setMostrarTodos] = useState(false);
 
   return (
     <section id="maquinas-tutoriais" className="py-16 scroll-mt-24 relative bg-black">
@@ -18,17 +17,20 @@ export default function MaquinasETutoriais() {
           {/* Cabeçalho da Seção */}
           <div className="flex flex-col md:flex-row justify-between items-center mb-12">
             <div className="flex items-center gap-6 mb-4 md:mb-0">
-               {/* Botão de "Todos os Tutoriais" */}
-              <a href="/todos-tutoriais" className="text-sm font-semibold border-b-2 border-gray-400 hover:border-white transition pb-1 text-gray-300">
+               {/* BOTÃO ALTERADO: Agora ele ativa o modal geral em vez de redirecionar a página */}
+              <button 
+                onClick={() => setMostrarTodos(true)} 
+                className="text-sm font-semibold border-b-2 border-gray-400 hover:border-white transition pb-1 text-gray-300 cursor-pointer"
+              >
                 Ver Todos os Tutoriais
-              </a>
+              </button>
               <h2 className="text-3xl font-bold text-white">Equipamentos & Manutenção</h2>
             </div>
           </div>
 
           {/* Grid de Máquinas */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {maquinasData.map((maquina) => (
+            {maquinasData.slice(0, 3).map((maquina) => ( // Opcional: Adicionei slice(0,3) caso queira que apareça só 3 na tela inicial, mas todos no modal
               <div key={maquina.id} className="group">
                 {/* Imagem clicável que abre o modal */}
                 <button 
@@ -55,7 +57,9 @@ export default function MaquinasETutoriais() {
         </div>
       </div>
 
-      {/* MODAL (Fundo escuro transparente e conteúdo) */}
+      {/* ----------------------------------------------------------- */}
+      {/* MODAL 1: MÁQUINA ESPECÍFICA (O que você já tinha) */}
+      {/* ----------------------------------------------------------- */}
       {maquinaSelecionada && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm">
           
@@ -95,6 +99,52 @@ export default function MaquinasETutoriais() {
           </div>
         </div>
       )}
+
+      {/* ----------------------------------------------------------- */}
+      {/* MODAL 2: TODOS OS TUTORIAIS (Novo) */}
+      {/* ----------------------------------------------------------- */}
+      {mostrarTodos && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md">
+          
+          <div className="bg-zinc-900 rounded-2xl overflow-hidden max-w-5xl w-full max-h-[90vh] flex flex-col relative border border-zinc-700 shadow-2xl">
+            
+            {/* Botão de Fechar */}
+            <button 
+              onClick={() => setMostrarTodos(false)}
+              className="absolute top-4 right-4 z-10 text-white bg-black/50 hover:bg-red-600 rounded-full w-8 h-8 flex items-center justify-center transition"
+            >
+              ✕
+            </button>
+
+            {/* Título do Modal Geral */}
+            <div className="p-6 md:p-8 border-b border-zinc-700 bg-zinc-900">
+              <h3 className="text-2xl font-bold text-white">Todos os Guias e Tutoriais</h3>
+            </div>
+
+            {/* Lista com barra de rolagem (overflow-y-auto) */}
+            <div className="p-6 md:p-8 overflow-y-auto space-y-6">
+              {maquinasData.map((maquina) => (
+                <div key={maquina.id} className="flex flex-col md:flex-row gap-6 bg-zinc-800/50 p-4 rounded-xl border border-zinc-700/50">
+                  <img 
+                    src={maquina.imagem} 
+                    alt={maquina.nome} 
+                    className="w-full md:w-48 h-48 object-cover rounded-lg"
+                  />
+                  <div className="flex flex-col justify-center">
+                    <h4 className="text-xl font-bold text-white mb-2">{maquina.nome}</h4>
+                    <span className="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">Guia de Uso / Manutenção</span>
+                    <p className="text-gray-300 leading-relaxed text-sm">
+                      {maquina.tutorial}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      )}
+
     </section>
   );
 }
