@@ -104,7 +104,7 @@ export default function Header() {
               </a>
               <button 
           onClick={() => setIsCartOpen(true)}
-          className="bg-[#f26422] hover:bg-[#d8531a] text-white font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-2xl flex items-center gap-2 transition-all shadow-lg shadow-[#f26422]/20 active:scale-95 relative"
+          className="bg-[#ff7b00] hover:bg-[#d8531a] text-white font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-2xl flex items-center gap-2 transition-all shadow-lg shadow-[#f26422]/20 active:scale-95 relative"
         >
           <ShoppingBag size={20} />
           Carrinho

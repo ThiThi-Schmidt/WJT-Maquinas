@@ -64,7 +64,7 @@ export default function Products() {
             onClick={() => setSelectedCategory("all")}
             className={`px-6 py-2.5 rounded-2xl font-bold text-sm transition-all shrink-0 ${
               selectedCategory === "all"
-                ? "bg-[#f26422] text-white"
+                ? "bg-[#ff7b00] text-white"
                 : "bg-[#1e1e1e] text-gray-300 hover:bg-[#252525] border border-white/5"
             }`}
           >
@@ -80,7 +80,7 @@ export default function Products() {
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`px-6 py-2.5 rounded-2xl font-bold text-sm transition-all shrink-0 ${
                   isActive
-                    ? "bg-[#f26422] text-white"
+                    ? "bg-[#ff7b00] text-white"
                     : "bg-[#1e1e1e] text-gray-300 hover:bg-[#252525] border border-white/5"
                 }`}
               >
