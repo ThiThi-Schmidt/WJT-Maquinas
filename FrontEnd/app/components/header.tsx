@@ -68,6 +68,9 @@ export default function Header() {
                 <a href="#sobre-nos" className={ativo === "sobre-nos" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Sobre nós</a>
               </li>
               <li className="hover:text-white transition duration-200">
+                <a href="#comentarios" className={ativo === "comentarios" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Comentários</a>
+              </li>
+              <li className="hover:text-white transition duration-200">
                 <a href="#maquinas-tutoriais" className={ativo === "maquinas-tutoriais" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Ajuda</a>
               </li>
               <li className="hover:text-white transition duration-200">

@@ -5,6 +5,7 @@ import Front from "./components/front";
 import Products from "./components/products";
 import Posts from "./components/posts";
 import Avaliacao from "./components/avaliacao";
+import Coments from "./components/comentarios";
 
 
 
@@ -15,6 +16,7 @@ export default function Body() {
       <Front />
       <Products />
       <Avaliacao />
+      <Coments />
       <Posts />
       <Footer />
     </main>
