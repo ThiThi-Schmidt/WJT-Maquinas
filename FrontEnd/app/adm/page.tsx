@@ -3,10 +3,11 @@
 import { useState } from "react";
 
 import { AdminHeader } from "./components/AdminHeader";
-import { AdminStats } from "./components/AdminStats";
+
 import { OrderFilters } from "./components/OrderFilters";
 import { OrderCard } from "./components/OrderCard";
 import { OrderDetails } from "./components/OrderDetails";
+import { AdminStats } from "./components/AdminStats";
 
 // Componentes refatorados
 
@@ -23,9 +24,7 @@ export default function AdminPanel() {
       
       <AdminHeader />
 
-      <AdminStats 
-       
-      />
+      <AdminStats />
 
       <div className="flex gap-6 items-stretch flex-1 min-h-145">
         

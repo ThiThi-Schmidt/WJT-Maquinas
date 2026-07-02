@@ -18,7 +18,7 @@ export default function Header() {
   const [ativo, setAtivo] = useState("");
   useEffect(() => {
     const rastrearScroll = () => {
-      const secoes = ["logo", "loja", "sobre-nos", "clientes", "maquinas-tutoriais", "contato"];
+      const secoes = ["logo", "loja", "sobre-nos", "clientes", "comentarios", "maquinas-tutoriais", "contato"];
       
       for (let id of secoes) {
         const elemento = document.getElementById(id);

@@ -35,7 +35,7 @@ export default function Testimonials() {
             &#10094;
           </button>
           <div className=" rounded-2xl p-6 sm:p-12 shadow-xl flex flex-col items-center space-y-4 sm:space-y-6">
-            <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 border-2 border-orange-400 shrink-0">
+            <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-1 border-2 border-orange-500 shrink-0">
               <Image src={list[active].img} alt={list[active].name} fill className="rounded-full object-cover" />
             </div>
             <p className="text-white italic max-w-2xl text-sm sm:text-base leading-relaxed min-h-30 sm:min-h-auto flex items-center justify-center">
@@ -48,7 +48,7 @@ export default function Testimonials() {
 
             <button
               onClick={handleNext}
-              className="absolute -right-2 md:-right-5 top-1/2 -translate-y-1/2 px-9 py-3 bg-orange-500 rounded-xl trabsition font-semiboltd hover:bg-[#664533] text-gray-700 hover:text-white border border-orange-400 rounded-full flex items-center justify-center shadow-md transition-all duration-200 active:scale-95 sm:flex"
+              className="absolute -right-2 md:-right-5 top-1/2 -translate-y-1/2 px-9 py-3 bg-orange-500 rounded-xl trabsition font-semiboltd hover:bg-[#664533] text-white hover:text-white border border-orange-500 rounded-full flex items-center justify-center shadow-md transition-all duration-200 active:scale-95 sm:flex"
               aria-label="Next testimonial"
             >
               &#10095;
