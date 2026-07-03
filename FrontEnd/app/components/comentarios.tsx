@@ -7,11 +7,11 @@ export default function Testimonials() {
   const [active, setActive] = useState(0);
 
   const list = [
-    {name: "Mariana Costa", role: "Médica Veterinária", img: "/images/person_1.jpg", text: "Excelente atendimento e produtos de alta qualidade. Meu cachorro apresentou uma melhora significativa na saúde da pelagem após algumas semanas de uso. Recomendo pela confiança e pelo cuidado com os animais."},
+    {name: "Ricardo Almeida", role: "Jardineiro", img: "/images/person_1.jpg", text: "Fui muito bem atendido e encontrei exatamente o que precisava. Produtos de ótima qualidade e um serviço de manutenção rápido e eficiente."},
 
-    {name: "Ricardo Almeida", role: "Tutor de Pets", img: "/images/person_4.jpg", text: "Encontrei tudo o que precisava para o meu pet em um só lugar. A entrega foi rápida, os produtos chegaram em perfeito estado e o atendimento ao cliente foi muito prestativo."},
+    {name: "Mariana Costa", role: "Agricultora", img: "/images/person_4.jpg", text: "Comprei equipamentos para facilitar o trabalho na propriedade e fiquei muito satisfeita. Atendimento excelente, produtos de qualidade e entrega dentro do prazo."},
 
-    {name: "Fernanda Oliveira", role: "Adestradora Canina", img: "/images/person-1.jpg", text: "Trabalho diariamente com cães e sempre busco produtos de qualidade. A variedade do catálogo e a excelente experiência de compra fazem desta loja uma das minhas principais recomendações."}
+    {name: "Fernanda Oliveira", role: "Empresária", img: "/images/person-1.jpg", text: "No dia a dia dos negócios, contar com fornecedores de confiança faz toda a diferença. Fiquei muito satisfeita com a qualidade dos produtos, a agilidade no atendimento e o compromisso da equipe."}
   ];
 
   const handlePrev = () => {
