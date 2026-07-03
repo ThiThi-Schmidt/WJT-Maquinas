@@ -24,7 +24,11 @@ export function AdminHeader() {
           </span>
         </h1>
       </div>
-      
+      <a 
+        href="/" 
+        className="text-xs bg-[#f26422] hover:bg-[#d8531a] text-white font-bold uppercase tracking-wider px-5 py-3 rounded-2xl transition-all shadow-lg shadow-[#f26422]/10 active:scale-95 inline-block"> 
+        Voltar 
+      </a>
       <div className="hidden md:flex items-center space-x-4">
           {isAuthenticated && user ? (
             <>

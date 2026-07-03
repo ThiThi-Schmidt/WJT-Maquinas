@@ -91,7 +91,7 @@ export default function Products() {
         </div>
 
         {/* Grid de produtos */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:lg-cols-7 gap-2">
           {filteredProducts.map((product) => (
             <ProductCart key={product.id} product={product} />
           ))}

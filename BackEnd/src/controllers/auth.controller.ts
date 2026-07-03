@@ -15,7 +15,20 @@ export class AuthController {
             console.error("Erro real no login:", err);
             const status = err?.status || 500;
             return res.status(status).json({
-            error: err?.message || "Erro interno",
+            error: err?.message || "Erro interno", 
+            });
+        }
+    }
+
+    async register(req: Request, res: Response) {
+        try {
+            const { name, email, password } = req.body;
+            const user = await authService.register(name, email, password);
+            return res.status(201).json(user);
+        } catch (err: any) {
+            console.error(err);
+            return res.status(err.status || 500).json({
+                error: err.message || "Erro ao cadastrar"
             });
         }
     }
