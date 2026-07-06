@@ -1,19 +1,18 @@
 "use client";
 
-import { useState, useEffect } from "react"; // Adicionado apenas isso nos imports
+import { useState, useEffect } from "react";
 import { useAuthContext } from "../context/AuthContext";
-import { ShoppingBag, ShoppingCart } from "lucide-react";
+// Importado o ícone "Settings" e "User" para o esboço
+import { ShoppingBag, ShoppingCart, Settings, User } from "lucide-react"; 
 import { useCart } from "../context/CartContext";
-
 
 export default function Header() {
   const { user, isAuthenticated, logout } = useAuthContext();
   const { setIsCartOpen, setIsOrdersOpen, cartItems } = useCart();
   const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
-  
 
-
-
+  // Estado para controlar a abertura da abinha de opções do usuário
+  const [menuAberto, setMenuAberto] = useState(false);
 
   const [ativo, setAtivo] = useState("");
   useEffect(() => {
@@ -57,39 +56,34 @@ export default function Header() {
         {/* Menu Desktop */}
         <div className="hidden md:flex items-center">
           <ul className="flex space-x-6 text-sm font-medium text-white/70">
-            <ul className="flex space-x-6 text-sm font-medium text-white/70">
-              <li className="hover:text-white transition duration-200">
-                <a href="#logo" className={ativo === "logo" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Início</a>
-              </li>
-              <li className="hover:text-white transition duration-200">
-                <a href="#loja" className={ativo === "loja" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Loja</a>
-              </li>
-              <li className="hover:text-white transition duration-200">
-                <a href="#sobre-nos" className={ativo === "sobre-nos" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Sobre nós</a>
-              </li>
-              <li className="hover:text-white transition duration-200">
-                <a href="#comentarios" className={ativo === "comentarios" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Comentários</a>
-              </li>
-              <li className="hover:text-white transition duration-200">
-                <a href="#maquinas-tutoriais" className={ativo === "maquinas-tutoriais" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Ajuda</a>
-              </li>
-              <li className="hover:text-white transition duration-200">
-                <a href="#contato" className={ativo === "contato" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Contato</a>
-              </li>
-            </ul>
+            <li className="hover:text-white transition duration-200">
+              <a href="#logo" className={ativo === "logo" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Início</a>
+            </li>
+            <li className="hover:text-white transition duration-200">
+              <a href="#loja" className={ativo === "loja" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Loja</a>
+            </li>
+            <li className="hover:text-white transition duration-200">
+              <a href="#sobre-nos" className={ativo === "sobre-nos" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Sobre nós</a>
+            </li>
+            <li className="hover:text-white transition duration-200">
+              <a href="#comentarios" className={ativo === "comentarios" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Comentários</a>
+            </li>
+            <li className="hover:text-white transition duration-200">
+              <a href="#maquinas-tutoriais" className={ativo === "maquinas-tutoriais" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Ajuda</a>
+            </li>
+            <li className="hover:text-white transition duration-200">
+              <a href="#contato" className={ativo === "contato" ? "border-b-2 border-[#ff7b00] pb-1 text-white" : ""}>Contato</a>
+            </li>
           </ul>
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
-  
           <button
             onClick={() => setIsCartOpen(true)}
             className="relative flex items-center gap-2 bg-[#f26422] hover:bg-[#d8531a] text-white px-5 py-3 rounded-xl transition font-semibold"
           >
             <ShoppingCart size={20} />
-
             <span>Carrinho</span>
-
             {cartItems.length > 0 && (
               <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-red-500 flex items-center justify-center text-xs font-bold">
                 {cartItems.length}
@@ -99,9 +93,48 @@ export default function Header() {
 
           {isAuthenticated && user ? (
             <>
-              <span className="text-sm font-medium text-white">
-                Olá, <span className="text-[#ff7b00]">{user.name}</span>
-              </span>
+              {/* Adicionado um wrapper relativo para segurar o menu flutuante */}
+              <div className="relative flex items-center gap-3">
+                <span className="text-sm font-medium text-white">
+                  Olá, <span className="text-[#ff7b00]">{user.name}</span>
+                </span>
+
+                {/* Botão da Engrenagem */}
+                <button
+                  onClick={() => setMenuAberto(!menuAberto)}
+                  className="p-1.5 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition duration-200"
+                  title="Configurações da conta"
+                >
+                  <Settings size={18} className={`transition-transform duration-300 ${menuAberto ? "rotate-45 text-[#ff7b00]" : ""}`} />
+                </button>
+
+                {/* Aba flutuante de Opções (Dropdown) */}
+                {menuAberto && (
+                  <div className="absolute right-0 top-full mt-2 w-48 bg-[#1a2438] border border-white/10 rounded-xl shadow-2xl py-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
+                    <button
+                      onClick={() => {
+                        setMenuAberto(false);
+                        alert("Disparar modal/página de edição"); // Esboço da ação
+                      }}
+                      className="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-200 hover:bg-white/5 hover:text-white transition"
+                    >
+                      Editar Perfil
+                    </button>
+                    
+                    <button
+                      onClick={() => {
+                        setMenuAberto(false);
+                        if(confirm("Tem certeza que deseja excluir sua conta? Esta ação é irreversível.")) {
+                          alert("Disparar função de exclusão"); // Esboço da ação
+                        }
+                      }}
+                      className="w-full text-left px-4 py-2.5 text-sm font-medium text-red-400 hover:bg-red-500/10 hover:text-red-300 transition"
+                    >
+                      Excluir Conta
+                    </button>
+                  </div>
+                )}
+              </div>
 
               {user.role === "ADMIN" && (
                 <a
