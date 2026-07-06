@@ -14,10 +14,6 @@ import { AdminStats } from "./components/AdminStats";
 
 export default function AdminPanel() {
   const [selectedStatusFilter, setSelectedStatusFilter] = useState("all");
- 
-
-
-
 
   return (
     <div className="min-h-screen bg-[#121212] text-white font-sans p-8 flex flex-col gap-6 selection:bg-[#f26422]/30">

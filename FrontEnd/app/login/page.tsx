@@ -19,14 +19,25 @@ export default function Login() {
       <div className="w-full max-w-md bg-[#03001d] border border-white/5 rounded-[2.5rem] p-8 flex flex-col gap-8 shadow-2xl">
         <LoginHeader />
         <LoginForm />
-        <p className="text-center text-xs text-gray-400 font-medium">
-          Não tem uma conta?{" "}
-          <Link
-           href="/cadastro" className="text-[#ff834a] font-bold hover:underline">
-            Cadastre-se gratuito
-          </Link>
-        </p>
+        <div className="flex items-center justify-between text-xs font-medium">
+          <p className="text-gray-400">
+            Não tem uma conta?{" "}
+            <Link
+              href="/cadastro"
+              className="text-[#ff834a] font-bold hover:underline"
+            >
+              Cadastre-se gratuito
+            </Link>
+          </p>
 
+
+          <Link
+            href="/"
+            className="flex items-center gap-1 text-[#ff834a] font-bold hover:underline"
+          >
+            ← Voltar
+          </Link>
+        </div>
       </div>
     </div>
   );
