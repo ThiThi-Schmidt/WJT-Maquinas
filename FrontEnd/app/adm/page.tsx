@@ -9,9 +9,6 @@ import { OrderCard } from "./components/OrderCard";
 import { OrderDetails } from "./components/OrderDetails";
 import { AdminStats } from "./components/AdminStats";
 
-// Componentes refatorados
-
-
 export default function AdminPanel() {
   const [selectedStatusFilter, setSelectedStatusFilter] = useState("all");
 

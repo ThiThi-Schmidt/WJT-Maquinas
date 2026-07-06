@@ -3,19 +3,50 @@
 import { ShoppingBag, Plus, Minus, Trash2 } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import Image from "next/image";
+import { useState } from "react";
+import { useAuthContext } from "../context/AuthContext";
+import { useOrders } from "../hooks/useOrder";
 
 export function CartSidebar() {
-  const { isCartOpen, setIsCartOpen, cartItems, updateQuantity, removeFromCart, cartTotal } = useCart();
+  const { isCartOpen, setIsCartOpen, cartItems, updateQuantity, removeFromCart, cartTotal, clearCart } = useCart();
+  const { createOrder } = useOrders();
+  const { isAuthenticated } = useAuthContext();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleCheckout = async () => {
+    if (!isAuthenticated) {
+      alert("Você precisa estar logado para finalizar o pedido!");
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+
+      const orderItems = cartItems.map((item) => ({
+        productId: item.id,
+        quantity: item.quantity,
+      }));
+
+      await createOrder(orderItems);
+      
+      alert("Pedido realizado com sucesso!");
+      clearCart();
+      setIsCartOpen(false);
+      
+    } catch (error) {
+      alert("Erro ao finalizar o pedido. Tente novamente.");
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   if (!isCartOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex justify-end">
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsCartOpen(false)} />
-
       <div className="relative w-full max-w-md h-full bg-[#1e1e1e] border-l border-white/5 flex flex-col z-10 shadow-2xl text-white">
-        
-        {/* Topo usando o ShoppingBag de referência */}
         <div className="p-6 border-b border-white/5 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <ShoppingBag size={20} className="text-[#f26422]" />
@@ -70,8 +101,12 @@ export function CartSidebar() {
                 {cartTotal.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
               </span>
             </div>
-            <button className="w-full bg-[#f26422] hover:bg-[#d8531a] text-white font-bold py-4 rounded-2xl transition active:scale-95">
-              Finalizar Pedido
+            <button 
+              onClick={handleCheckout}
+              disabled={isSubmitting}
+              className={`w-full bg-[#f26422] hover:bg-[#d8531a] text-white font-bold py-4 rounded-2xl transition active:scale-95 ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
+            >
+              {isSubmitting ? "Processando..." : "Finalizar Pedido"}
             </button>
           </div>
         )}

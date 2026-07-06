@@ -22,5 +22,4 @@ export type CreateProductInput = {
   imagem?: string;
 };
 
-
 export type UpdateProductInput = Partial<CreateProductInput>;

@@ -1,4 +1,3 @@
-// Exportamos o "Tipo" para o TypeScript saber exatamente o que é uma máquina
 export interface Maquina {
   id: number;
   nome: string;
@@ -7,7 +6,6 @@ export interface Maquina {
   tutorial: string;
 }
 
-// Exportamos os nossos dados fictícios
 export const maquinasData: Maquina[] = [
   {
     id: 1,

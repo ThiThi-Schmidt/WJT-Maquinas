@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { useAuthContext } from "../context/AuthContext";
-// Importado o ícone "Settings" e "User" para o esboço
 import { ShoppingBag, ShoppingCart, Settings, User } from "lucide-react"; 
 import { useCart } from "../context/CartContext";
 
@@ -10,8 +9,6 @@ export default function Header() {
   const { user, isAuthenticated, logout } = useAuthContext();
   const { setIsCartOpen, setIsOrdersOpen, cartItems } = useCart();
   const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
-
-  // Estado para controlar a abertura da abinha de opções do usuário
   const [menuAberto, setMenuAberto] = useState(false);
 
   const [ativo, setAtivo] = useState("");
@@ -47,13 +44,12 @@ export default function Header() {
       }}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* Logo */}
+
         <a className="flex items-center gap-3 text-3xl font-bold tracking-tight" href={"#logo"}>
           <img src="/images/couch.png" alt="Logo" className="h-12 w-auto" />
           <span>WJT</span>
         </a>
 
-        {/* Menu Desktop */}
         <div className="hidden md:flex items-center">
           <ul className="flex space-x-6 text-sm font-medium text-white/70">
             <li className="hover:text-white transition duration-200">
@@ -93,13 +89,12 @@ export default function Header() {
 
           {isAuthenticated && user ? (
             <>
-              {/* Adicionado um wrapper relativo para segurar o menu flutuante */}
               <div className="relative flex items-center gap-3">
                 <span className="text-sm font-medium text-white">
                   Olá, <span className="text-[#ff7b00]">{user.name}</span>
                 </span>
 
-                {/* Botão da Engrenagem */}
+            
                 <button
                   onClick={() => setMenuAberto(!menuAberto)}
                   className="p-1.5 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition duration-200"
@@ -108,13 +103,12 @@ export default function Header() {
                   <Settings size={18} className={`transition-transform duration-300 ${menuAberto ? "rotate-45 text-[#ff7b00]" : ""}`} />
                 </button>
 
-                {/* Aba flutuante de Opções (Dropdown) */}
                 {menuAberto && (
                   <div className="absolute right-0 top-full mt-2 w-48 bg-[#1a2438] border border-white/10 rounded-xl shadow-2xl py-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
                     <button
                       onClick={() => {
                         setMenuAberto(false);
-                        alert("Disparar modal/página de edição"); // Esboço da ação
+                        alert("Disparar modal/página de edição"); 
                       }}
                       className="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-200 hover:bg-white/5 hover:text-white transition"
                     >
@@ -125,7 +119,7 @@ export default function Header() {
                       onClick={() => {
                         setMenuAberto(false);
                         if(confirm("Tem certeza que deseja excluir sua conta? Esta ação é irreversível.")) {
-                          alert("Disparar função de exclusão"); // Esboço da ação
+                          alert("Disparar função de exclusão"); 
                         }
                       }}
                       className="w-full text-left px-4 py-2.5 text-sm font-medium text-red-400 hover:bg-red-500/10 hover:text-red-300 transition"

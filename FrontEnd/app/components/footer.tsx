@@ -104,7 +104,6 @@ export default function Footer() {
         </div>
       </footer>
 
-      {/* MODAL 1: TERMOS E CONDIÇÕES */}
       {modalAtivo === "termos" && (
         <div
           onClick={(e) => {
@@ -154,7 +153,6 @@ export default function Footer() {
         </div>
       )}
 
-      {/* MODAL 2: POLÍTICA DE PRIVACIDADE */}
       {modalAtivo === "privacidade" && (
         <div
           onClick={(e) => {

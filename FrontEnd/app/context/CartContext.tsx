@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, ReactNode, useEffect } from "react";
 import { Product } from "../types/Products";
 
 export interface CartItem extends Product {
@@ -14,6 +14,7 @@ interface CartContextType {
   removeFromCart: (id: number) => void;
   updateQuantity: (id: number, amount: number) => void;
   isCartOpen: boolean;
+  clearCart: () => void;
   setIsCartOpen: (isOpen: boolean) => void;
   isOrdersOpen: boolean;
   setIsOrdersOpen: (isOpen: boolean) => void;
@@ -24,8 +25,27 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [isInitialized, setIsInitialized] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [isOrdersOpen, setIsOrdersOpen] = useState(false); // Novo estado controlado
+  const [isOrdersOpen, setIsOrdersOpen] = useState(false);
+
+  useEffect(() => {
+    const savedCart = localStorage.getItem("@wjt:cart");
+    if (savedCart) {
+      try {
+        setCartItems(JSON.parse(savedCart));
+      } catch (error) {
+        console.error("Erro ao ler o carrinho salvo:", error);
+      }
+    }
+    setIsInitialized(true);
+  }, []);
+
+  useEffect(() => {
+    if (isInitialized) {
+      localStorage.setItem("@wjt:cart", JSON.stringify(cartItems));
+    }
+  }, [cartItems, isInitialized]);
 
   const addToCart = (product: Product) => {
     setCartItems((prev) => {
@@ -53,6 +73,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   const cartTotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
@@ -62,6 +86,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         addToCart,
         removeFromCart,
         updateQuantity,
+        clearCart,
         isCartOpen,
         setIsCartOpen,
         isOrdersOpen,
