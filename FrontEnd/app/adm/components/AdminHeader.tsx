@@ -2,12 +2,6 @@
 
 import { useAuthContext } from "@/app/context/AuthContext";
 
-
-
-
-
-
-
 export function AdminHeader() {
   const { user, isAuthenticated, logout } = useAuthContext();
 

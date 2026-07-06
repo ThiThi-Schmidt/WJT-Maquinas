@@ -4,6 +4,7 @@ import productRouter from "./routes/product.routes.js";
 import userRouter from "./routes/user.routes.js";
 import { categoryRoutes } from "./routes/category.routes.js";
 import cors from "cors";
+import orderRouter from "./routes/order.routes.js";
 
 
 const app = express();
@@ -24,6 +25,7 @@ app.use(authRouter);
 app.use("/products", productRouter);
 app.use("/users", userRouter);
 app.use("/categories", categoryRoutes);
+app.use("/orders", orderRouter);
 
 app.listen(PORT, () => {
   console.log("API rodando em http://localhost:" + PORT);
