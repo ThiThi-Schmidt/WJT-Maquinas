@@ -1,11 +1,13 @@
 "use client";
 
+import { useUsers } from '../hooks/useUser';
 import { useState, useEffect } from "react";
 import { useAuthContext } from "../context/AuthContext";
 import { ShoppingBag, ShoppingCart, Settings, User } from "lucide-react"; 
 import { useCart } from "../context/CartContext";
 
 export default function Header() {
+  const { deleteUser, loading } = useUsers();
   const { user, isAuthenticated, logout } = useAuthContext();
   const { setIsCartOpen, setIsOrdersOpen, cartItems } = useCart();
   const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
@@ -116,16 +118,26 @@ export default function Header() {
                     </button>
                     
                     <button
-                      onClick={() => {
-                        setMenuAberto(false);
-                        if(confirm("Tem certeza que deseja excluir sua conta? Esta ação é irreversível.")) {
-                          alert("Disparar função de exclusão"); 
+                    onClick={async () => { // <-- 1. Adicione a palavra "async" aqui
+                      setMenuAberto(false);
+                      if(confirm("Tem certeza que deseja excluir sua conta? Esta ação é irreversível.")) {
+                        try {
+                          // 2. Chama a função passando o ID do usuário (já vi que a variável user existe no seu código)
+                          await deleteUser(user.id); 
+                          
+                          alert("Conta excluída com sucesso!");
+                          
+                          // 3. Como a conta foi excluída, chama a sua função de logout para deslogar a pessoa
+                          logout(); 
+                        } catch (error) {
+                          alert("Erro ao excluir conta. Tente novamente.");
                         }
-                      }}
-                      className="w-full text-left px-4 py-2.5 text-sm font-medium text-red-400 hover:bg-red-500/10 hover:text-red-300 transition"
-                    >
-                      Excluir Conta
-                    </button>
+                      }
+                    }}
+                    className="w-full text-left px-4 py-2.5 text-sm font-medium text-red-400 hover:bg-red-500/10 hover:text-red-300 transition"
+                  >
+                    Excluir Conta
+                  </button>
                   </div>
                 )}
               </div>
