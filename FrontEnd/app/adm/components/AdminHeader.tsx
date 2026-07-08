@@ -13,32 +13,25 @@ export function AdminHeader() {
             <img src="/images/couch.png" alt="Logo" className="h-12 w-auto" />
             <span>WJT</span>
           </a>
-          <span className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-4 bg-white/5 px-5  py-3 rounded-xl border border-white/5">
+          <span className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-4 bg-white/5 px-5 py-3 rounded-xl border border-white/5">
             Painel Admin
           </span>
         </h1>
       </div>
+      
       <a 
         href="/" 
         className="text-xs bg-[#f26422] hover:bg-[#d8531a] text-white font-bold uppercase tracking-wider px-5 py-3 rounded-2xl transition-all shadow-lg shadow-[#f26422]/10 active:scale-95 inline-block"> 
         Voltar 
       </a>
+      
       <div className="hidden md:flex items-center space-x-4">
           {isAuthenticated && user ? (
             <>
               <span className="text-sm font-medium text-white">
-                Olá, <span className="text-[#ff7b00]">{user.name}</span>
+                Olá, <span className="text-[#f26422]">{user.name}</span>
               </span>
-
-              {user.role === "ADMIN" && (
-                <a
-                  href="/adm"
-                  className="px-4 py-2 rounded-lg bg-[#ff7b00] hover:bg-[#e56d00] transition text-sm font-semibold"
-                >
-                  Admin
-                </a>
-              )}
-
+              
               <button
                 onClick={logout}
                 className="px-4 py-2 rounded-lg border border-white/20 hover:bg-white/10 transition text-sm font-semibold"

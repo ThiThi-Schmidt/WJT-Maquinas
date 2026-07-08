@@ -13,7 +13,7 @@ export function useOrders() {
     if (!token) return;
     try {
       setLoading(true);
-      const res = await fetch(`${API_BASE_URL}/orders`, {
+      const res = await fetch(`${API_BASE_URL}/orders/admin`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error("Erro ao buscar pedidos");

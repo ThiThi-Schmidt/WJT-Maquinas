@@ -1,5 +1,6 @@
 import type { Request, Response } from "express";
 import { OrderService } from "../services/order.service.js";
+import { prisma } from "../lb/prisma.js";
 
 const orderService = new OrderService();
 
@@ -34,6 +35,23 @@ export class OrderController {
       return res.json(orders);
     } catch (err: any) {
       return res.status(500).json({ error: "Erro ao buscar todos os pedidos" });
+    }
+  }
+
+  async updateStatus(req: Request, res: Response) {
+    try {
+      const { id } = req.params;
+      const { status } = req.body;
+
+      const updatedOrder = await prisma.order.update({
+        where: { id: Number(id) },
+        data: { status },
+      });
+
+      return res.json(updatedOrder);
+    } catch (error) {
+      console.error("Erro ao atualizar status:", error);
+      return res.status(500).json({ error: "Erro ao atualizar o status do pedido." });
     }
   }
 }

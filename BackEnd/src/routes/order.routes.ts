@@ -11,6 +11,8 @@ orderRouter.use(authMiddleware);
 orderRouter.post("/", orderController.create);
 orderRouter.get("/my-orders", orderController.getMyOrders);
 
+orderRouter.patch("/:id/status", adminMiddleware, orderController.updateStatus);
 orderRouter.get("/admin", adminMiddleware, orderController.getAll);
+
 
 export default orderRouter;

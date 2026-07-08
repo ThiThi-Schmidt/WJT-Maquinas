@@ -1,60 +1,61 @@
-"use client";
+'use client'
 
-import { Clipboard, CheckCircle2 } from "lucide-react";
+import { Order } from "@/app/types/Order";
+import { DollarSign, ShoppingBag, Clock, Check } from "lucide-react";
 
 interface AdminStatsProps {
-  totalPending: number;
-  totalProduction: number;
-  totalSent: number;
-  totalDelivered: number;
+  orders: Order[];
 }
 
-export function AdminStats({ totalPending, totalProduction, totalSent, totalDelivered }: AdminStatsProps) {
+export function AdminStats({ orders = [] }: AdminStatsProps) {
+  const totalOrders = orders.length;
+  const pendingOrders = orders.filter((o) => o.status === "PENDING").length;
+  const totalRevenue = orders.reduce((acc, order) => acc + order.total, 0);
+  const deliveredOrders = orders.filter((o) => o.status === "DELIVERED").length;
+
   return (
-    <section className="grid grid-cols-1 md:grid-cols-4 gap-4">
-      {/* Recebidos */}
-      <div className="bg-[#1e1e1e] border border-white/5 rounded-4xl p-6 flex items-center justify-between shadow-lg">
-        <div className="flex flex-col gap-1">
-          <span className="text-xs font-black text-gray-500 uppercase tracking-wider">Recebidos</span>
-          <span className="text-4xl font-black">{totalPending}</span>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-white">
+      <div className="bg-[#1e1e1e] p-6 rounded-2xl border border-white/5 flex items-center gap-4">
+        <div className="p-4 bg-[#f26422]/10 rounded-xl text-[#f26422]">
+          <DollarSign size={24} />
         </div>
-        <div className="bg-yellow-500/10 p-3.5 rounded-2xl text-yellow-500 border border-yellow-500/10">
-          <Clipboard size={24} />
-        </div>
-      </div>
-
-      {/* Em Produção */}
-      <div className="bg-[#1e1e1e] border border-white/5 rounded-4xl p-6 flex items-center justify-between shadow-lg">
-        <div className="flex flex-col gap-1">
-          <span className="text-xs font-black text-gray-500 uppercase tracking-wider">Em Produção</span>
-          <span className="text-4xl font-black">{totalProduction}</span>
-        </div>
-        <div className="bg-blue-500/10 p-3.5 rounded-2xl text-blue-500 border border-blue-500/10 flex items-center justify-center">
-          <span className="text-2xl leading-none">👨‍🍳</span>
+        <div>
+          <p className="text-gray-400 text-sm font-medium">Faturamento</p>
+          <h3 className="text-2xl font-black">
+            R$ {totalRevenue.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
+          </h3>
         </div>
       </div>
 
-      {/* Enviados */}
-      <div className="bg-[#1e1e1e] border border-white/5 rounded-4xl p-6 flex items-center justify-between shadow-lg">
-        <div className="flex flex-col gap-1">
-          <span className="text-xs font-black text-gray-500 uppercase tracking-wider">Enviados</span>
-          <span className="text-4xl font-black">{totalSent}</span>
+      <div className="bg-[#1e1e1e] p-6 rounded-2xl border border-white/5 flex items-center gap-4">
+        <div className="p-4 bg-blue-500/10 rounded-xl text-blue-500">
+          <ShoppingBag size={24} />
         </div>
-        <div className="bg-orange-500/10 p-3.5 rounded-2xl text-orange-500 border border-orange-500/10 flex items-center justify-center">
-          <span className="text-2xl leading-none">🛵</span>
+        <div>
+          <p className="text-gray-400 text-sm font-medium">Total de Pedidos</p>
+          <h3 className="text-2xl font-black">{totalOrders}</h3>
         </div>
       </div>
 
-      {/* Entregues */}
-      <div className="bg-[#1e1e1e] border border-white/5 rounded-4xl p-6 flex items-center justify-between shadow-lg">
-        <div className="flex flex-col gap-1">
-          <span className="text-xs font-black text-gray-500 uppercase tracking-wider">Entregues</span>
-          <span className="text-4xl font-black">{totalDelivered}</span>
+      <div className="bg-[#1e1e1e] p-6 rounded-2xl border border-white/5 flex items-center gap-4">
+        <div className="p-4 bg-yellow-500/10 rounded-xl text-yellow-500">
+          <Clock size={24} />
         </div>
-        <div className="bg-green-500/10 p-3.5 rounded-2xl text-green-500 border border-green-500/10">
-          <CheckCircle2 size={24} />
+        <div>
+          <p className="text-gray-400 text-sm font-medium">Pendentes</p>
+          <h3 className="text-2xl font-black">{pendingOrders}</h3>
         </div>
       </div>
-    </section>
+
+      <div className="bg-[#1e1e1e] p-6 rounded-2xl border border-white/5 flex items-center gap-4">
+        <div className="p-4 bg-green-500/10 rounded-xl text-green-500">
+          <Check size={24} />
+        </div>
+        <div>
+          <p className="text-gray-400 text-sm font-medium">Entregue</p>
+          <h3 className="text-2xl font-black">{deliveredOrders}</h3>
+        </div>
+      </div>
+    </div>
   );
 }

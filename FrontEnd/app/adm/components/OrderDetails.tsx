@@ -1,106 +1,83 @@
-"use client";
+'use client'
 
-import { X, UserIcon, Phone, MapPin } from "lucide-react";
-
+import { Order, OrderStatus } from "@/app/types/Order";
+import { statusConfig } from "./OrderCard";
+import Image from "next/image";
 
 interface OrderDetailsProps {
-  order: any | null; // Substitua por sua tipagem correta se necessário
-  onClose: () => void;
+  order: Order;
+  onUpdateStatus: (id: number, status: OrderStatus) => void;
 }
 
-export function OrderDetails({ order, onClose }: OrderDetailsProps) {
+export function OrderDetails({ order, onUpdateStatus }: OrderDetailsProps) {
+
   if (!order) {
     return (
-      <div className="w-full max-w-sm bg-[#1e1e1e] border border-white/5 rounded-4xl p-6 flex flex-col gap-5 shadow-xl sticky top-6 justify-center items-center">
-        <div className="text-center text-gray-500 text-xs font-medium">
-          Selecione um pedido na lista para visualizar o prontuário aqui.
-        </div>
+      <div className="w-[500px] bg-[#1e1e1e] p-6 rounded-2xl border border-white/5 text-white h-full flex items-center justify-center">
+        <p className="text-gray-400 font-medium">
+          Selecione um pedido na lista para visualizar os detalhes.
+        </p>
       </div>
     );
   }
+  const currentStatus = statusConfig[order.status];
+  const availableStatuses: OrderStatus[] = ["PENDING", "SENT", "DELIVERED"];
 
   return (
-    <div className="w-full max-w-sm bg-[#1e1e1e] border border-white/5 rounded-4xl p-6 flex flex-col gap-5 shadow-xl sticky top-6">
-      {/* Topo do Prontuário */}
-      <div className="flex justify-between items-center border-b border-white/5 pb-4">
-        <h3 className="text-sm font-black uppercase tracking-wider">Prontuário do Pedido</h3>
-        <button 
-          onClick={onClose}
-          className="p-1.5 hover:bg-white/5 rounded-xl text-gray-400 hover:text-white transition"
-        >
-          <X size={16} />
-        </button>
-      </div>
-
-      {/* Protocolo */}
-      <div className="flex flex-col gap-1 bg-[#121212] border border-white/5 p-4 rounded-2xl">
-        <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest">Protocolo</span>
-        <div className="flex justify-between items-center">
-          <span className="text-xl font-black">{order.id}</span>
-          <span className="text-xs font-bold text-green-400">
-            {ORDER_STATUSES[order.status as keyof typeof ORDER_STATUSES]?.label}
-          </span>
+    <div className=" w-[500px] bg-[#1e1e1e] p-6 rounded-2xl border border-white/5 text-white h-full flex flex-col">
+      {/* Cabeçalho */}
+      <div className="flex justify-between items-center mb-6 pb-6 border-b border-white/5">
+        <div>
+          <h2 className="text-2xl font-black">Pedido #{order.id}</h2>
+          <p className="text-gray-400 mt-1">Data: {new Date(order.createdAt).toLocaleString("pt-BR")}</p>
+        </div>
+        <div className={`px-4 py-2 rounded-lg border font-bold ${currentStatus.color}`}>
+          {currentStatus.label}
         </div>
       </div>
-
-      {/* Infos Cliente */}
-      <div className="flex flex-col gap-3">
-        <h4 className="text-[10px] font-black uppercase text-gray-500 tracking-wider">Informações do Cliente</h4>
-        <div className="flex flex-col gap-3 text-xs font-medium text-gray-300">
-          <div className="flex items-center gap-2.5">
-            <UserIcon size={15} className="text-gray-500" />
-            <span className="text-gray-200 font-bold">{order.customerName}</span>
-          </div>
-          <div className="flex items-center gap-2.5">
-            <Phone size={15} className="text-gray-500" />
-            <span>{order.customerPhone}</span>
-          </div>
-          <div className="flex items-start gap-2.5">
-            <MapPin size={15} className="text-gray-500 mt-0.5 shrink-0" />
-            <span className="leading-relaxed">{order.address}</span>
-          </div>
+      <div className="mb-6">
+        <h3 className="text-lg font-bold mb-2">Dados do Cliente</h3>
+        <div className="bg-[#121212] p-4 rounded-xl border border-white/5">
+          <p className="text-gray-300"><strong className="text-white">Nome:</strong> {order.user?.name || "N/A"}</p>
+          <p className="text-gray-300"><strong className="text-white">Email:</strong> {order.user?.email || "N/A"}</p>
         </div>
       </div>
-
-      {/* Produtos */}
-      <div className="flex flex-col gap-2 border-t border-b border-white/5 py-4 my-1">
-        <h4 className="text-[10px] font-black uppercase text-gray-500 tracking-wider mb-1">Produtos comprados</h4>
-        <div className="flex flex-col gap-2.5 max-h-40 overflow-y-auto pr-1">
-          {order.items.map((item: any, idx: number) => (
-            <div key={idx} className="flex justify-between text-xs font-bold">
-              <span className="text-gray-400">
-                {item.quantity}x <span className="text-white font-medium">{item.name}</span>
-              </span>
-              <span>
-                R$ {(item.price * item.quantity).toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
-              </span>
+      <div className="flex-1 overflow-y-auto mb-6">
+        <h3 className="text-lg font-bold mb-4">Itens ({order.items.length})</h3>
+        <div className="flex flex-col gap-3">
+          {order.items.map((item) => (
+            <div key={item.id} className="flex gap-4 items-center bg-[#121212] p-3 rounded-xl border border-white/5">
+               {/* <div className="relative w-12 h-12 rounded-lg overflow-hidden shrink-0">
+                  <Image src={item.product?.imagem || "/placeholder.png"} alt="Produto" fill className="object-cover" />
+               </div> */}
+               <div className="flex-1">
+                 <p className="font-bold">{item.product?.name || `Produto #${item.productId}`}</p>
+                 <p className="text-sm text-gray-400">{item.quantity}x de R$ {item.price.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+               </div>
+               <div className="font-black text-[#f26422]">
+                 R$ {(item.quantity * item.price).toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
+               </div>
             </div>
           ))}
         </div>
       </div>
-
-      {/* Observações */}
-      {order.notes && (
-        <div className="bg-yellow-500/5 border border-yellow-500/10 p-3.5 rounded-xl text-xs text-yellow-500/90 font-medium">
-          <strong>Observação:</strong> {order.notes}
-        </div>
-      )}
-
-      {/* Totalizadores */}
-      <div className="mt-auto flex flex-col gap-2 bg-[#121212] border border-white/5 p-4 rounded-2xl text-xs font-medium text-gray-400">
-        <div className="flex justify-between">
-          <span>Subtotal:</span>
-          <span className="text-gray-200">R$ {order.subtotal.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Taxa de Entrega:</span>
-          <span className="text-gray-200">R$ {order.deliveryFee.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</span>
-        </div>
-        <div className="flex justify-between items-center border-t border-white/5 pt-2 mt-1 text-white font-black text-sm">
-          <span>Total Geral:</span>
-          <span className="text-[#f26422] text-xl">
-            R$ {order.total.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
-          </span>
+      <div className="pt-6 border-t border-white/5">
+        <h3 className="text-sm font-bold text-gray-400 mb-3 uppercase tracking-wider">Alterar Status</h3>
+        <div className="flex flex-wrap gap-2">
+          {availableStatuses.map((status) => (
+            <button
+              key={status}
+              onClick={() => onUpdateStatus(order.id, status)}
+              disabled={order.status === status}
+              className={`px-4 py-2 rounded-lg text-sm font-bold transition ${
+                order.status === status
+                  ? "bg-white/10 text-white cursor-not-allowed"
+                  : "bg-[#2a2a2a] text-gray-400 hover:bg-[#f26422] hover:text-white"
+              }`}
+            >
+              {statusConfig[status].label}
+            </button>
+          ))}
         </div>
       </div>
     </div>

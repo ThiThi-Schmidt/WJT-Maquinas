@@ -45,9 +45,9 @@ model Product {
 
 enum OrderStatus {
   PENDING
-  PAID
-  SHIPPED
-  CANCELED
+  PREPARING
+  SENT
+  DELIVERED
 }
 
 model Order {

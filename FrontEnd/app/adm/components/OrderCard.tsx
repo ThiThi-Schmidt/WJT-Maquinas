@@ -1,55 +1,43 @@
-"use client";
+'use client'
 
-import { Clock } from "lucide-react";
-
+import { Order, OrderStatus } from "@/app/types/Order";
 
 interface OrderCardProps {
-  order: any; // Substitua por sua tipagem correta se necessário
-  isSelected: boolean;
-  onClick: () => void;
+  order: Order;
+  onClick: (order: Order) => void;
+  isSelected?: boolean;
 }
 
-export function OrderCard({ order, isSelected, onClick }: OrderCardProps) {
-  const statusMeta = ORDER_STATUSES[order.status as keyof typeof ORDER_STATUSES];
+export const statusConfig: Record<OrderStatus, { label: string; color: string }> = {
+  PENDING: { label: "Pendente", color: "text-yellow-500 bg-yellow-500/10 border-yellow-500/20" },
+  PREPARING: { label: "Em Preparo", color: "text-blue-500 bg-blue-500/10 border-blue-500/20" },
+  SENT: { label: "Enviado", color: "text-purple-500 bg-purple-500/10 border-purple-500/20" },
+  DELIVERED: { label: "Entregue", color: "text-green-500 bg-green-500/10 border-green-500/20" },
+};
+
+
+export function OrderCard({ order, onClick, isSelected }: OrderCardProps) {
+  const status = statusConfig[order.status];
 
   return (
     <div
-      onClick={onClick}
-      className={`p-7 rounded-4xl border transition-all flex items-center justify-between cursor-pointer group min-h-30 ${
+      onClick={() => onClick(order)}
+      className={`p-4 rounded-xl border cursor-pointer transition-all ${
         isSelected
-          ? "bg-[#141414] border-[#f26422] shadow-lg shadow-[#f26422]/5"
-          : "bg-[#121212] border-white/5 hover:border-white/15 hover:bg-[#151515]"
+          ? "bg-[#2a2a2a] border-[#f26422]"
+          : "bg-[#1e1e1e] border-white/5 hover:border-white/20"
       }`}
     >
-      <div className="flex flex-col gap-4">
-        <div className="flex items-center gap-3.5">
-          <span className="text-3xl font-black tracking-tight">{order.id}</span>
-          <span className="bg-[#1e1e1e] px-3 py-1 rounded-xl border border-white/5 text-[10px] font-black uppercase tracking-wider text-gray-300 flex items-center gap-1.5">
-            {statusMeta?.icon} {statusMeta?.label}
-          </span>
-        </div>
-
-        <div className="flex items-center gap-12 text-sm text-gray-400">
-          <div>
-            <p className="text-[10px] uppercase font-bold text-gray-600 tracking-wider">Cliente</p>
-            <p className="font-bold text-gray-200 mt-1 text-base">{order.customerName}</p>
-          </div>
-          <div>
-            <p className="text-[10px] uppercase font-bold text-gray-600 tracking-wider">Horário</p>
-            <p className="font-bold text-gray-200 mt-1 flex items-center gap-1">
-              <Clock size={14} className="text-gray-500" />
-              {order.statusHistory[0]?.time || "13:34"}
-            </p>
-          </div>
-        </div>
+      <div className="flex justify-between items-start mb-2">
+        <span className="text-white font-bold">Pedido #{order.id}</span>
+        <span className={`text-xs font-bold px-2 py-1 rounded-md border ${status.color}`}>
+          {status.label}
+        </span>
       </div>
-
-      <div className="text-right pr-2">
-        <p className="text-[10px] uppercase font-bold text-gray-600 tracking-wider">Total</p>
-        <p className="text-2xl font-black text-white mt-1 group-hover:text-[#f26422] transition-colors">
-          <span className="text-[#f26422] text-sm font-bold mr-0.5">R$</span>
-          {order.total.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
-        </p>
+      
+      <div className="text-sm text-gray-400 flex flex-col gap-1">
+        <p>Cliente: <span className="text-gray-200">{order.user?.name || "Desconhecido"}</span></p>
+        <p>Total: <span className="text-[#f26422] font-bold">R$ {order.total.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</span></p>
       </div>
     </div>
   );

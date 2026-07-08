@@ -108,16 +108,6 @@ export default function Header() {
                     <button
                       onClick={() => {
                         setMenuAberto(false);
-                        alert("Disparar modal/página de edição"); 
-                      }}
-                      className="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-200 hover:bg-white/5 hover:text-white transition"
-                    >
-                      Editar Perfil
-                    </button>
-                    
-                    <button
-                      onClick={() => {
-                        setMenuAberto(false);
                         if(confirm("Tem certeza que deseja excluir sua conta? Esta ação é irreversível.")) {
                           alert("Disparar função de exclusão"); 
                         }
