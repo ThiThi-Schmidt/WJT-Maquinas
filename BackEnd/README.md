@@ -27,7 +27,7 @@ O repositório é dividido de forma modular em duas aplicações principais:
 
 ### Configuração do Back-end
 
-1. Abra o terminal e navegue até a pasta do Back-end:
+1. Abra o terminal e escolha o cmd(command prompt) ou bash para utilizar os comandos corretamente:
    ```bash ou cmd
    cd BackEnd
 

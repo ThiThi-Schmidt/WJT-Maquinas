@@ -32,7 +32,7 @@ Certifique-se de ter o **Node.js** (versão 18 ou superior) instalado em sua má
 
 ###
 
-1. Navegue até a pasta do Front-End através do terminal:
+1. Abra o terminal e escolha o cmd(command prompt) ou bash para utilizar os comandos corretamente:
    ```bash
    cd FrontEnd
 
@@ -40,6 +40,13 @@ Certifique-se de ter o **Node.js** (versão 18 ou superior) instalado em sua má
 
    npm run dev
 
-## Utils/config.ts
+## Utils/config.ts ou usse ipconfig e altere a API para Endereço IPv4
    export const API_BASE_URL = "http://localhost:3001"
+
+
+2. Para fazer login aperte no botão de usuário no header do site, e se não tiver conta escolha a classificação cliente ou administrador na area do cadastro:
+
+   Todos podem fazer o cadastro do admin e login por enquanto...
+
+
    
