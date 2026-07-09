@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+O **WJT Máquinas** é uma plataforma full-stack desenvolvida para gerenciamento e controle de estoque de máquinas e ferramentas. O sistema conta com controle de autenticação estrito e níveis de acesso (RBAC), permitindo que apenas usuários com a função de administrador (`ADMIN`) realizem alterações críticas como criação, edição e exclusão de produtos.
 
-## Getting Started
+---
 
-First, run the development server:
+## Funcionalidades Principais
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ **Autenticação Segura:** Tela de login integrada a um contexto global de autenticação (`AuthContext`).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ **Persistência de Sessão:** Gerenciamento de tokens JWT utilizando o `localStorage` do navegador para manter o usuário conectado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+ **Níveis de Acesso (RBAC):** Redirecionamento inteligente baseado no cargo do usuário (Administradores são levados à rota `/adm`, enquanto clientes comuns permanecem na interface padrão).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+ **Gerenciamento de Estoque (CRUD):** Painel administrativo que possibilita listar, criar, editar e excluir produtos em tempo real.
 
-## Learn More
+ **Tratamento de Erros:** Validações de formulários na interface gráfica e exibição amigável de mensagens vindas da API.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tecnologias Utilizadas
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* **Framework:** Next.js (App Router)
+* **Biblioteca Principal:** React
+* **Linguagem:** TypeScript 
+* **Estilização:** Tailwind CSS 
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Execução
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### **Pré-requisitos**
+Certifique-se de ter o **Node.js** (versão 18 ou superior) instalado em sua máquina.
+
+###
+
+1. Navegue até a pasta do Front-End através do terminal:
+   ```bash
+   cd FrontEnd
+
+   npm install
+
+   npm run dev
+
+## Utils/config.ts
+   export const API_BASE_URL = "http://localhost:3001"
+   
