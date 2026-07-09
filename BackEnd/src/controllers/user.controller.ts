@@ -62,7 +62,7 @@ export class UserController {
       await userService.delete(id);
       res.status(204).send();
     } catch (err) {
-      console.error("🚨 ERRO REAL AO DELETAR:", err);
+      console.error("ERRO REAL AO DELETAR:", err);
       res.status(500).json({ error: "Erro ao deletar usuário" });
     }
   }

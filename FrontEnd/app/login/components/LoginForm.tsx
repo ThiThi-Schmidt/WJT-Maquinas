@@ -87,7 +87,7 @@ export function LoginForm() {
             type={showPassword ? "text" : "password"}
             required
             value={password}
-            placeholder="12345..."
+            placeholder="********"
             onChange={(e) => setPassword(e.target.value)}
             className="w-full bg-[#121212] border border-white/5 rounded-2xl py-4 pl-12 pr-12 text-sm font-medium text-white placeholder-gray-600 focus:outline-none focus:border-[#f26422] focus:ring-1 focus:ring-[#f26422] transition-all"
           />

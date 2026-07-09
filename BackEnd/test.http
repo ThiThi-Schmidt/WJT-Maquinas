@@ -53,7 +53,7 @@ Content-Type: application/json
 # ATUALIZAR // ADICIONAR ID
 PUT http://localhost:3001/products/3
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoiYWRtaW5Ad2p0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MjkyNzc2MywiZXhwIjoxNzgyOTI5NTYzfQ.ImAYhD43TZlUpjUYKL2MON1WKSbCVmdg2O4WLqInjMs
+Authorization: Bearer 
 
 {
   "imagem": "/images/ferramentas.png"
@@ -107,7 +107,7 @@ Authorization: Bearer
 # DELETAR PRODUTO // ADICIONAR ID
 DELETE http://localhost:3001/products/11
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoiYWRtaW5Ad2p0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MjUwMjI3MiwiZXhwIjoxNzgyNTA0MDcyfQ.tdqcj7KfvXJortFWC6mJKC4_gK6NmfVIbSrZcxi_qfM
+Authorization: Bearer 
 ###
 
 # CATEGORIAS

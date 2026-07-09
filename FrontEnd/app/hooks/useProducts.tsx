@@ -12,23 +12,10 @@ export function useProducts() {
 
   const getAllProducts = async () => {
   try {
-    console.log("1 - Entrou na função");
-
     setLoading(true);
-
-    console.log("2 - API:", API_BASE_URL);
-
-    console.log("3 - Antes do fetch");
-
+    
     const res = await fetch(`${API_BASE_URL}/products`);
-
-    console.log("4 - Depois do fetch");
-
-    console.log(res);
-
     const data = await res.json();
-
-    console.log("5 - Dados recebidos", data);
 
     setProducts(data);
   } catch (err) {

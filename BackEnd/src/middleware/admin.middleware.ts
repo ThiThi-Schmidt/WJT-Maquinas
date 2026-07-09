@@ -11,6 +11,7 @@ export const adminMiddleware = (
         next()
     }
     else{
-        res.status(403).send()
+        res.status(403).json({ error: "Acesso negado. Apenas administradores podem fazer isso." });
     }
+    
 }

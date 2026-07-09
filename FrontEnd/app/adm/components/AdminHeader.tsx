@@ -1,15 +1,13 @@
 "use client";
 
 import { useAuthContext } from "@/app/context/AuthContext";
-import Link from "next/link"; // Adicionamos a importação do Link do Next.js!
+import Link from "next/link";
 
 export function AdminHeader() {
   const { user, isAuthenticated, logout } = useAuthContext();
 
   return (
     <div className="w-full bg-[#1e1e1e] border border-white/5 rounded-3xl p-5 flex items-center justify-between shadow-xl">
-      
-      {/* LADO ESQUERDO: Logo e Badge */}
       <div className="flex items-center gap-2">
         <h1 className="text-2xl font-black text-white tracking-tighter">
           <a className="flex items-center gap-3 text-3xl font-bold tracking-tight" href={"#logo"}>
@@ -21,10 +19,8 @@ export function AdminHeader() {
           </span>
         </h1>
       </div>
-      
-      {/* CENTRO: Botões de Navegação */}
+
       <div className="flex items-center gap-4">
-        {/* Só mostra o botão de Produtos se for ADMIN */}
         {user?.role === "ADMIN" && (
           <Link 
             href="/admProduct" 
@@ -41,8 +37,7 @@ export function AdminHeader() {
           Voltar 
         </a>
       </div>
-      
-      {/* LADO DIREITO: Info do Usuário */}
+
       <div className="hidden md:flex items-center space-x-4">
         {isAuthenticated && user ? (
           <>

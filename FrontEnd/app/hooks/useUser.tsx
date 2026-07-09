@@ -28,15 +28,23 @@ export function useUsers() {
       });
 
       if (!res.ok) {
-      if (res.status === 401) {
-          localStorage.removeItem("token"); 
-          window.location.href = "/"; 
-          return;
-      }
+    if (res.status === 401) {
+        localStorage.removeItem("token"); 
+        window.location.href = "/"; 
+        return;
+    }
+    const rawText = await res.text(); 
+    let errorMessage = "Erro ao buscar usuários";
 
-      const errData = await res.json();
-      throw new Error(errData.error || "Erro ao buscar usuários");
-  }
+    try {
+        const errData = JSON.parse(rawText);
+        errorMessage = errData.error || errorMessage;
+    } catch {
+        errorMessage = rawText || errorMessage;
+    }
+
+    throw new Error(errorMessage);
+}
 
       const data = await res.json();
       setUsers(data);

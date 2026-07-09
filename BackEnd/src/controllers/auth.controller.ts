@@ -22,8 +22,9 @@ export class AuthController {
 
     async register(req: Request, res: Response) {
         try {
-            const { name, email, password } = req.body;
-            const user = await authService.register(name, email, password);
+            const { name, email, password, role } = req.body; 
+            const user = await authService.register(name, email, password, role); 
+            
             return res.status(201).json(user);
         } catch (err: any) {
             console.error(err);

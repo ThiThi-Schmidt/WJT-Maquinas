@@ -18,15 +18,13 @@ interface Product {
 
 export default function ProductManager() {
 
-  const API_URL = "https://congenial-space-succotash-q7gx5qr65xjghx75q-3001.app.github.dev"; 
+  const API_URL = "http://localhost:3001/products"; 
 
-  // Estados do Componente
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
   const [editingId, setEditingId] = useState<number | null>(null);
 
-  // Estados do Formulário (Batendo certinho com o seu Prisma)
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -34,7 +32,6 @@ export default function ProductManager() {
   const [categoryId, setCategoryId] = useState("");
   const [imagem, setImagem] = useState("");
 
-  // 1. BUSCAR PRODUTOS (GET)
   const fetchProducts = async () => {
     try {
       setLoading(true);
@@ -53,7 +50,6 @@ export default function ProductManager() {
     fetchProducts();
   }, []);
 
-  // Limpar formulário após criar ou editar
   const clearForm = () => {
     setName("");
     setDescription("");
@@ -64,7 +60,6 @@ export default function ProductManager() {
     setEditingId(null);
   };
 
-  // 2. CRIAR OU EDITAR PRODUTO (POST / PUT)
   const handleSaveProduct = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage("");
@@ -75,11 +70,10 @@ export default function ProductManager() {
       return;
     }
 
-    // Corpo da requisição ajustado conforme suas regras do back-end
     const productData = {
       name,
       description: description || undefined,
-      price: Number(price),
+      price: Number(price.toString().replace(",", ".")),
       stock: Number(stock),
       imagem: imagem || undefined,
       categoryId: Number(categoryId),
@@ -105,13 +99,12 @@ export default function ProductManager() {
       }
 
       clearForm();
-      fetchProducts(); // Recarrega a tabela automaticamente
+      fetchProducts();
     } catch (err: any) {
       setErrorMessage(err.message);
     }
   };
 
-  // Preenche o formulário para edição
   const handleEditClick = (product: Product) => {
     setEditingId(product.id);
     setName(product.name);
@@ -122,7 +115,6 @@ export default function ProductManager() {
     setImagem(product.imagem || "");
   };
 
-  // 3. DELETAR PRODUTO (DELETE)
   const handleDeleteProduct = async (id: number) => {
     if (!confirm("Tem certeza que deseja excluir este produto?")) return;
     setErrorMessage("");
@@ -141,7 +133,7 @@ export default function ProductManager() {
         throw new Error(data.error || "Erro ao deletar produto.");
       }
 
-      fetchProducts(); // Recarrega a tabela automaticamente
+      fetchProducts();
     } catch (err: any) {
       setErrorMessage(err.message);
     }
@@ -171,8 +163,6 @@ export default function ProductManager() {
       )}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
-        {/* FORMULÁRIO */}
         <div className="bg-zinc-900/50 p-6 rounded-2xl border border-white/5 h-fit">
           <h3 className="text-lg font-semibold mb-4 text-zinc-300">
             {editingId ? "Editar Produto" : "Novo Produto"}
@@ -207,7 +197,7 @@ export default function ProductManager() {
 
             <div>
               <label className="text-xs text-zinc-400 block mb-1">URL da Imagem</label>
-              <input type="text" value={imagem} onChange={(e) => setImagem(e.target.value)} className="w-full p-3 rounded-xl bg-[#121212] border border-white/10 text-sm focus:border-[#f26422] outline-none" placeholder="https://..." />
+              <input type="text" value={imagem} onChange={(e) => setImagem(e.target.value)} className="w-full p-3 rounded-xl bg-[#121212] border border-white/10 text-sm focus:border-[#f26422] outline-none" placeholder="/images/exemplos.png" />
             </div>
 
             <button type="submit" className="bg-[#f26422] hover:bg-[#d8531a] text-white py-3 rounded-xl font-bold text-sm transition-all active:scale-95 shadow-lg shadow-[#f26422]/10 mt-2">
@@ -215,8 +205,6 @@ export default function ProductManager() {
             </button>
           </form>
         </div>
-
-        {/* TABELA DE PRODUTOS */}
         <div className="lg:col-span-2 bg-zinc-900/50 p-6 rounded-2xl border border-white/5">
           <h3 className="text-lg font-semibold mb-4 text-zinc-300">Produtos no Banco</h3>
           

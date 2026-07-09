@@ -25,7 +25,6 @@ export function OrderDetails({ order, onUpdateStatus }: OrderDetailsProps) {
 
   return (
     <div className=" w-[500px] bg-[#1e1e1e] p-6 rounded-2xl border border-white/5 text-white h-full flex flex-col">
-      {/* Cabeçalho */}
       <div className="flex justify-between items-center mb-6 pb-6 border-b border-white/5">
         <div>
           <h2 className="text-2xl font-black">Pedido #{order.id}</h2>
@@ -35,6 +34,7 @@ export function OrderDetails({ order, onUpdateStatus }: OrderDetailsProps) {
           {currentStatus.label}
         </div>
       </div>
+
       <div className="mb-6">
         <h3 className="text-lg font-bold mb-2">Dados do Cliente</h3>
         <div className="bg-[#121212] p-4 rounded-xl border border-white/5">
@@ -42,14 +42,12 @@ export function OrderDetails({ order, onUpdateStatus }: OrderDetailsProps) {
           <p className="text-gray-300"><strong className="text-white">Email:</strong> {order.user?.email || "N/A"}</p>
         </div>
       </div>
+
       <div className="flex-1 overflow-y-auto mb-6">
         <h3 className="text-lg font-bold mb-4">Itens ({order.items.length})</h3>
         <div className="flex flex-col gap-3">
           {order.items.map((item) => (
             <div key={item.id} className="flex gap-4 items-center bg-[#121212] p-3 rounded-xl border border-white/5">
-               {/* <div className="relative w-12 h-12 rounded-lg overflow-hidden shrink-0">
-                  <Image src={item.product?.imagem || "/placeholder.png"} alt="Produto" fill className="object-cover" />
-               </div> */}
                <div className="flex-1">
                  <p className="font-bold">{item.product?.name || `Produto #${item.productId}`}</p>
                  <p className="text-sm text-gray-400">{item.quantity}x de R$ {item.price.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
@@ -61,6 +59,7 @@ export function OrderDetails({ order, onUpdateStatus }: OrderDetailsProps) {
           ))}
         </div>
       </div>
+      
       <div className="pt-6 border-t border-white/5">
         <h3 className="text-sm font-bold text-gray-400 mb-3 uppercase tracking-wider">Alterar Status</h3>
         <div className="flex flex-wrap gap-2">

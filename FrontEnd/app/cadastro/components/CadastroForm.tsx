@@ -10,6 +10,7 @@ export function CadastroForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState("CLIENT");
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -97,7 +98,7 @@ export function CadastroForm() {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="email@email.com"
+          placeholder="exemplo@email.com"
           className="w-full bg-[#121212] border border-white/5 rounded-2xl py-4 px-4 text-sm focus:outline-none focus:border-[#f26422]"
         />
       </div>
@@ -129,6 +130,14 @@ export function CadastroForm() {
 
         </div>
 
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 px-1">Tipo de Conta</label>
+        <select value={role} onChange={(e) => setRole(e.target.value)} className="w-full bg-[#121212] border border-white/5 rounded-2xl py-4 px-4 text-sm text-gray-400 focus:outline-none focus:border-[#f26422]">
+          <option value="CLIENT">Cliente</option>
+          <option value="ADMIN">Administrador</option>
+        </select>
       </div>
 
       <button

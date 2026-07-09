@@ -27,13 +27,12 @@ export default function AdminPanel() {
 
   useEffect(() => {
     if (selectedOrder) {
-      // Se a lista atualizar, busca os dados fresquinhos do pedido selecionado
       const pedidoAtualizado = orders.find((o) => o.id === selectedOrder.id);
       if (pedidoAtualizado) {
         setSelectedOrder(pedidoAtualizado);
       }
     }
-  }, [orders]); // Fica de olho na variável orders!
+  }, [orders]);
 
   const filteredOrders = selectedStatusFilter === "all" 
     ? orders 
@@ -71,9 +70,6 @@ export default function AdminPanel() {
           order={selectedOrder as any} 
           onUpdateStatus={updateOrderStatus}
         />
-
-       
-
       </div>
     </div>
   );
