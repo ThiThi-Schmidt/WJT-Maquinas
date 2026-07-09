@@ -96,7 +96,6 @@ export default function Header() {
                   Olá, <span className="text-[#ff7b00]">{user.name}</span>
                 </span>
 
-            
                 <button
                   onClick={() => setMenuAberto(!menuAberto)}
                   className="p-1.5 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition duration-200"
@@ -107,19 +106,6 @@ export default function Header() {
 
                 {menuAberto && (
                   <div className="absolute right-0 top-full mt-2 w-48 bg-[#1a2438] border border-white/10 rounded-xl shadow-2xl py-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
-                    <button
-                      onClick={() => {
-                        setMenuAberto(false);
-<button
-                      onClick={() => {
-                        setMenuAberto(false);
-                        alert("Disparar modal/página de edição"); 
-                      }}
-                      className="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-200 hover:bg-white/5 hover:text-white transition"
-                    >
-                      Editar Perfil
-                    </button>
-                    
                     <button
                       onClick={async () => {
                         setMenuAberto(false);
@@ -137,13 +123,6 @@ export default function Header() {
                     >
                       Excluir Conta
                     </button>
-                        }
-                      }
-                    }}
-                    className="w-full text-left px-4 py-2.5 text-sm font-medium text-red-400 hover:bg-red-500/10 hover:text-red-300 transition"
-                  >
-                    Excluir Conta
-                  </button>
                   </div>
                 )}
               </div>

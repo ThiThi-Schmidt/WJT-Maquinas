@@ -69,7 +69,7 @@ export function useProducts() {
 
   const updateProduct = async (id: number, productData: Partial<Product>) => {
     try {
-      const res = await fetch(`${API_BASE_URL}/product/${id}`, {
+      const res = await fetch(`${API_BASE_URL}/products/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

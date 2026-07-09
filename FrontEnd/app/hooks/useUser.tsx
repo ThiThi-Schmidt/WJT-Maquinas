@@ -28,9 +28,15 @@ export function useUsers() {
       });
 
       if (!res.ok) {
-        const errData = await res.json();
-        throw new Error(errData.error || "Erro ao buscar usuários");
+      if (res.status === 401) {
+          localStorage.removeItem("token"); 
+          window.location.href = "/"; 
+          return;
       }
+
+      const errData = await res.json();
+      throw new Error(errData.error || "Erro ao buscar usuários");
+  }
 
       const data = await res.json();
       setUsers(data);

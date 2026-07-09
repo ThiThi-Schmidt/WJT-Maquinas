@@ -1,1 +1,1 @@
-export const API_BASE_URL = "http://192.168.56.1:3001";
+export const API_BASE_URL = "https://congenial-space-succotash-q7gx5qr65xjghx75q-3001.app.github.dev"
