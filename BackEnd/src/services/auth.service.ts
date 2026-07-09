@@ -29,9 +29,6 @@ export class AuthService {
         role: user.role,
       },
       jwtSecret,
-      {
-        expiresIn: "30m",
-      }
     );
 
     return {

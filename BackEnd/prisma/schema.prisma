@@ -53,7 +53,7 @@ enum OrderStatus {
 model Order {
   id        Int           @id @default(autoincrement())
   userId    Int
-  user      User          @relation(fields: [userId], references: [id])
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
   total     Float
   status    OrderStatus   @default(PENDING)
   items     OrderItem[]
