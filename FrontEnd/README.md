@@ -62,8 +62,10 @@ O **WJT Máquinas** é uma plataforma full-stack desenvolvida para gerenciamento
    ### Login
    ```
    ADMIN: admin@wjt.com // é um email exclusivo do site mas ele não muda nada, você pode só criar uma conta admin com email normal.
+   SENHA: 123456
 
    CLIENTE: fulano@email.com
    CLIENTE: fulana@email.com
+   SENHAS: 123456
    ETC
    ```
