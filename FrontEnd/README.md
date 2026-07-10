@@ -1,3 +1,5 @@
+### FRONT END
+
 O **WJT Máquinas** é uma plataforma full-stack desenvolvida para gerenciamento e controle de estoque de máquinas e ferramentas. O sistema conta com controle de autenticação estrito e níveis de acesso (RBAC), permitindo que apenas usuários com a função de administrador (`ADMIN`) realizem alterações críticas como criação, edição e exclusão de produtos.
 
 ---
@@ -27,11 +29,6 @@ O **WJT Máquinas** é uma plataforma full-stack desenvolvida para gerenciamento
 
 ## Execução
 
-### **Pré-requisitos**
-Certifique-se de ter o **Node.js** (versão 18 ou superior) instalado em sua máquina.
-
-###
-
 1. Abra o terminal e escolha o cmd(command prompt) ou bash para utilizar os comandos corretamente:
    ```bash
    cd FrontEnd
@@ -40,13 +37,23 @@ Certifique-se de ter o **Node.js** (versão 18 ou superior) instalado em sua má
 
    npm run dev
 
-## Utils/config.ts ou usse ipconfig e altere a API para Endereço IPv4
+## Utils/config.ts ou use ipconfig e altere a API para Endereço IPv4
    export const API_BASE_URL = "http://localhost:3001"
 
 
-2. Para fazer login aperte no botão de usuário no header do site, e se não tiver conta escolha a classificação cliente ou administrador na area do cadastro:
+2. Como mecher no site:
+   ```
+   Entre na area de login, logue com uma conta existente mas se não tiver porfavor seja redirecionando para o cadastro crie sua conta corrente, para acessar 100% o site.
+   
+   Logo após os cliente ou você logar, os clientes seram redirecionandos para a página principal e vão ter a capacidade de adicionar ao carrinho os produtos, mas se você logar como administrador você é redirecionado para a area admin onde vai ter uma lista de todos o pedidos e vai poder por enquanto apenas mudar a classificação das encomendas.
 
-   Todos podem fazer o cadastro do admin e login por enquanto...
+   Logado como admin, no topo da area vai estar um botão de produtos que ao clicar você será redirecionando para uma area onde poderá criar, atualizar e excluir os produtos e ainda ter uma lista de todos criados e depois você pode acessar seu site para ver seu novo produto criado.
+   ``` 
 
-
+3. Coisas importantes!!:
+   ```
+   Criar a conta administradora no back-end.
+   Apenas o login funciona com adm no front-end // Óbvio.
+   Forma de pagamentos? Não temos.
+   Reclamações ou pedidos por email não estão funcionando por enquanto.
    

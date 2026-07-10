@@ -31,24 +31,23 @@ export class UserService {
 
   async update(
     id: number,
-    name: string,
-    email: string,
-    password: string,
-    role: Role
+    data: { name?: string; email?: string; password?: string; role?: Role }
   ) {
-    const passwordHash = await bcrypt.hash(password, 10);
+    const updateData: any = {};
+
+    if (data.name !== undefined) updateData.name = data.name;
+    if (data.email !== undefined) updateData.email = data.email;
+    if (data.role !== undefined) updateData.role = data.role;
+    if (data.password?.trim()) {
+      updateData.password = await bcrypt.hash(data.password, 10);
+    }
 
     return prisma.user.update({
       where: { id },
-      data: {
-        name,
-        email,
-        password: passwordHash,
-        role,
-      },
+      data: updateData,
     });
   }
-
+  
   async findByEmail(email: string) {
     return prisma.user.findUnique({ where: { email } });
   }

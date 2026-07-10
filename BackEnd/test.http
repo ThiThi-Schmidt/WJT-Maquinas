@@ -1,6 +1,8 @@
+# VIDA // SERVER LIGADO
 GET http://localhost:3001/health
 ###
 
+# USUÁRIOS
 GET http://localhost:3001/users
 Content-Type: application/json
 Authorization: Bearer 
@@ -51,12 +53,14 @@ Content-Type: application/json
 ###
 
 # ATUALIZAR // ADICIONAR ID
-PUT http://localhost:3001/products/3
+PUT http://localhost:3001/users/1
 Content-Type: application/json
-Authorization: Bearer 
+Authorization: Bearer  
 
 {
-  "imagem": "/images/ferramentas.png"
+  "name": "Fulana",
+  "email": "fulana@email.com",
+  "password": 1234567
 }
 ###
 
@@ -65,21 +69,22 @@ DELETE http://localhost:3001/users/3
 Authorization: Bearer 
 ###
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+# PRODUTOS
 GET http://localhost:3001/products
 Content-Type: application/json
 ###
 
 # BUSCAR PRODUTO ESPECIFICO // ADICIONAR ID
-GET http://localhost:3001/products/
+GET http://localhost:3001/products/13
 Content-Type: application/json
 ###
 
 # CRIAR PRODUTO NA LOJA
 POST http://localhost:3001/products
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoiYWRtaW5Ad2p0LmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc4MjUwNDI3NCwiZXhwIjoxNzgyNTA2MDc0fQ._dwtqRfObbK-Awf6Qgk4yS4mZYZMDVJTQ1-wqP1CHiY
+Authorization: Bearer 
 
 {
   "name": "Soprador",
@@ -92,23 +97,24 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsI
 ###
 
 # ATUALIZAR // ADICIONAR ID
-PUT http://localhost:3001/products/11
+PUT http://localhost:3001/products/13
 Content-Type: application/json
 Authorization: Bearer 
 
 {
-  "name": "Motoserra",
-  "description": "A bateria.",
-  "price": 599.90,
-  "stock": 40
+  "name": "Báteria",
+  "price": 379.90,
+  "stock": 12
 }
 ###
 
 # DELETAR PRODUTO // ADICIONAR ID
-DELETE http://localhost:3001/products/11
+DELETE http://localhost:3001/products/
 Content-Type: application/json
 Authorization: Bearer 
 ###
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 # CATEGORIAS
 GET http://localhost:3001/categories

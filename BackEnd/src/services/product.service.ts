@@ -3,7 +3,7 @@ import { prisma } from "../lb/prisma.js";
 interface CreateProductData {
   name: string;
   description?: string;
- price: number;
+  price: number;
   stock: number;
   categoryId: number;
   imagem?: string;

@@ -1,3 +1,5 @@
+### BACK END
+
 O **WJT Máquinas** é uma plataforma full-stack desenvolvida para gerenciamento e controle de estoque de máquinas e ferramentas. O sistema conta com controle de autenticação estrito e níveis de acesso (RBAC), permitindo que apenas usuários com a função de administrador (`ADMIN`) realizem alterações críticas como criação, edição e exclusão de produtos.
 
 ---
@@ -36,3 +38,33 @@ O repositório é dividido de forma modular em duas aplicações principais:
    npx prisma generate
 
    npm run dev
+
+2. Acessando o test.http, você encontra todas as areás:
+   ### USUÁRIOS
+   ```
+   cadastro // o cadastro do admin só ocorre no back-end.
+   login
+   atuailizar
+   deletar
+   ``` 
+
+   ### PRODUTOS
+   ```
+   criar
+   atualizar
+   deletar
+   ```
+   ### CATEGORIAS
+   ```
+   criar
+   ```
+
+3. Contas Test:
+   ### Login
+   ```
+   ADMIN: admin@wjt.com // é um email exclusivo do site mas ele não muda nada, você pode só criar uma conta admin com email normal.
+
+   CLIENTE: fulano@email.com
+   CLIENTE: fulana@email.com
+   ETC
+   ```

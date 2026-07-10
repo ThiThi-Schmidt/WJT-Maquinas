@@ -52,23 +52,47 @@ export class ProductController {
     }
   }
 
-
   async update(req: Request, res: Response) {
     try {
       const id = Number(req.params.id);
-      const { name, description, price, stock, imagem } = req.body;
+      if (isNaN(id)) {
+        return res.status(400).json({ error: "ID do produto inválido." });
+      }
+
+      const { name, description, price, stock, categoryId, imagem } = req.body;
+
+      const productExists = await prisma.product.findUnique({ where: { id } });
+      if (!productExists) {
+        return res.status(404).json({ error: "Produto não encontrado para atualização." });
+      }
+
+      if (categoryId !== undefined) {
+        const categoryExists = await prisma.category.findUnique({ where: { id: Number(categoryId) } });
+        if (!categoryExists) {
+          return res.status(400).json({ error: "A categoria informada não existe." });
+        }
+      }
+
+      const updateData: any = {};
       
+      if (name !== undefined) updateData.name = name;
+      if (description !== undefined) updateData.description = description;
+      if (price !== undefined) updateData.price = Number(price);
+      if (stock !== undefined) updateData.stock = Number(stock);
+      if (imagem !== undefined) updateData.imagem = imagem;
+      if (categoryId !== undefined) updateData.categoryId = Number(categoryId);
+
       const product = await prisma.product.update({
         where: { id },
-        data: { name, description, price: Number(price), stock: Number(stock), imagem }
+        data: updateData
       });
       
       return res.json(product);
     } catch (err: any) {
-      return res.status(500).json({ error: "Erro ao atualizar produto" });
+      console.error("Erro real ao atualizar produto:", err);
+      return res.status(500).json({ error: err.message || "Erro interno ao atualizar produto." });
     }
   }
-
   async delete(req: Request, res: Response) {
     try {
       const id = Number(req.params.id);

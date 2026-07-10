@@ -7,10 +7,8 @@ export function CadastroHeader() {
         <img src="/images/couch.png" alt="Logo" className="h-15 w-auto" />
         <h2>WJT</h2>
       </a>
-
       <div>
         <h1 className="text-2xl font-bold">Criar Conta</h1>
-
         <p className="text-xs text-gray-400 uppercase font-black mt-2">
           Cadastre-se gratuitamente
         </p>

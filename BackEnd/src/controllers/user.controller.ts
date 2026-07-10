@@ -47,12 +47,22 @@ export class UserController {
   async update(req: Request, res: Response) {
     try {
       const id = Number(req.params.id);
+      if (isNaN(id)) {
+        return res.status(400).json({ error: "ID de usuário inválido." });
+      }
+
       const { name, email, password, role } = req.body;
 
-      const user = await userService.update(id, name, email, password, role);
+      const userExists = await userService.getById(id);
+      if (!userExists) {
+        return res.status(404).json({ error: "Usuário não encontrado." });
+      }
+
+      const user = await userService.update(id, { name, email, password, role });
       res.json(user);
-    } catch (err) {
-      res.status(500).json({ error: "Erro ao atualizar usuário" });
+    } catch (err: any) {
+      console.error("Erro ao atualizar usuário:", err);
+      res.status(500).json({ error: err.message || "Erro ao atualizar usuário." });
     }
   }
 
