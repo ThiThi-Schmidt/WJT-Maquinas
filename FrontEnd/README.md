@@ -57,3 +57,13 @@ O **WJT Máquinas** é uma plataforma full-stack desenvolvida para gerenciamento
    Forma de pagamentos? Não temos.
    Reclamações ou pedidos por email não estão funcionando por enquanto.
    
+
+4. Contas Test:
+   ### Login
+   ```
+   ADMIN: admin@wjt.com // é um email exclusivo do site mas ele não muda nada, você pode só criar uma conta admin com email normal.
+
+   CLIENTE: fulano@email.com
+   CLIENTE: fulana@email.com
+   ETC
+   ```
