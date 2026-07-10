@@ -32,8 +32,7 @@ export function AdminHeader() {
         
         <a 
           href="/" 
-          className="text-xs bg-[#f26422] hover:bg-[#d8531a] text-white font-bold uppercase tracking-wider px-5 py-3 rounded-2xl transition-all shadow-lg shadow-[#f26422]/10 active:scale-95 inline-block"
-        > 
+          className="text-xs bg-[#f26422] hover:bg-[#d8531a] text-white font-bold uppercase tracking-wider px-5 py-3 rounded-2xl transition-all shadow-lg shadow-[#f26422]/10 active:scale-95 inline-block"> 
           Voltar 
         </a>
       </div>
@@ -47,8 +46,7 @@ export function AdminHeader() {
             
             <button
               onClick={logout}
-              className="px-4 py-2 rounded-lg border border-white/20 hover:bg-white/10 transition text-sm font-semibold"
-            >
+              className="px-4 py-2 rounded-lg border border-white/20 hover:bg-white/10 transition text-sm font-semibold">
               Sair
             </button>
           </>

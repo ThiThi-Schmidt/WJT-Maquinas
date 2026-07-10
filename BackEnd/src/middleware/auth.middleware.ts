@@ -14,13 +14,11 @@ export const authMiddleware = async (req: Request, res: Response, next: NextFunc
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET as string)
         req.user = Number(decoded.sub)
-
         const users = await userService.getById(req.user);
 
         if (!users) {
             return res.status(401).json({ error: "Usuário não encontrado ou deletado." });
         }
-
         req.role = users.role
         next()
     } catch (err) {

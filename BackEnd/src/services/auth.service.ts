@@ -23,22 +23,11 @@ export class AuthService {
     }
 
     const token = jwt.sign(
-      {
-        sub: user.id,
-        email: user.email,
-        role: user.role,
-      },
+      {sub: user.id, email: user.email, role: user.role,},
       jwtSecret,
     );
 
-    return {
-      token,
-      user: {
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      role: user.role,
-      },
+    return {token, user: {id: user.id, name: user.name, email: user.email, role: user.role,}
     };
   }
 
@@ -51,21 +40,12 @@ export class AuthService {
       throw err;
     }
 
-    const user = await userService.create(
-      name,
-      email,
-      password,
-      role as any
+    const user = await userService.create(name, email, password, role as any
     );
 
     return {
       message: "Usuário criado com sucesso!",
-      user: {
-        id: user.id,
-        name: user.name,
-        email: user.email,
-        role: user.role,
-      },
+      user: {id: user.id, name: user.name, email: user.email, role: user.role,},
     };
   }
 

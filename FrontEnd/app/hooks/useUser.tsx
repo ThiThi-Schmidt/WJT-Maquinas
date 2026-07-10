@@ -134,6 +134,5 @@ export function useUsers() {
     }
   };
 
-  return {users, loading, error, createUser, updateProfile, deleteUser, refreshUsers: getAllUsers,
-  };
+  return {users, loading, error, createUser, updateProfile, deleteUser, refreshUsers: getAllUsers,};
 }

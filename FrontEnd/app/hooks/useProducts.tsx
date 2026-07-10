@@ -100,6 +100,5 @@ export function useProducts() {
     }
   };
 
-  return {products, loading, error, createProduct, updateProduct,deleteProduct, refreshProducts: getAllProducts,
-  };
+  return {products, loading, error, createProduct, updateProduct,deleteProduct, refreshProducts: getAllProducts,};
 }

@@ -65,14 +65,12 @@ export class ProductController {
       if (!productExists) {
         return res.status(404).json({ error: "Produto não encontrado para atualização." });
       }
-
       if (categoryId !== undefined) {
         const categoryExists = await prisma.category.findUnique({ where: { id: Number(categoryId) } });
         if (!categoryExists) {
           return res.status(400).json({ error: "A categoria informada não existe." });
         }
       }
-
       const updateData: any = {};
       
       if (name !== undefined) updateData.name = name;
@@ -97,7 +95,6 @@ export class ProductController {
     try {
       const id = Number(req.params.id);
       await prisma.product.delete({ where: { id } });
-      
       return res.status(204).send();
     } catch (err: any) {
       return res.status(500).json({ error: "Erro ao deletar produto" });

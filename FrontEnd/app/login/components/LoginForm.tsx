@@ -95,8 +95,7 @@ export function LoginForm() {
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-4 text-gray-500 hover:text-gray-300 transition-colors"
-          >
+            className="absolute right-4 text-gray-500 hover:text-gray-300 transition-colors">
             {showPassword ? "Ocultar" : "Mostrar"}
           </button>
         </div>
@@ -105,8 +104,7 @@ export function LoginForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#ee6f34] hover:bg-[#d8531a] disabled:opacity-50 text-white font-bold text-sm uppercase tracking-wider py-4 rounded-2xl mt-2 transition-all shadow-lg shadow-[#f26422]/10 active:scale-[0.98]"
-      >
+        className="w-full bg-[#ee6f34] hover:bg-[#d8531a] disabled:opacity-50 text-white font-bold text-sm uppercase tracking-wider py-4 rounded-2xl mt-2 transition-all shadow-lg shadow-[#f26422]/10 active:scale-[0.98]">
         {isSubmitting ? "Entrando..." : "Entrar na conta"}
       </button>
     </form>

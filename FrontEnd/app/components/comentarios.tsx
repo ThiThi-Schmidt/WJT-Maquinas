@@ -49,8 +49,7 @@ export default function Testimonials() {
             <button
               onClick={handleNext}
               className="absolute -right-2 md:-right-5 top-1/2 -translate-y-1/2 px-9 py-3 bg-orange-500 rounded-xl trabsition font-semiboltd hover:bg-[#664533] text-white hover:text-white border border-orange-500 rounded-full flex items-center justify-center shadow-md transition-all duration-200 active:scale-95 sm:flex"
-              aria-label="Next testimonial"
-            >
+              aria-label="Next testimonial">
               &#10095;
             </button>
           </div>

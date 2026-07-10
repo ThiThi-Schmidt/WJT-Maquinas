@@ -16,8 +16,7 @@ export default function MaquinasETutoriais() {
             <div className="flex items-center gap-6 mb-4 md:mb-0">
               <button 
                 onClick={() => setMostrarTodos(true)} 
-                className="text-sm font-semibold border-b-2 border-gray-400 hover:border-white transition pb-1 text-gray-300 cursor-pointer"
-              >
+                className="text-sm font-semibold border-b-2 border-gray-400 hover:border-white transition pb-1 text-gray-300 cursor-pointer">
                 Ver Todos os Tutoriais
               </button>
               <h2 className="text-3xl font-bold text-white">Equipamentos & Manutenção</h2>
@@ -29,8 +28,7 @@ export default function MaquinasETutoriais() {
               <div key={maquina.id} className="group">
                 <button 
                   onClick={() => setMaquinaSelecionada(maquina)}
-                  className="block mb-4 overflow-hidden rounded-2xl w-full text-left cursor-pointer"
-                >
+                  className="block mb-4 overflow-hidden rounded-2xl w-full text-left cursor-pointer">
                   <img 
                     src={maquina.imagem} 
                     alt={maquina.nome} 
@@ -78,7 +76,7 @@ export default function MaquinasETutoriais() {
                 </p>
               </div>
             </div>
-            
+
           </div>
         </div>
       )}

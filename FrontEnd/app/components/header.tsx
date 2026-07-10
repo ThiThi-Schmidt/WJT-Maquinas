@@ -43,8 +43,8 @@ export default function Header() {
           url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M0 0l12 12M12 0L0 12' stroke='%23000' stroke-width='1.2' opacity='0.4'/%3E%3C/svg%3E")
         `,
         backgroundBlendMode: "overlay",
-      }}
-    >
+      }}>
+
       <div className="container mx-auto px-4 flex justify-between items-center">
 
         <a className="flex items-center gap-3 text-3xl font-bold tracking-tight" href={"#logo"}>
@@ -78,8 +78,8 @@ export default function Header() {
         <div className="hidden md:flex items-center space-x-4">
           <button
             onClick={() => setIsCartOpen(true)}
-            className="relative flex items-center gap-2 bg-[#f26422] hover:bg-[#d8531a] text-white px-5 py-3 rounded-xl transition font-semibold"
-          >
+            className="relative flex items-center gap-2 bg-[#f26422] hover:bg-[#d8531a] text-white px-5 py-3 rounded-xl transition font-semibold">
+
             <ShoppingCart size={20} />
             <span>Carrinho</span>
             {cartItems.length > 0 && (
@@ -99,8 +99,7 @@ export default function Header() {
                 <button
                   onClick={() => setMenuAberto(!menuAberto)}
                   className="p-1.5 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition duration-200"
-                  title="Configurações da conta"
-                >
+                  title="Configurações da conta">
                   <Settings size={18} className={`transition-transform duration-300 ${menuAberto ? "rotate-45 text-[#ff7b00]" : ""}`} />
                 </button>
 
@@ -119,8 +118,7 @@ export default function Header() {
                           }
                         }
                       }}
-                      className="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-200 hover:bg-white/5 hover:text-white transition"
-                    >
+                      className="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-200 hover:bg-white/5 hover:text-white transition">
                       Excluir Conta
                     </button>
                   </div>
@@ -130,16 +128,14 @@ export default function Header() {
               {user.role === "ADMIN" && (
                 <a
                   href="/adm"
-                  className="px-4 py-2 rounded-lg bg-[#ff7b00] hover:bg-[#e56d00] transition text-sm font-semibold"
-                >
+                  className="px-4 py-2 rounded-lg bg-[#ff7b00] hover:bg-[#e56d00] transition text-sm font-semibold">
                   Admin
                 </a>
               )}
 
               <button
                 onClick={logout}
-                className="px-4 py-2 rounded-lg border border-white/20 hover:bg-white/10 transition text-sm font-semibold"
-              >
+                className="px-4 py-2 rounded-lg border border-white/20 hover:bg-white/10 transition text-sm font-semibold">
                 Sair
               </button>
             </>

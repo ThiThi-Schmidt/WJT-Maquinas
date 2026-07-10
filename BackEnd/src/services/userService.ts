@@ -20,12 +20,7 @@ export class UserService {
     const passwordHash = await bcrypt.hash(password, 10);
 
     return await prisma.user.create({
-      data: {
-        name,
-        email,
-        password: passwordHash,
-        role: role ?? "CLIENT",
-      },
+      data: {name, email, password: passwordHash, role: role ?? "CLIENT",},
     });
   }
 
@@ -49,7 +44,7 @@ export class UserService {
   }
   
   async findByEmail(email: string) {
-    return prisma.user.findUnique({ where: { email } });
+    return prisma.user.findUnique({ where: { email } })
   }
 
   async delete(id: number) {

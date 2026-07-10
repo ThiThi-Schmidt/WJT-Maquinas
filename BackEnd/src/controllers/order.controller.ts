@@ -9,7 +9,6 @@ export class OrderController {
     try {
       const userId = Number(req.user);
       const { items } = req.body; 
-
       const order = await orderService.create(userId, items);
       
       return res.status(201).json(order);
@@ -42,7 +41,6 @@ export class OrderController {
     try {
       const { id } = req.params;
       const { status } = req.body;
-
       const updatedOrder = await prisma.order.update({
         where: { id: Number(id) },
         data: { status },

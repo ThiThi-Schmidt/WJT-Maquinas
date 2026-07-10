@@ -29,8 +29,7 @@ export function OrderFilters({ selectedStatusFilter, setSelectedStatusFilter, or
             selectedStatusFilter === filter.id
               ? "bg-[#f26422] text-white"
               : "bg-[#2a2a2a] text-gray-400 hover:bg-white/10 hover:text-white"
-          }`}
-        >
+          }`}>
           {filter.label}
           <span className={`px-2 py-0.5 rounded-md text-xs ${
             selectedStatusFilter === filter.id ? "bg-white/20" : "bg-[#1e1e1e]"

@@ -25,7 +25,6 @@ export class UserController {
       res.status(500).json({ error: "Erro ao buscar usuário" });
     }
   }
-
   async create(req: Request, res: Response) {
     try {
       const { name, email, password, role } = req.body;
@@ -36,14 +35,12 @@ export class UserController {
         password,
         role as Role | undefined
       );
-
       res.status(201).json(user);
     } catch (error: any) {
       console.error("Erro ao cadastrar usuário:", error);
       res.status(400).json({ error: error.message || "Erro ao cadastrar usuário" });
     }
   }
-
   async update(req: Request, res: Response) {
     try {
       const id = Number(req.params.id);
@@ -57,7 +54,6 @@ export class UserController {
       if (!userExists) {
         return res.status(404).json({ error: "Usuário não encontrado." });
       }
-
       const user = await userService.update(id, { name, email, password, role });
       res.json(user);
     } catch (err: any) {

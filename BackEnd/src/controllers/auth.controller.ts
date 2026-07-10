@@ -1,7 +1,6 @@
 import type { Request, Response } from "express";
 import { AuthService } from "../services/auth.service.js";
 
-
 const jwtSecret = process.env.JWT_SECRET || "Default#$%Pass"
 const authService = new AuthService();
 

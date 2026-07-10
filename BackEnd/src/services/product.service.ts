@@ -44,14 +44,7 @@ export class ProductService {
     console.log("Antes do prisma.product.create");
 
     const product = await prisma.product.create({
-      data: {
-        name: data.name,
-        description: data.description ?? null,
-        price: Number(data.price),
-        stock: Number(data.stock),
-        imagem: data.imagem ?? null,
-        categoryId: categoryId,
-      },
+      data: {name: data.name, description: data.description ?? null, price: Number(data.price), stock: Number(data.stock), imagem: data.imagem ?? null, categoryId: categoryId,},
     });
 
     console.log("Produto criado com sucesso:", product);

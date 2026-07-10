@@ -61,7 +61,7 @@ export default function AdminPanel() {
             ))}
             
             {filteredOrders.length === 0 && (
-              <p className="text-gray-500 text-center mt-10">Nenhum pedido encontrado.</p>
+              <p className="text-gray-500 text-center mt-10">Nenhum pedido encontrado</p>
             )}
           </div>
         </div>

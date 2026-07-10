@@ -35,8 +35,7 @@ export default function Footer() {
                 />
                 <button 
                   type="button" 
-                  className="bg-[#ff7b00] text-white px-6 py-3 rounded-lg hover:bg-[#c2410c] transition"
-                > 
+                  className="bg-[#ff7b00] text-white px-6 py-3 rounded-lg hover:bg-[#c2410c] transition"> 
                   Enviar
                 </button>
               </form>
@@ -84,8 +83,7 @@ export default function Footer() {
                 <button 
                   type="button"
                   onClick={() => setModalAtivo("termos")} 
-                  className="hover:text-[#ff7b00] transition bg-transparent border-none cursor-pointer p-0 m-0 text-white/85 font-normal"
-                >
+                  className="hover:text-[#ff7b00] transition bg-transparent border-none cursor-pointer p-0 m-0 text-white/85 font-normal">
                   Termos &amp; Condições
                 </button>
               </li>
@@ -93,8 +91,7 @@ export default function Footer() {
                 <button 
                   type="button"
                   onClick={() => setModalAtivo("privacidade")} 
-                  className="hover:text-[#ff7b00] transition bg-transparent border-none cursor-pointer p-0 m-0 text-white/85 font-normal"
-                >
+                  className="hover:text-[#ff7b00] transition bg-transparent border-none cursor-pointer p-0 m-0 text-white/85 font-normal">
                   Política de privacidade
                 </button>
               </li>
@@ -110,8 +107,7 @@ export default function Footer() {
             if ((e.target as HTMLElement).id === "fundo-termos") setModalAtivo(null);
           }}
           id="fundo-termos"
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-md px-4"
-        >
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-md px-4">
           <div className="bg-neutral-900 text-gray-300 p-6 md:p-10 rounded-2xl w-full max-w-5xl max-h-[85vh] overflow-y-auto relative shadow-2xl border border-neutral-800 text-left">
             <button type="button" onClick={() => setModalAtivo(null)} className="absolute top-5 right-6 text-gray-500 hover:text-white text-3xl font-bold">&times;</button>
             
@@ -159,8 +155,7 @@ export default function Footer() {
             if ((e.target as HTMLElement).id === "fundo-privacidade") setModalAtivo(null);
           }}
           id="fundo-privacidade"
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-md px-4"
-        >
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-md px-4">
           <div className="bg-neutral-900 text-gray-300 p-6 md:p-10 rounded-2xl w-full max-w-5xl max-h-[85vh] overflow-y-auto relative shadow-2xl border border-neutral-800 text-left">
             <button type="button" onClick={() => setModalAtivo(null)} className="absolute top-5 right-6 text-gray-500 hover:text-white text-3xl font-bold">&times;</button>
             

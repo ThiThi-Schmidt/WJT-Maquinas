@@ -24,8 +24,7 @@ export default function Login() {
             Não tem uma conta?{" "}
             <Link
               href="/cadastro"
-              className="text-[#ff834a] font-bold hover:underline"
-            >
+              className="text-[#ff834a] font-bold hover:underline">
               Cadastre-se gratuito
             </Link>
           </p>
@@ -33,8 +32,7 @@ export default function Login() {
 
           <Link
             href="/"
-            className="flex items-center gap-1 text-[#ff834a] font-bold hover:underline"
-          >
+            className="flex items-center gap-1 text-[#ff834a] font-bold hover:underline">
             ← Voltar
           </Link>
         </div>

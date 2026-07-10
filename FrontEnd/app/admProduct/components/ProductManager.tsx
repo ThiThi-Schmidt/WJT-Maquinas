@@ -145,8 +145,7 @@ export default function ProductManager() {
         <h2 className="text-2xl font-bold text-[#f26422]">Controle de Estoque</h2>
         <a 
           href="/adm" 
-          className="text-xs bg-[#f26422] hover:bg-[#d8531a] text-white font-bold uppercase tracking-wider px-5 py-3 rounded-2xl transition-all shadow-lg shadow-[#f26422]/10 active:scale-95 inline-block"
-        > 
+          className="text-xs bg-[#f26422] hover:bg-[#d8531a] text-white font-bold uppercase tracking-wider px-5 py-3 rounded-2xl transition-all shadow-lg shadow-[#f26422]/10 active:scale-95 inline-block"> 
           Voltar 
         </a>
         {editingId && (

@@ -13,8 +13,8 @@ export default function Cadastro() {
           "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/images/hero.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-      }}
-    >
+      }}>
+        
       <div className="w-full max-w-md bg-[#03001d] border border-white/5 rounded-[2.5rem] p-8 flex flex-col gap-8 shadow-2xl">
 
         <CadastroHeader />
@@ -25,8 +25,7 @@ export default function Cadastro() {
             Já possui uma conta?{" "}
             <Link
               href="/login"
-              className="text-[#ff834a] font-bold hover:underline"
-            >
+              className="text-[#ff834a] font-bold hover:underline">
               Entrar
             </Link>
           </p>
@@ -34,8 +33,7 @@ export default function Cadastro() {
 
           <Link
             href="/"
-            className="flex items-center gap-1 text-[#ff834a] font-bold hover:underline"
-          >
+            className="flex items-center gap-1 text-[#ff834a] font-bold hover:underline">
             ← Voltar
           </Link>
         </div>

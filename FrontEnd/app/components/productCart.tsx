@@ -52,8 +52,7 @@ export default function ProductCart({ product }: ProductCartProps) {
 
         <button 
           onClick={() => addToCart(product)}
-          className="bg-[#1e1e1e] hover:bg-[#252525] border border-white/5 text-white p-3 rounded-2xl transition-all shadow-lg active:scale-95"
-        >
+          className="bg-[#1e1e1e] hover:bg-[#252525] border border-white/5 text-white p-3 rounded-2xl transition-all shadow-lg active:scale-95">
           <Plus size={18} />
         </button>
       </div>
